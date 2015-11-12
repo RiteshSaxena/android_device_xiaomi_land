@@ -130,10 +130,10 @@ on boot
    chmod 0660 /dev/cpuset/camera-daemon/tasks
 
 service wcnss-service /system/vendor/bin/wcnss_service
-    class main
+    class late_start
     user system
     group system wifi radio
-    restart
+    oneshot
 
 ## imsqmidaemon starts with root and UID will be downgraded to SYSTEM.
 service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
