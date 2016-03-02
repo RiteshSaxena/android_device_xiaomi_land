@@ -73,7 +73,6 @@ void QCamera2HardwareInterface::zsl_channel_cb(mm_camera_super_buf_t *recvd_fram
     LOGH("[KPI Perf]: E");
     char value[PROPERTY_VALUE_MAX];
     bool dump_raw = false;
-    bool dump_yuv = false;
     bool log_matching = false;
     QCamera2HardwareInterface *pme = (QCamera2HardwareInterface *)userdata;
     if (pme == NULL ||
@@ -388,7 +387,6 @@ void QCamera2HardwareInterface::capture_channel_cb_routine(mm_camera_super_buf_t
     KPI_ATRACE_CALL();
     char value[PROPERTY_VALUE_MAX];
     LOGH("[KPI Perf]: E PROFILE_YUV_CB_TO_HAL");
-    bool dump_yuv = false;
     QCamera2HardwareInterface *pme = (QCamera2HardwareInterface *)userdata;
     if (pme == NULL ||
         pme->mCameraHandle == NULL ||
@@ -1952,6 +1950,7 @@ int32_t QCamera2HardwareInterface::updateMetadata(metadata_buffer_t *pMetaData)
     //rotation & device rotation
     uint32_t prmRotation = mParameters.getJpegRotation();
     cam_rotation_info_t rotation_info;
+    memset(&rotation_info, 0, sizeof(cam_rotation_info_t));
     if (prmRotation == 0) {
        rotation_info.rotation = ROTATE_0;
     } else if (prmRotation == 90) {
@@ -2552,7 +2551,7 @@ void QCamera2HardwareInterface::dumpJpegToFile(const void *data,
                 snprintf(buf, sizeof(buf), QCAMERA_DUMP_FRM_LOCATION "%d_%d.jpg",
                         mDumpFrmCnt, index);
                 if (true == m_bIntJpegEvtPending) {
-                    strlcpy(m_BackendFileName, buf, sizeof(buf));
+                    strlcpy(m_BackendFileName, buf, QCAMERA_MAX_FILEPATH_LENGTH);
                     mBackendFileSize = size;
                 }
 
