@@ -59,6 +59,9 @@ on fs
     mkdir /persist/data 0700 system system
     restorecon_recursive /persist
 
+on post-fs
+    chmod 0755 /sys/kernel/debug/tracing
+
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/tombstones 0771 system system
