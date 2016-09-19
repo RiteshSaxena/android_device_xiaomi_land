@@ -824,3 +824,6 @@ service mtservice /system/bin/mtd
 
 on property:vold.decrypt=trigger_restart_min_framework
     start time_daemon
+
+on property:vold.decrypt=trigger_restart_framework
+    restart time_daemon
