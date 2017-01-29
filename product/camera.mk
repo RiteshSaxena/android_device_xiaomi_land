@@ -8,7 +8,8 @@ PRODUCT_COPY_FILES += \
 # Libshims
 PRODUCT_PACKAGES += \
     libshims_camera \
-    libshim_ims_camera
+    libshim_ims_camera \
+    libshim_ims
 
 # Snap
 PRODUCT_PACKAGES += \
