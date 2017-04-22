@@ -61,6 +61,9 @@ on fs
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
 
+on post-fs
+    start qseecomd
+
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/tombstones 0771 system system
