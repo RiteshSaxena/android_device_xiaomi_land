@@ -39,11 +39,11 @@ ro.bluetooth.hfp.ver=1.7
 qcom.bluetooth.soc=smd
 
 # Camera
-camera.display.umax=1920x1080
-camera.display.lmax=1280x720
+persist.vendor.camera.display.umax=1920x1080
+persist.vendor.camera.display.lmax=1280x720
 persist.camera.gyro.android=1
 persist.camera.is_type=1
-vidc.enc.narrow.searchrange=1
+vendor.vidc.enc.narrow.searchrange=1
 camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp
 
 # CNE/DPM
@@ -72,9 +72,9 @@ ro.sf.lcd_density=320
 drm.service.enabled=true
 
 #Enable B service adj transition by default
-ro.sys.fw.bservice_enable=true
-ro.sys.fw.bservice_limit=5
-ro.sys.fw.bservice_age=5000
+ro.vendor.qti.sys.fw.bservice_enable=true
+ro.vendor.qti.sys.fw.bservice_limit=5
+ro.vendor.qti.sys.fw.bservice_age=5000
 
 # Fingerprint
 persist.qfp=false
@@ -130,10 +130,9 @@ persist.rild.nitz_short_ons_3=
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
-ro.am.reschedule_service=true
-ro.core_ctl_max_cpu=4
-ro.core_ctl_min_cpu=2
-ro.sys.fw.dex2oat_thread_count=4
+ro.vendor.qti.am.reschedule_service=true
+ro.vendor.qti.core_ctl_min_cpu=2
+ro.vendor.qti.core_ctl_max_cpu=4
 
 # Radio
 rild.libargs=-d /dev/smd0
@@ -178,11 +177,11 @@ persist.timed.enable=true
 net.tcp.2g_init_rwnd=10
 
 # Trim properties
-ro.sys.fw.use_trim_settings=true
-ro.sys.fw.empty_app_percent=50
-ro.sys.fw.trim_empty_percent=100
-ro.sys.fw.trim_cache_percent=100
-ro.sys.fw.trim_enable_memory=2147483648
+ro.vendor.qti.sys.fw.use_trim_settings=true
+ro.vendor.qti.sys.fw.empty_app_percent=50
+ro.vendor.qti.sys.fw.trim_empty_percent=100
+ro.vendor.qti.sys.fw.trim_cache_percent=100
+ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
 
 # Wifi
 wifi.interface=wlan0
