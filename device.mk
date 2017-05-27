@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,4 +23,4 @@ DEVICE_PACKAGE_OVERLAYS += \
 include $(LOCAL_PATH)/product/*.mk
 
 # Inherit proprietary files
-$(call inherit-product-if-exists, vendor/xiaomi/land/land-vendor.mk)
+$(call inherit-product, vendor/xiaomi/land/land-vendor.mk)
