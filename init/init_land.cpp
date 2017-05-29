@@ -1,5 +1,6 @@
 /*
    Copyright (c) 2016, The CyanogenMod Project
+   Copyright (c) 2017, The LineageOS Project
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -121,17 +122,17 @@ void vendor_load_properties()
     property_set("ro.product.wt.boardid", board_id);
 
     if (!strcmp(board_id, "S88537AA1")) {
-        property_set("ro.build.display.wtid", "SW_S88537AA1_V076_M20_MP_XM");
+        property_set("ro.build.display.wtid", "SW_S88537AA1_V077_M20_MP_XM");
     } else if (!strcmp(board_id, "S88537AB1")) {
-        property_set("ro.build.display.wtid", "SW_S88537AB1_V076_M20_MP_XM");
+        property_set("ro.build.display.wtid", "SW_S88537AB1_V077_M20_MP_XM");
     } else if (!strcmp(board_id, "S88537AC1")) {
-        property_set("ro.build.display.wtid", "SW_S88537AC1_V076_M20_MP_XM");
+        property_set("ro.build.display.wtid", "SW_S88537AC1_V077_M20_MP_XM");
     } else if (!strcmp(board_id, "S88537BA1")) {
-        property_set("ro.build.display.wtid", "SW_S88537BA1_V076_M20_MP_XM");
+        property_set("ro.build.display.wtid", "SW_S88537BA1_V077_M20_MP_XM");
     } else if (!strcmp(board_id, "S88537CA1")) {
-        property_set("ro.build.display.wtid", "SW_S88537CA1_V076_M20_MP_XM");
+        property_set("ro.build.display.wtid", "SW_S88537CA1_V077_M20_MP_XM");
     } else if (!strcmp(board_id, "S88537EC1")) {
-        property_set("ro.build.display.wtid", "SW_S88537EC1_V076_M20_MP_XM");
+        property_set("ro.build.display.wtid", "SW_S88537EC1_V077_M20_MP_XM");
     }
 
     if (!strcmp(board_id, "S88537AB1")) {
