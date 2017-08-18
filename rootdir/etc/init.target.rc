@@ -113,6 +113,12 @@ service time_daemon /system/vendor/bin/time_daemon
    class late_start
    user root
    group root
+   
+service vendor.power_off_alarm /vendor/bin/power_off_alarm
+    class core
+    group system
+    disabled
+    oneshot
 
 on boot
     start rmt_storage
@@ -204,6 +210,7 @@ on charger
     start qcom-post-boot
     setprop persist.sys.usb.config mass_storage
     start vendor.hvdcp_opti
+    start vendor.power_off_alarm
 
 service adsprpcd /system/vendor/bin/adsprpcd
     class main
