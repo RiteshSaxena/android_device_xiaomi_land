@@ -193,7 +193,7 @@ on boot
     chmod 0644 /dev/goodix_fp
 
     setprop persist.sys.fp.vendor none
-    start gx_fpd
+    start vendor.gx_fpd
 
     # Notification LEDs
     chown root system /sys/class/leds/red/blink
@@ -618,20 +618,20 @@ service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/m
 on property:init.svc.surfaceflinger=restarting
     restart vendor.hwcomposer-2-1
 
-service gx_fpd /system/vendor/bin/gx_fpd
+service vendor.gx_fpd /system/vendor/bin/gx_fpd
     class core
     user system
     group system drmrpc
     disabled
 
 on property:persist.sys.fp.vendor=switchf
-    stop gx_fpd
+    stop vendor.gx_fpd
     setprop persist.sys.fp.vendor searchf
     setprop ro.boot.fpsensor fpc
     setprop ro.hardware.fingerprint searchf
-    start fps_hal
+    start vendor.fps_hal
 
 on property:persist.sys.fp.vendor=goodix
     setprop ro.boot.fpsensor gdx
     setprop ro.hardware.fingerprint goodix
-    start fps_hal
+    start vendor.fps_hal
