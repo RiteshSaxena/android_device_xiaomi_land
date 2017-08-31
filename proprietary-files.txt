@@ -1,19 +1,22 @@
 # ADSP
 bin/adsprpcd
-vendor/lib/libadsprpc.so
 vendor/lib/libadsp_default_listener.so
+vendor/lib/libadsprpc.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
-vendor/lib64/libadsprpc.so
 vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libadsprpc.so
+vendor/lib64/libfastcvadsp_stub.so
+vendor/lib64/libfastcvopt.so
 
 # ADSP modules
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_skel.so
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_skel.so
 vendor/lib/rfsa/adsp/libobjectMattingApp_skel.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveCleverCapture_skel.so
@@ -22,15 +25,6 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libscveTextReco_skel.so
 
 # Audio
-etc/aanc_tuning_mixer.txt
-etc/audio_platform_info.xml
-etc/audio_platform_info_extcodec.xml
-etc/audio_policy.conf
-etc/drc/drc_cfg_5.1.txt
-etc/drc/drc_cfg_AZ.txt
-etc/mixer_paths.xml
-etc/mixer_paths_mtp.xml
-etc/mixer_paths_skuk.xml
 etc/mixer_paths_wcd9306.xml
 etc/mixer_paths_wcd9326.xml
 etc/mixer_paths_wcd9330.xml
@@ -45,13 +39,12 @@ etc/sound_trigger_mixer_paths.xml
 etc/sound_trigger_mixer_paths_wcd9306.xml
 etc/sound_trigger_mixer_paths_wcd9330.xml
 etc/sound_trigger_mixer_paths_wcd9335.xml
-etc/sound_trigger_platform_info.xml
-etc/surround_sound_3mic/surround_sound_rec_AZ.cfg
+etc/drc/drc_cfg_5.1.txt
+etc/drc/drc_cfg_AZ.txt
 etc/surround_sound_3mic/surround_sound_rec_5.1.cfg
-lib/hw/audio.primary.msm8937.so
+etc/surround_sound_3mic/surround_sound_rec_AZ.cfg
 lib/soundfx/libdirac.so
-vendor/etc/audio_effects.conf
-vendor/etc/audio_output_policy.conf
+lib/libDiracAPI_SHARED.so
 vendor/etc/diracmobile.config
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
@@ -66,7 +59,6 @@ vendor/lib/libaudiodevarb.so
 vendor/lib/libdrc.so
 vendor/lib/libqct_resampler.so
 vendor/lib/libsurround_3mic_proc.so
-vendor/lib/libswvdec.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -79,7 +71,6 @@ vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libhwdaphal.so
 vendor/lib64/libaudiodevarb.so
-vendor/lib64/libswvdec.so
 
 # Audio ACDB
 etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb
@@ -1501,11 +1492,3 @@ vendor/lib/mediadrm/libwvdrmengine.so|70419ce1f8eb6bd3aa36234f8d7e8003569efc9c
 bin/cnss-daemon
 bin/cnss_diag
 bin/wcnss_service
-etc/firmware/wlan/prima/WCNSS_cfg.dat
-etc/hostapd/hostapd.accept
-etc/hostapd/hostapd_default.conf
-etc/hostapd/hostapd.deny
-etc/wifi/WCNSS_qcom_cfg.ini
-etc/wifi/fstman.ini
-etc/wifi/p2p_supplicant_overlay.conf
-etc/wifi/wpa_supplicant_overlay.conf
