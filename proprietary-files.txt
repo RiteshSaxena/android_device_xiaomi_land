@@ -1184,7 +1184,7 @@ vendor/lib/librs_adreno_sha1.so
 vendor/lib/libsc-a3xx.so
 vendor/lib/libscale.so
 vendor/lib/libsd_sdk_display.so
-vendor/lib/libsdm-disp-apis.so
+vendor/lib/libsdm-disp-apis.so|72f6db2b249a47a6ac83d4dfc7d2e9f76b349920
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/eglsubAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
@@ -1221,11 +1221,11 @@ vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/libsc-a3xx.so
 vendor/lib64/libscalar.so
 vendor/lib64/libscale.so
-vendor/lib64/libsd_sdk_display.so
-vendor/lib64/libsdm-color.so
-vendor/lib64/libsdm-diag.so
-vendor/lib64/libsdm-disp-apis.so
-vendor/lib64/libsdmextension.so
+vendor/lib64/libsd_sdk_display.so|584beb42052eb6f7990f61731ff325e6a56b09d7
+vendor/lib64/libsdm-color.so|daa84d2435afe1159b479548ca89add2c6e188eb
+vendor/lib64/libsdm-diag.so|2cb958c6bde9e8e6e8b085b781bc9b3927fbb929
+vendor/lib64/libsdm-disp-apis.so|10eb679e9c91a0c9dbd5a993eaf154212986e7f0
+vendor/lib64/libsdmextension.so|621a57559b40d459c4da42c149599082a5f94942
 vendor/lib64/libuiblur.so|4b3fabf5ded7c4af531abde681676fc5e9248494
 
 # Graphics firmware
