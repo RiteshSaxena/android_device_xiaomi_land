@@ -1328,11 +1328,11 @@ vendor/lib64/libQtiTether.so|5dc8470d4ef042a5044f59da0ae1df3dee1f9b1a
 
 # Perf
 bin/msm_irqbalance
-vendor/bin/perfd
+vendor/bin/perfd|f20134d2f7e637040de086f988438404a4bbfd58
 vendor/lib/libqti-iop-client.so
-vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti-perfd-client.so|006a867d373b58152f5ad5ebd86956957c85dfff
 vendor/lib64/libqti-iop-client.so
-vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-perfd-client.so|6362954b2208611ffe831fd747797d570141c595
 
 # Peripheral manager
 bin/pm-proxy
