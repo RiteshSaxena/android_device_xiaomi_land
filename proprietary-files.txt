@@ -1446,27 +1446,27 @@ etc/firmware/modem_config/S88537CA1/row_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn
 
-# Sensors
-bin/sensors.qcom
-vendor/lib/hw/activity_recognition.msm8937.so
-vendor/lib/libsensor1.so
-vendor/lib/libsensor_reg.so
-vendor/lib/sensor_calibrate.so
-vendor/lib/sensors.ssc.so
-vendor/lib64/hw/activity_recognition.msm8937.so
-vendor/lib64/libsensor1.so
-vendor/lib64/libsensor_reg.so
-vendor/lib64/sensor_calibrate.so
-vendor/lib64/sensors.ssc.so
+# Sensors - Redmi 4x (santoni)
+bin/sensors.qcom|66d9d0a68a54c47d968172f3e1363dbd0c4be933
+vendor/lib/hw/activity_recognition.msm8937.so|fadf5cb62913aedcb9605074023eb8e1e66563b4
+vendor/lib/libsensor1.so|5e677de1b2f5d343ef1a649a7eb15373bb40e74d
+vendor/lib/libsensor_reg.so|77c17234d8cf9e40c8be77be4982164b9db3401e
+vendor/lib/sensor_calibrate.so|0152357b0fc9b549cbdf781280f70186b6efe913
+vendor/lib/sensors.ssc.so|944d9fa269b549e97930c7ff3c0f4ec78c06f04b
+vendor/lib64/hw/activity_recognition.msm8937.so|1f7ad65956981c5c59e773f8fa029541d8e6b931
+vendor/lib64/libsensor1.so|f030ddfa0ebeb5f5f04e09cb6986473b985aac3e
+vendor/lib64/libsensor_reg.so|3b56ecae4104312c8787abc38ad5a93939be9aed
+vendor/lib64/sensor_calibrate.so|4117e78ad63faeb9a3bb1ac0d951524c781e1802
+vendor/lib64/sensors.ssc.so|d701204e9f6840d27488d91beb927b81a52250de
 
 # Subsystem restart
 bin/ssr_diag
 
-# Thermal
-vendor/bin/thermal-engine
-vendor/lib/libthermalclient.so
-vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
+# Thermal - Redmi 4x (santoni)
+vendor/bin/thermal-engine|ae3ab44dc3c56e88c0f386da8ca971a8397871d3
+vendor/lib/libthermalclient.so|580966926e8045632d196dcc21fb5ca49b5eba4e
+vendor/lib64/libthermalclient.so|bcd8215fcbf7be2922970c77c73979830a9cd1f3
+vendor/lib64/libthermalioctl.so|d5c12338e56e05d3ddbffbba915b8ce6878a9485
 
 # Time services
 -app/TimeService/TimeService.apk
