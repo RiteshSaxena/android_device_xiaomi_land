@@ -1,5 +1,4 @@
 /*
-   Copyright (c) 2016, The CyanogenMod Project
    Copyright (c) 2017, The LineageOS Project
 
    Redistribution and use in source and binary forms, with or without
@@ -30,116 +29,153 @@
 
 #include <fcntl.h>
 #include <stdlib.h>
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <sys/sysinfo.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
 
-static char board_id[PROP_VALUE_MAX];
+char const *heapstartsize;
+char const *heapgrowthlimit;
+char const *heapsize;
+char const *heapminfree;
+char const *heapmaxfree;
+char const *large_cache_height;
 
-static int read_file2(const char *fname, char *data, int max_size)
+static std::string board_id;
+
+static void import_cmdline(const std::string& key,
+        const std::string& value, bool for_emulator __attribute__((unused)))
 {
-    int fd, rc;
+    if (key.empty()) return;
 
-    if (max_size < 1)
-        return 0;
-
-    fd = open(fname, O_RDONLY);
-    if (fd < 0) {
-        ERROR("failed to open '%s'\n", fname);
-        return 0;
-    }
-
-    rc = read(fd, data, max_size - 1);
-    if ((rc > 0) && (rc < max_size))
-        data[rc] = '\0';
-    else
-        data[0] = '\0';
-    close(fd);
-
-    return 1;
-}
-
-static void import_cmdline(char *name, int for_emulator)
-{
-    char *value = strchr(name, '=');
-    int name_len = strlen(name);
-    const char s[2] = ":";
-
-    if (value == 0) return;
-    *value++ = 0;
-    if (name_len == 0) return;
-
-    if (!strcmp(name, "board_id")) {
-        value = strtok(value, s);
-        strlcpy(board_id, value, sizeof(board_id));
+    if (key == "board_id") {
+        std::istringstream iss(value);
+        std::string token;
+        std::getline(iss, token, ':');
+        board_id = token;
     }
 }
 
 static void init_alarm_boot_properties()
 {
-    char const *alarm_file = "/proc/sys/kernel/boot_reason";
-    char buf[64];
-    char tmp[PROP_VALUE_MAX];
+    int boot_reason;
+    FILE *fp;
 
-    property_get("ro.boot.alarmboot", tmp);
+    fp = fopen("/proc/sys/kernel/boot_reason", "r");
+    fscanf(fp, "%d", &boot_reason);
+    fclose(fp);
 
-    if (read_file2(alarm_file, buf, sizeof(buf))) {
-        /*
-         * Setup ro.alarm_boot value to true when it is RTC triggered boot up
-         * For existing PMIC chips, the following mapping applies
-         * for the value of boot_reason:
-         *
-         * 0 -> unknown
-         * 1 -> hard reset
-         * 2 -> sudden momentary power loss (SMPL)
-         * 3 -> real time clock (RTC)
-         * 4 -> DC charger inserted
-         * 5 -> USB charger insertd
-         * 6 -> PON1 pin toggled (for secondary PMICs)
-         * 7 -> CBLPWR_N pin toggled (for external power supply)
-         * 8 -> KPDPWR_N pin toggled (power key pressed)
-         */
-        if (buf[0] == '3' || !strcmp(tmp,"true"))
-            property_set("ro.alarm_boot", "true");
-        else
-            property_set("ro.alarm_boot", "false");
+    /*
+     * Setup ro.alarm_boot value to true when it is RTC triggered boot up
+     * For existing PMIC chips, the following mapping applies
+     * for the value of boot_reason:
+     *
+     * 0 -> unknown
+     * 1 -> hard reset
+     * 2 -> sudden momentary power loss (SMPL)
+     * 3 -> real time clock (RTC)
+     * 4 -> DC charger inserted
+     * 5 -> USB charger inserted
+     * 6 -> PON1 pin toggled (for secondary PMICs)
+     * 7 -> CBLPWR_N pin toggled (for external power supply)
+     * 8 -> KPDPWR_N pin toggled (power key pressed)
+     */
+     if (boot_reason == 3) {
+        property_set("ro.alarm_boot", "true");
+     } else {
+        property_set("ro.alarm_boot", "false");
+     }
+}
+
+void check_device()
+{
+    struct sysinfo sys;
+
+    sysinfo(&sys);
+
+    if (sys.totalram > 2048ull * 1024 * 1024) {
+        // from - phone-xxhdpi-3072-dalvik-heap.mk
+        heapstartsize = "8m";
+        heapgrowthlimit = "288m";
+        heapsize = "768m";
+        heapminfree = "512k";
+        heapmaxfree = "8m";
+        large_cache_height = "1024";
+    } else {
+        // from - phone-xxhdpi-2048-dalvik-heap.mk
+        heapstartsize = "16m";
+        heapgrowthlimit = "192m";
+        heapsize = "512m";
+        heapminfree = "2m";
+        heapmaxfree = "8m";
+        large_cache_height = "1024";
+   }
+}
+
+
+void init_variant_properties()
+{
+    if (property_get("ro.cm.device") != "land")
+        return;
+
+    import_kernel_cmdline(0, import_cmdline);
+    
+    // Set board
+    property_set("ro.product.wt.boardid", board_id.c_str());
+
+    if (board_id == "S88537AA1") {
+        property_set("ro.build.display.wtid", "SW_S88537AA1_V079_M20_MP_XM");
+    } else if (board_id == "S88537AB1") {
+        property_set("ro.build.display.wtid", "SW_S88537AB1_V079_M20_MP_XM");
+    } else if (board_id == "S88537AC1") {
+        property_set("ro.build.display.wtid", "SW_S88537AC1_V079_M20_MP_XM");
+    } else if (board_id == "S88537BA1") {
+        property_set("ro.build.display.wtid", "SW_S88537BA1_V079_M20_MP_XM");
+        property_set("mm.enable.qcom_parser", "196495");
+    } else if (board_id == "S88537CA1") {
+        property_set("ro.build.display.wtid", "SW_S88537CA1_V079_M20_MP_XM");
+        property_set("mm.enable.qcom_parser", "196495");
+    } else if (board_id == "S88537EC1") {
+        property_set("ro.build.display.wtid", "SW_S88537EC1_V079_M20_MP_XM");
+        property_set("mm.enable.qcom_parser", "196495");
+    }
+
+    // Variants   
+    if (board_id == "S88537AB1"){
+        property_set("ro.product.model", "Redmi 3X");
+    } else {
+        property_set("ro.product.model", "Redmi 3S");
     }
 }
 
 void vendor_load_properties()
 {
-    char device[PROP_VALUE_MAX];
-    int rc;
-
-    rc = property_get("ro.cm.device", device);
-    if (!rc || strncmp(device, "land", PROP_VALUE_MAX))
-        return;
-
-    import_kernel_cmdline(0, import_cmdline);
-
-    property_set("ro.product.wt.boardid", board_id);
-
-    if (!strcmp(board_id, "S88537AA1")) {
-        property_set("ro.build.display.wtid", "SW_S88537AA1_V077_M20_MP_XM");
-    } else if (!strcmp(board_id, "S88537AB1")) {
-        property_set("ro.build.display.wtid", "SW_S88537AB1_V077_M20_MP_XM");
-    } else if (!strcmp(board_id, "S88537AC1")) {
-        property_set("ro.build.display.wtid", "SW_S88537AC1_V077_M20_MP_XM");
-    } else if (!strcmp(board_id, "S88537BA1")) {
-        property_set("ro.build.display.wtid", "SW_S88537BA1_V077_M20_MP_XM");
-    } else if (!strcmp(board_id, "S88537CA1")) {
-        property_set("ro.build.display.wtid", "SW_S88537CA1_V077_M20_MP_XM");
-    } else if (!strcmp(board_id, "S88537EC1")) {
-        property_set("ro.build.display.wtid", "SW_S88537EC1_V077_M20_MP_XM");
-    }
-
-    if (!strcmp(board_id, "S88537AB1")) {
-        property_set("ro.product.model", "Redmi 3X");
-    } else {
-        property_set("ro.product.model", "Redmi 3S");
-    }
-
     init_alarm_boot_properties();
+    check_device();
+    init_variant_properties();
+
+    property_set("dalvik.vm.heapstartsize", heapstartsize);
+    property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
+    property_set("dalvik.vm.heapsize", heapsize);
+    property_set("dalvik.vm.heaptargetutilization", "0.75");
+    property_set("dalvik.vm.heapminfree", heapminfree);
+    property_set("dalvik.vm.heapmaxfree", heapmaxfree);
+
+    property_set("ro.hwui.texture_cache_size", "72");
+    property_set("ro.hwui.layer_cache_size", "48");
+    property_set("ro.hwui.r_buffer_cache_size", "8");
+    property_set("ro.hwui.path_cache_size", "32");
+    property_set("ro.hwui.gradient_cache_size", "1");
+    property_set("ro.hwui.drop_shadow_cache_size", "6");
+    property_set("ro.hwui.texture_cache_flushrate", "0.4");
+    property_set("ro.hwui.text_small_cache_width", "1024");
+    property_set("ro.hwui.text_small_cache_height", "1024");
+    property_set("ro.hwui.text_large_cache_width", "2048");
+    property_set("ro.hwui.text_large_cache_height", large_cache_height);
 }
+
