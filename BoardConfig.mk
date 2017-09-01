@@ -14,11 +14,6 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/land
-
-# Define platform before including any common things
-include $(DEVICE_PATH)/PlatformConfig.mk
-
 # Inherit device-specific board fragments
 include $(DEVICE_PATH)/board/*.mk
 
