@@ -1327,7 +1327,7 @@ vendor/lib64/libconnctrl.so|37ee8792d34cea23d7fd935aa68f9f6b8405828b
 vendor/lib64/libQtiTether.so|5dc8470d4ef042a5044f59da0ae1df3dee1f9b1a
 
 # Perf
-bin/msm_irqbalance
+bin/msm_irqbalance|ab907828fa49dbc2f37e863ef877fdcef2cd1cf6
 vendor/bin/perfd|f20134d2f7e637040de086f988438404a4bbfd58
 vendor/lib/libqti-iop-client.so
 vendor/lib/libqti-perfd-client.so|006a867d373b58152f5ad5ebd86956957c85dfff
