@@ -1431,38 +1431,34 @@ vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
 
 # Radio - from Redmi 4x (santoni)
--app/QtiTelephonyService/QtiTelephonyService.apk|eccae26a9ce7dd5da7108d6c49499ec3fbc57bf2
 -app/datastatusnotification/datastatusnotification.apk
 -app/fastdormancy/fastdormancy.apk
 -app/shutdownlistener/shutdownlistener.apk
 bin/netmgrd
-bin/port-bridge
+bin/qmuxd
 bin/radish
 bin/rmt_storage
 bin/tftp_server
 etc/data/dsi_config.xml|c4f6518596a519e9838159b1eaa99fa2ad86e24d
 etc/data/netmgr_config.xml|11460248c7205863b95be2fe98739ba4c061329e
+etc/data/qmi_config.xml
 etc/permissions/embms.xml
+etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
-framework/QtiTelephonyServicelibrary.jar|fc47f4b4bffa66023e76407aca341683fb5d58ee
 framework/embmslibrary.jar
+-framework/qcnvitems.jar
 -framework/qcrilhook.jar
-framework/qti-telephony-common.jar|ac95ab90260c3467d2c09adafa9c8863fa95b997
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-vendor/bin/qti|2fac2daca6acf041e1b67cef7679b09ba1c3a62e
 vendor/lib/liblqe.so
 vendor/lib/libmdmdetect.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/liblqe.so
 vendor/lib64/libmdmdetect.so
 vendor/lib64/libnetmgr.so
-vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
-vendor/lib64/librilqmiservices.so
-vendor/lib64/libsettings.so
 vendor/lib64/libsystem_health_mon.so
 vendor/qcril.db
 
