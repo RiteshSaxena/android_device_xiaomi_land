@@ -104,15 +104,15 @@ etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
 etc/acdbdata/QRD/QRD_Headset_cal.acdb
 etc/acdbdata/QRD/QRD_Speaker_cal.acdb
 
-# Bluetooth
-bin/btnvtool
-bin/hci_qcomm_init
-vendor/lib/libbtnv.so
-vendor/lib64/libbtnv.so
+# Bluetooth - from Redmi 4x (santoni)
+bin/btnvtool|7daa2152fdbce4c0c002ee5c6787a64daa81cd7e
+bin/hci_qcomm_init|aabd009cba8cff4c37b7ef51aef52aa2c2c5c3e5
+vendor/lib/libbtnv.so|3aa0dbcfd604ae8930636989d0b8302404373a81
+vendor/lib64/libbtnv.so|a131e10a686bd373934037bb77a86af0b99e3e4e
 
-# CNE - from oxygen (MiMax 2)
--priv-app/CNEService/CNEService.apk|fd70751e25d26b22a885e5d6599bf04ba3fe705e
-bin/cnd|38538ec894c0d4e3dcb9f950ba4870acb299dcc7
+# CNE - from Redmi 4x (santoni)
+-priv-app/CNEService/CNEService.apk|017f9ad65bf46a8baa156655c483d8f19326553c
+bin/cnd|ce4d3e707a963d9dafd06849f5beae0c3d23c5a1
 etc/cne/SwimConfig.xml|68dedcca1c2ac18cf81fdee1854de16a3a60dd02
 etc/cne/andsfCne.xml|f81a69eac5dd16bbb195a0fcf1211a51cc014553
 etc/cne/wqeclient/ATT/ATT_profile1.xml|c3072f14098d64c2e799423c046d71691b10af7a
@@ -135,19 +135,19 @@ etc/permissions/cneapiclient.xml|15831adf0e80243042b90c734eea0a68eb8ae9c9
 etc/permissions/com.quicinc.cne.xml|e99e631d8b06ba4680529e9e4004d8d05baf6904
 framework/ConnectivityExt.jar|67025d09bbc7bb87bca1d15ab9c133eeb1ef2b9d
 framework/cneapiclient.jar|3cb56a579341acfb16d2be2e41bac2c7b6ac34b4
-framework/com.quicinc.cne.jar|773982968679874bc77847b641ef894e7ee09957
-vendor/lib/libcne.so|0233909b10d70d76640301d8cfaea6516ad560db
-vendor/lib/libcneapiclient.so|1eea71722e08a3c03cc6b76e9a7a49b3065bea5b
+framework/com.quicinc.cne.jar|1d741c27256748d53364768650d614a3faded289
+vendor/lib/libcne.so|aa879c0d8802ea3ed008bdc09e06f5d11c4a1251
+vendor/lib/libcneapiclient.so|7e871fbc1903601d88955a21ed1c48fc4fb67ff6
 vendor/lib/libcneqmiutils.so|df7703daf0e8dec5dbfe0b682f9722229df0a9de
-vendor/lib/libvendorconn.so|79723771b70e2e6fb59483d55f35c93babe7f2c9
-vendor/lib/libwqe.so|337cb504ca66d9e0a406dff3322804093e323532
-vendor/lib/libxml.so|7652229e9d5b31c33da84752a452bdbebe34cc56
-vendor/lib64/libcne.so|92ed20dc084c4b1af70a587a71d585ad862b5be6
-vendor/lib64/libcneapiclient.so|20e85454520e609ee847b97498c321c66575aa81
-vendor/lib64/libcneqmiutils.so|30c3d0fe9a37bad375373028c01719093bb50679
-vendor/lib64/libvendorconn.so|113953f878ed06829033bf882615bbd18bbca4d7
-vendor/lib64/libwqe.so|98f9b6cede25152c29a15202c684ccccaa0c7406
-vendor/lib64/libxml.so|ed5a01f4ded3cd22f68fd0094d15478bdd17935e
+vendor/lib/libvendorconn.so|f3e28d32c24591ac160d58565bbac2e4cb0ba9ab
+vendor/lib/libwqe.so|81f58d6bd8f9937070d99495c46ab6f8a89ff6e8
+vendor/lib/libxml.so|18b92add6a17761f4ef3e049d25e8159c4712ac2
+vendor/lib64/libcne.so|0b40b854e0dcb9717da22267669219b71b3666c1
+vendor/lib64/libcneapiclient.so|b0e937798ed69f8d538bb37e148bf9804b6eab43
+vendor/lib64/libcneqmiutils.so|2297fe027844422726b1f8566519efd41736b355
+vendor/lib64/libvendorconn.so|c9544b28a61f6d41b3b4a628b2e246ccfba831f9
+vendor/lib64/libwqe.so|b1b4cbab2b0889ca83a0632c1d87eb4ac0714596
+vendor/lib64/libxml.so|d9a8b984c537ecd81d7b2dd91dbc192dfe6cebe7
 
 # Camera
 bin/mm-qcamera-daemon
@@ -1055,25 +1055,25 @@ bin/hvdcp_opti
 lib/hw/consumerir.default.so
 lib64/hw/consumerir.default.so
 
-# DPM - from oxygen (MiMax 2)
-bin/dpmd|ec3c19d3eadf958c9718dacc92910d2133f9dc88
+# DPM - from Redmi 4x (santoni)
+bin/dpmd|e54c1714a9742104b26270bb2e8c68b13e31e6db
 etc/dpm/dpm.conf|4044e359cfde5a4e8c1ef31a684b3009bca31058
 etc/dpm/nsrm/NsrmConfiguration.xml|c406e5aaaa4ab278a7f7b62405ad5d91c8084835
 etc/permissions/com.qti.dpmframework.xml|36b94c9338069e434b83359a92cdc7ff62b822df
 etc/permissions/dpmapi.xml|ded29f9befaef20a7ccee0c75427fda1d1d04890
-framework/com.qti.dpmframework.jar|7d855e9cf5d10cd88cdcd9c9bd16120afcaa7e72
+framework/com.qti.dpmframework.jar|e99d002926751212cc65e249b1ad6fd202500480
 framework/dpmapi.jar|0015235ff71d52d1b340b10ce4fa737fa26975ef
 framework/tcmclient.jar|e7149c664f4b1841139ab816c0d4e0942df0583c
-vendor/lib/libdpmctmgr.so|8c1a86ba0d7bb8225706390876ceff5a56275c7d
-vendor/lib/libdpmfdmgr.so|6a843ac863b98100aa8d82dcd54613411a7bd0b1
-vendor/lib/libdpmframework.so|089606fd75e3d86f37335c13323a6bc590932219
-vendor/lib/libdpmnsrm.so|212124a8d5fcd3c6196b9960668a6c3c7267b599
-vendor/lib/libdpmtcm.so|703d275591a4bbba81c1d19c533da83019fc6cce
-vendor/lib64/libdpmctmgr.so|7ab87a031d9bbabb9bedc756aeb7c765d4733fce
-vendor/lib64/libdpmfdmgr.so|cbc6558d6ea71772f773624770a07822b027bbc1
-vendor/lib64/libdpmframework.so|e42989d30080fccefdc40f7486eb6805a8653ebb
-vendor/lib64/libdpmnsrm.so|8dc04929693f8302723f4baa2a5321268e76a486
-vendor/lib64/libdpmtcm.so|d987f88b0ef068159ea1743472199d543cf1ed65
+vendor/lib/libdpmctmgr.so|9998fb47922ec5fb8c9c8cdae65c8f0cfa119cf3
+vendor/lib/libdpmfdmgr.so|f0759efe4fcf5733def2cd4fdabde43449273e39
+vendor/lib/libdpmframework.so|c7faa2b99e3425ad3f3d779390de02fedff058a2
+vendor/lib/libdpmnsrm.so|aa1c21a5b02dae625353cd7370551f48890505c7
+vendor/lib/libdpmtcm.so|920de84cdac03220386d9103956866c22041afd8
+vendor/lib64/libdpmctmgr.so|9da94f6adfbcfdcc65ea05185b9ef88271ac61ca
+vendor/lib64/libdpmfdmgr.so|b5f2fb5f20b5a95b087f5123e9fc02019f8af9a3
+vendor/lib64/libdpmframework.so|3ac49fb28f81f476a7c0a60f3bf4ecdf2be812c5
+vendor/lib64/libdpmnsrm.so|550a09e9da986311178876cceaf71167b01d70b4
+vendor/lib64/libdpmtcm.so|4c2025b0882276ff7e742591b45c6e728ffedb11
 
 # DRM
 bin/qseecomd
@@ -1122,51 +1122,51 @@ lib64/libfpservice.so
 vendor/lib/hw/gatekeeper.msm8937.so
 vendor/lib64/hw/gatekeeper.msm8937.so
 
-# GPS - from oxygen (MiMax 2)
--framework/com.qti.location.sdk.jar|c580c72be92ff493995dc6b262a176bfde73c8b7
--priv-app/com.qualcomm.location/com.qualcomm.location.apk|fd63c0acf5a87280f37fe38ecb164853dc82d25d
-bin/loc_launcher|6aa71f397f4404e3244e9b151002ac4038e5252c
-bin/lowi-server|f75c748585f85719fb2e351a69533c7f77c8242e
-bin/xtwifi-client|bf0b6607d4912953a924eb3c8fa399cda3b1d6e5
-bin/xtwifi-inet-agent|69b16c8e813dc1f520d6905eea7acbae3f9848d3
+# GPS - from Redmi 4x (santoni)
+-framework/com.qti.location.sdk.jar|18c2c3200c86323b912cab4b5f17ac354cf29bdc
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk|63eb2afa7714ff5828ab60080aac82f709ef1af3
+bin/loc_launcher|df40b24f93bb5f93e8758dc16f40996aca1370aa
+bin/lowi-server|ba05c97b23a9616c3e48f3dedd5fef4b7b4f163d
+bin/xtwifi-client|4c1680392f94d91a362576ea92d26b7ffca24b82
+bin/xtwifi-inet-agent|c5603c50b4df155d3791c749d6f31de5d4b8f28f
 etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
 etc/permissions/com.qualcomm.location.vzw_library.xml|c25d37a4aa23cfd98d01d5d3121e43d0b6b37f05
 etc/permissions/com.qualcomm.location.xml|8896841bc23fa47bb26fb3dacfa82747f6966330
 etc/permissions/izat.xt.srv.xml|a0f460056f27b5495a4d6e959eecf0e429c42a57
 etc/xtra_root_cert.pem|f55a31ec4d9cf8ce2724acadecf00c779f8767db
-framework/com.qualcomm.location.vzw_library.jar|a0cc3eea8ccfc5215846914f057e909eec797557
+framework/com.qualcomm.location.vzw_library.jar|edeb9f967e346eefd59491df5dd2b99289beb2d1
 framework/izat.xt.srv.jar|da31c6183f8d29251ce5656ddab6d4b386934382
-lib64/libloc_api_v02.so|44bdad0ca52a0a9ae1fe9cbab575cf4044eeb604
-lib64/libloc_ds_api.so|0e6cbcec843cf5dbdddb0828c785b47eb5d53c59
-vendor/bin/slim_daemon|63bcb44a826177141750651ff677c1ad1d782a6e
-vendor/lib64/hw/flp.default.so|aecf9c2ed04dd34576e1c28c70e1d8315208e266
-vendor/lib64/libDRPlugin.so|b00ae086b7fda447df361d2b6ae5274c55d640ab
-vendor/lib64/libalarmservice_jni.so|7ab6dbd42bad4f9dae9e888243cc875e6989e27a
-vendor/lib64/libasn1cper.so|cecf35a0ba7817a9e0fe7e8e4e4b953594639e2d
-vendor/lib64/libasn1crt.so|c4db894b49ddebc58ce4d9d05f2d519d2f55d1ea
-vendor/lib64/libasn1crtx.so|cd2e8acc2221485d0dbcc231fa06dadff1ce9e3f
-vendor/lib64/libdataitems.so|191a35b9f1248cef3f6057bd26c9c7db17ae5fc2
-vendor/lib64/libdrplugin_client.so|f0529d9f05372515bce33397718cd3f2a9808782
-vendor/lib64/libevent_observer.so|474a2989d1a3f0df015b653ace1ab3a5212ee8a2
-vendor/lib64/libflp.so|dd2ba6a181435c0eb1e5e626df65ddfac7e467f6
-vendor/lib64/libgdtap.so|07f6458a830f87b616ea4b24e13e77a861732248
-vendor/lib64/libgeofence.so|ec4e68dc800f4a29e05c40ab35e274e2ea1b69c3
-vendor/lib64/libizat_client_api.so|41e935b9b087c3ab4f2083cca90e6d22d6444912
-vendor/lib64/libizat_core.so|c5321760427b29d3c8d335add412347326dcae21
-vendor/lib64/liblbs_core.so|872ce633eef10a065a12f73285d250f95ce42485
-vendor/lib64/libloc_ext.so|d7066ec07358814a246e7d2f5dba2724ae8b6249
-vendor/lib64/liblocationservice.so|b838a0df886a59ac5af79169daa32df2953e4634
-vendor/lib64/liblocationservice_glue.so|5e2a7be26e44636577c10612e1284ebc4f65d604
-vendor/lib64/liblowi_client.so|38364a4e9d7556dba8098ca58a5bbc1c987b9f5b
-vendor/lib64/liblowi_wifihal.so|7c9344c592d91d5e8cd6810d680471d250727fbd
-vendor/lib64/liblowi_wifihal_nl.so|f02c0c7dee4b7ab53da6415a16ac6b982f0fbf80
-vendor/lib64/libslimclient.so|fcf769e1d08dc63232222b5b19bf069ca064da37
-vendor/lib64/libulp2.so|4812125c26f787547263e1fbcb4830dd0c1dda80
-vendor/lib64/libxt_native.so|e9a1765518d10c684fd75a5ccaf8fb93ce43a693
-vendor/lib64/libxtadapter.so|5860fd01f064491362ee210ce564dd6d5fbb5931
-vendor/lib64/libxtwifi_ulp_adaptor.so|9d98a1e1fdea88d288d290baefc62fa3137154dc
+lib64/libloc_api_v02.so|31d709bc7358f47a7d509adb43f225a58d94e4a3
+lib64/libloc_ds_api.so|f68ea5adb852d043f766fb0703ae4bb23e5eb512
+vendor/bin/slim_daemon|08278ad2f80db7a8b2815d175a6b3984924bb95b
+vendor/lib64/hw/flp.default.so|05982a6935d54aeb0b879d7bcf8eb05b7c4dce68
+vendor/lib64/libDRPlugin.so|85024f34dc51d76df36de0bf10ec48e5ca4f76cd
+vendor/lib64/libalarmservice_jni.so|17662b984fe6d866619a3c185441f1015173fe20
+vendor/lib64/libasn1cper.so|d189b533db01cf8cdfb54d1636ebd44f4698a208
+vendor/lib64/libasn1crt.so|38ab9cc35016cf05251f71d5c1c0a99656daf1a6
+vendor/lib64/libasn1crtx.so|6dc74180ae91edb8d770913b58cf2de1890c2134
+vendor/lib64/libdataitems.so|a6bced6a90e8a7836cf5bdbeedcac39284f283c3
+vendor/lib64/libdrplugin_client.so|2f199088ba268604233ef63c40d339a698b3cc9b
+vendor/lib64/libevent_observer.so|6224c1540b50f2dc2ba36faf8d92dce099aea8c8
+vendor/lib64/libflp.so|b87f253f2e866556e7245e524eaa71c305ee1cc3
+vendor/lib64/libgdtap.so|35693a6e8fcbea847ceddf950f487715e06397e0
+vendor/lib64/libgeofence.so|34544ed6b26a4024e00fcb2eaa5c9716344ffd23
+vendor/lib64/libizat_client_api.so|fed8723d985f4397c2dbcf0635f5bad78c941c6c
+vendor/lib64/libizat_core.so|1aa2e56294c367634c3e0c29348af845e607a546
+vendor/lib64/liblbs_core.so|1c6c1f4691c8cbffe60f6b78644e34c4fb6d3e83
+vendor/lib64/libloc_ext.so|89836ecb1684f9fff4971653addef6b9595df798
+vendor/lib64/liblocationservice.so|c93ef6dce7dceb347db404795df4b04d2ddf9934
+vendor/lib64/liblocationservice_glue.so|5bb8e71dc4d52703b992ec01fa8137ae608d62e1
+vendor/lib64/liblowi_client.so|8ce7733439a58e575c474710124a5ce2f1293e46
+vendor/lib64/liblowi_wifihal.so|d48592b3da3a220880b8d8b13caadc25c7f5ced8
+vendor/lib64/liblowi_wifihal_nl.so|5624fb16a5048af038c038a21327643bd8b23383
+vendor/lib64/libslimclient.so|7b4ae3219ff7e9ffc06e8679e6faf9bc6a834982
+vendor/lib64/libulp2.so|14bff926ad1768386f394fa143020ce8780a930d
+vendor/lib64/libxt_native.so|976c3e491a4a2b656570cff7b56c952e132386f1
+vendor/lib64/libxtadapter.so|f4d3c16117adc5a77d9ead2d058682af10f77856
+vendor/lib64/libxtwifi_ulp_adaptor.so|1164ac63ea0e202931122500f5ed58e48874f813
 
-# Graphics
+# Graphics - from Redmi 4x (santoni)
 vendor/lib/hw/vulkan.msm8937.so|411f5ecdeb34bd8a991685eee509a80f83172a6d
 vendor/lib/egl/eglsubAndroid.so|84541806f8db4cd13396ad7f6813312da66930c8
 vendor/lib/egl/eglSubDriverAndroid.so|a63af6bdc902cd7561464fc9414d169556e59335
@@ -1190,7 +1190,6 @@ vendor/lib/libc2d30-a4xx.so|89a913924c5bdffea666a97fc9e867a48a92520a
 vendor/lib/libc2d30-a5xx.so|c190120a6ae39a1bbb9f41417d9b1dd1f6b5d307
 vendor/lib/libc2d30_bltlib.so|ad5f0dfd3a5fbb7f22618fbc2d8283a42ed8d1b7
 vendor/lib/libCB.so|6552947143ceeb218fc24593581afd138c148243
-vendor/lib/libEGL_adreno.so|cfd56d8550fa5558ab8e44a54537c940345580c3
 vendor/lib/libgsl.so|994d455ef51709d53a4e47eb71abd6cbb4aeba46
 vendor/lib/libllvm-glnext.so|2620411b5f8ce368fea8cd1165be56d262f0d5a9
 vendor/lib/libllvm-qcom.so|0294f8f900c1157e8e28c6acb2dbea846b76895d
@@ -1236,7 +1235,6 @@ vendor/lib64/libc2d30-a4xx.so|c576fb9878f53aeddeb5281983dfc6874e15afd2
 vendor/lib64/libc2d30-a5xx.so|8f33dfdec3836881c190188e60d2030121840bb3
 vendor/lib64/libc2d30_bltlib.so|278ac5563c15de0cbe58c6726e5283286802cfa6
 vendor/lib64/libCB.so|a2826f0b5cae348bebf6a644e6f9b9b438325aa6
-vendor/lib64/libEGL_adreno.so|67A62533466424908FA5DCCC3ED949F0BC8C7876
 vendor/lib64/libgsl.so|60e14889eee810a9c158f39aaedd3cf8456e4761
 vendor/lib64/libllvm-glnext.so|b69614fdc8e63fec125d85f75fe9693446d2b2d7
 vendor/lib64/libllvm-qcom.so|f8a8045f71c3a885b93a5c8ce772a2c19468ffc9
@@ -1286,58 +1284,52 @@ vendor/lib/hw/sound_trigger.primary.msm8937.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 
-# Media
-etc/firmware/DE.o.msm8937
-lib/libOmxVpp.so
-lib/libvpplibrary.so
-lib64/libvpplibrary.so
-vendor/lib/libAlacSwDec.so
-vendor/lib/libApeSwDec.so
-vendor/lib/libFlacSwDec.so
-vendor/lib/libI420colorconvert.so
-vendor/lib/libmmosal.so
-vendor/lib/libOmxAacDec.so
-vendor/lib/libOmxAlacDec.so
-vendor/lib/libOmxAlacDecSw.so
-vendor/lib/libOmxAmrwbplusDec.so
-vendor/lib/libOmxApeDec.so
-vendor/lib/libOmxApeDecSw.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxMux.so
-vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxWmaDec.so
-vendor/lib/libvqzip.so
-vendor/lib64/libFlacSwDec.so
-vendor/lib64/libI420colorconvert.so
-vendor/lib64/libmm-color-convertor.so
-vendor/lib64/libmmosal.so
-vendor/lib64/libOmxAacDec.so
-vendor/lib64/libOmxEvrcDec.so
+# Media - from Redmi 4x (santoni)
+etc/firmware/DE.o.msm8937|62c8a6ce7e6d81c3b9778d92db126e02a54e692f
+lib/libOmxVpp.so|2ff6daa35af6e06bc8d8cf13ef90c7fb6e928532
+lib/libvpplibrary.so|b747b41dd5b0dc17aec31247598a0b1f4dbe6191
+lib64/libvpplibrary.so|7c56eeb0fdd5d5b22bceab6bba8cf74c9f1b0c08
+vendor/lib/libAlacSwDec.so|9e19cdf730a1279f3cdfafc23d0385cecc15840d
+vendor/lib/libApeSwDec.so|5185623c3ebc0c814d6339ec646a0757da6a49b4
+vendor/lib/libFlacSwDec.so|89c0b9af3d56cd73e07393f2c88ac657659ebf5c
+vendor/lib/libI420colorconvert.so|87e6014400b4878c4df3eb7ad6f9085010a2be99
+vendor/lib/libmmosal.so|354ac7af33b7ead6856161ac19d8c019c74732dc
+vendor/lib/libOmxAacDec.so|16ee07b6ef21ed96ca881a7a9648d1fc82a9c14a
+vendor/lib/libOmxAlacDec.so|71527973be5a10cfef815730e200d646b08d0dff
+vendor/lib/libOmxAlacDecSw.so|2b4a419ca7fbb2a7501154c49d19bb8c51a3e597
+vendor/lib/libOmxAmrwbplusDec.so|256863271da6e118e551a365254a7a2b242ef557
+vendor/lib/libOmxApeDec.so|c23c0b6b0b82ee58edcd852b984862c6cb8ee317
+vendor/lib/libOmxApeDecSw.so|c23c0b6b0b82ee58edcd852b984862c6cb8ee317
+vendor/lib/libOmxEvrcDec.so|700989d4fbb775e44c0b27201fe77dc6621211ee
+vendor/lib/libOmxMux.so|b96194758137ce863a5c6e8f88d948a1cd4e0aea
+vendor/lib/libOmxQcelp13Dec.so|e2afcd0d0f6598e92585a629a16cf99469ec2b3a
+vendor/lib/libOmxWmaDec.so|08224f1ad72bf6157c052971b160e9fd6e357bd5
+vendor/lib/libvqzip.so|f61d2c5e711ab4a06ec6d4038de81d38ad32299f
+vendor/lib64/libFlacSwDec.so|3029a270f91accb1ea9acd37cbdec6b30b5b6776
+vendor/lib64/libI420colorconvert.so|61b48cbccc5bf9396893f3ab7c3472a22462a766
+vendor/lib64/libmm-color-convertor.so|1dd6acb1f688dedac801fb1ea0e7a0f8fd8edde4
+vendor/lib64/libmmosal.so|5cea4b1a400385eb8e768d7b8e050feac5b32a91
+vendor/lib64/libOmxAacDec.so|fa9b37f3e51f353a845238c0e58a48efc32e3398
+vendor/lib64/libOmxEvrcDec.so|7b732a2d5712b495752df88f12815c63ba0d2e4c
 
 # Modem
 vendor/lib/libwms.so
 vendor/lib64/libwms.so
 
-# Network - from oxygen (MiMax 2)
--priv-app/QtiTetherService/QtiTetherService.apk|de79486ed5d184b3e70ae7a2ae26e884dc2b0945
+# Network - from Redmi 4x (santoni)
+-priv-app/QtiTetherService/QtiTetherService.apk|94618bab6990ffbdebefbfd124cd16f6af6a811d
 vendor/lib/libconnctrl.so|0cc2b980b5b8a852b9c6e041ca50ca2d65b800db
-vendor/lib/libQtiTether.so|6f57fcc71d9e0f717b570b342c70d3d0fc57153a
-vendor/lib64/libconnctrl.so|37ee8792d34cea23d7fd935aa68f9f6b8405828b
-vendor/lib64/libQtiTether.so|5dc8470d4ef042a5044f59da0ae1df3dee1f9b1a
+vendor/lib/libQtiTether.so|fd264dfd66adcd2e9cd3cfede778f1387bdc6423
+vendor/lib64/libconnctrl.so|928acb9878e865493a37ad4a94ce29e95c616745
+vendor/lib64/libQtiTether.so|811873a0e84c5f2c064cbcd339e1e23263a4415f
 
-# Perf
+# Perf - from Redmi 4x (santoni)
 bin/msm_irqbalance|ab907828fa49dbc2f37e863ef877fdcef2cd1cf6
 vendor/bin/perfd|f20134d2f7e637040de086f988438404a4bbfd58
-vendor/lib/libqti-iop-client.so
+vendor/lib/libqti-iop-client.so|f1a2a457d69f5fc9164943e66e0cfe9aab5b17f2
 vendor/lib/libqti-perfd-client.so|006a867d373b58152f5ad5ebd86956957c85dfff
-vendor/lib/libqti-at.so
-vendor/lib/libqti-gt.so
-vendor/lib/libqti-wl.so
-vendor/lib64/libqti-iop-client.so
+vendor/lib64/libqti-iop-client.so|cf60b7e000f97909dd7840c1e4580914aa02cbe9
 vendor/lib64/libqti-perfd-client.so|6362954b2208611ffe831fd747797d570141c595
-vendor/lib64/libqc-opt.so
-vendor/lib64/libqti-at.so
-vendor/lib64/libqti-gt.so
 
 # Peripheral manager
 bin/pm-proxy
@@ -1345,125 +1337,125 @@ bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
-# Postprocessing
-etc/permissions/com.qti.snapdragon.sdk.display.xml
-framework/com.qti.snapdragon.sdk.display.jar
--vendor/app/colorservice/colorservice.apk
-vendor/bin/mm-pp-dpps
-vendor/lib/libdisp-aba.so
-vendor/lib64/libdisp-aba.so
+# Postprocessing - from Redmi 4x (santoni)
+etc/permissions/com.qti.snapdragon.sdk.display.xml|c7379e4fea71c2600f34b897cee760930ab0ce8b
+framework/com.qti.snapdragon.sdk.display.jar|e6387246d96376fd832fdcf14b65e149b6333bb2
+-vendor/app/colorservice/colorservice.apk|138a57132ac342850df99e87b3eec92bac27a213  
+vendor/bin/mm-pp-dpps|7129f9ece3caa68862599490f281bb6c19a685ff
+vendor/lib/libdisp-aba.so|d0dc609b3d731e0b1ceef13c3e40a2fbca6af96b
+vendor/lib64/libdisp-aba.so|8862af5d1a6d12280d1df470664e2a6847da2203
 
-# QMI - from oxygen (MiMax 2)
-bin/irsc_util|e9576519ba2a26d79bf62aac1c074d10102242d8
+# QMI - from Redmi 4x (santoni)
+bin/irsc_util|cafefb9c8f648db03394a581cac8efede6208bac
 etc/permissions/qti_permissions.xml|fd8a1db3c18b6d58334d747e47f4b155bb612039
-vendor/lib/libdiag.so|5e01c3163c6a229dcf02fe821789263ce681fa05
-vendor/lib/libdsi_netctrl.so|f177b19c1aedb0b51e54c832388a20baaebd1bc9
-vendor/lib/libdsutils.so|6dc9c07710e475ec9b1e6f81d90ef553c9d3b6c6
+vendor/lib/libdiag.so|61c090040462c3c1ad530136eae9c43b49ad2ff2
+vendor/lib/libdsi_netctrl.so|fc64f16a1fb3436afdbba4161b03f84eb046abcc
+vendor/lib/libdsutils.so|1c87965c4f794d0316df9d165d260f984a98ea1a
 vendor/lib/libidl.so|eadf4f3f7d25ec642cc457d4f6d16912682b0508
-vendor/lib/libqcci_legacy.so|31757d10c82bc527a51e29d01b71e3744e51721f
-vendor/lib/libqcmaputils.so|036f382df254f6a9b1d52897bcd140b745f846fe
-vendor/lib/libqdi.so|8798c326c8a5250580092d149696bd4816d5fed0
-vendor/lib/libqdp.so|ebf55eb9c661f47a769932cca6d1ee5e7a5f15ca
-vendor/lib/libqmi.so|87bafbf6211ebfeab89343c8b794d0d89d6f54d9
-vendor/lib/libqmi_cci.so|bbf786a4e9a1c26f8a3676911a1bf419badea42a
-vendor/lib/libqmi_client_helper.so|56d7d41c0f476637b9a8adca410a675fd45881d6
-vendor/lib/libqmi_client_qmux.so|46db63af79083f053dc6c837a62154789a3d0ad9
+vendor/lib/libqcci_legacy.so|b595e358eeb97b734c3b17ebe938e0caf2121c11
+vendor/lib/libqcmaputils.so|adae86f0f5cc2bf2cb262f2b74dba8e5d712c818
+vendor/lib/libqdi.so|0ddea8ead332ec591b1bd94c0213428edf32103e
+vendor/lib/libqdp.so|a5b501fc51a303dff0bf20098ba5ac3f957608c2
+vendor/lib/libqmi.so|cd8b6af8adfd115921250038dc35abbb17a89c45
+vendor/lib/libqmi_cci.so|594b2fcc483786586c948989bb5e99786cc498f3
+vendor/lib/libqmi_client_helper.so|0e35823e5883a4590dc5bc71eb43874f00ec093c
+vendor/lib/libqmi_client_qmux.so|4ab4875431b8cebee1f462e38d690d7a5cb67290
 vendor/lib/libqmi_common_so.so|1f38f77da048d51297091bb9f4ccac7462edaf91
-vendor/lib/libqmi_csi.so|4a3e449db250eee4ed1519cc7d15c30e67ec7351
+vendor/lib/libqmi_csi.so|54ee685963cd5ea78a4d0f4e4f88764641ead2d6
 vendor/lib/libqmi_encdec.so|cab1c426bd8673f5e98f847cb0a95adc5d2978f4
-vendor/lib/libqmiservices.so|892d2cec3bbe92e62cc4cde229b9b7d964727ee8
+vendor/lib/libqmiservices.so|55ff5c06262fb73bf1e6b533ffdaa444871fac7e
 vendor/lib/libqti-wl.so|a1a1b9e5177031c0002c13ecb0ad62f67e824680
-vendor/lib/libquipc_os_api.so|c3272b28f18528cc5c1748dc6aa9c5627768a201
+vendor/lib/libquipc_os_api.so|3a71aff326a2a8c6ccefe84ca9c18fcd3b767b6f
 vendor/lib/libsmemlog.so|c632a70764ee1d6416ce1758f4d10cd6983d204d
-vendor/lib64/libdiag.so|b6d0c86890f053eee9b1b10378fa9b2c51b529a9
-vendor/lib64/libdsi_netctrl.so|1bb3a1dde956771c4bc9451018413624ce12f8c8
-vendor/lib64/libdsutils.so|4689c397dd762dbf576b26a6d3d61c93b7f14b45
-vendor/lib64/libidl.so|2e96f015e20bc0208e1bd301874ffd824c45dbc3
-vendor/lib64/libqcci_legacy.so|b1a1b7845743a57f7c82f6c07c5c12f0ce1f4b6a
-vendor/lib64/libqcmaputils.so|7d0468816de845d2a84bae28929fa248d39b3ce4
-vendor/lib64/libqdi.so|801c8a12be9b22200555c003e233f81fbe4eaec7
-vendor/lib64/libqdp.so|28a0d8eb71fd5ffc89bfaa055304d997408b14ab
-vendor/lib64/libqmi.so|fdf6b4e2af4d60ffa5ef97ed20d3878cb04954c3
-vendor/lib64/libqmi_cci.so|6f07cfd8a01d5ac65e353b0c323ada2cfc4a62c3
-vendor/lib64/libqmi_client_helper.so|40e29d058fd4f91ac10b461a3de5f7be3bba5924
-vendor/lib64/libqmi_client_qmux.so|ab33896ab436d1d6b7d68352c437376458e1cae3
-vendor/lib64/libqmi_common_so.so|296b114235b1c4e2fbb0598c42cf16a22f9f5515
-vendor/lib64/libqmi_csi.so|57e2959747b7b3bd4f3a626be6c28d7e16f12eb8
-vendor/lib64/libqmi_encdec.so|d54296beaff7ee51f67ce2d3b69990470463cd22
-vendor/lib64/libqmiservices.so|b3b4aedfe332927387df3e7fb61d1e47854c5e1b
-vendor/lib64/libqti-wl.so|f4a0cd40935dce712e786407711b09c2e36df98c
-vendor/lib64/libquipc_os_api.so|a136014be9376030248c1edaa831a9e8a44767f2
-vendor/lib64/libsmemlog.so|b9178d993626d2ba6a2a11716a106a73edde475c
+vendor/lib64/libdiag.so|60384862bcaffaaf80e7b8ce847ecac18757c2cd
+vendor/lib64/libdsi_netctrl.so|eda0afe71c0f03097fcec439f026eb45a0b5df3f
+vendor/lib64/libdsutils.so|dcabf04c68f73cc62396d8d1c604574259a5b9c0
+vendor/lib64/libidl.so|a741dff6b3079c369f22ccb9a5d2ee06a2639a7f
+vendor/lib64/libqcci_legacy.so|ca4be8d89cb9590cb64876db1c2cb40285c0275e
+vendor/lib64/libqcmaputils.so|dc62e60fc92315dfd526fd9735ee3bc951ac4b58
+vendor/lib64/libqdi.so|c01277592566d7ede4d2c972f629fbbfb34b7dd8
+vendor/lib64/libqdp.so|815a7ab9240e6bbe0d587f78b5bbf6b7e73b455d
+vendor/lib64/libqmi.so|f14257f227fc3bafc9e1cfd8467c63fb453adfb6
+vendor/lib64/libqmi_cci.so|9527b54573a6b413a4874c69f2ece7eeed072ed5
+vendor/lib64/libqmi_client_helper.so|1ae557a68ffca7ce6ce202c6139cf68bc843aa6d
+vendor/lib64/libqmi_client_qmux.so|382de488ec9ba66953be8da4e7945fee987a341e
+vendor/lib64/libqmi_common_so.so|ed65901b057be9f825b1dd52f3cf476444ac99d6
+vendor/lib64/libqmi_csi.so|31b37f95d47be4396e8b376923ab29cc03bb1127
+vendor/lib64/libqmi_encdec.so|e6b2a9f18aac2894fb7d999769e3b42c8af1ae92
+vendor/lib64/libqmiservices.so|262a70e5dbb43c80718806ada91fe680f65edbe6
+vendor/lib64/libqti-wl.so|104cef51b83c70a04f0bae59c85c9c09709b08f6
+vendor/lib64/libquipc_os_api.so|dc85ee4e026b852ddaca580aaf2596e4ee44a520
+vendor/lib64/libsmemlog.so|72dd453c4bda2d0ec721983de71b2ddb613e29c0
 
-# Radio - from oxygen (MiMax 2)
--app/QtiTelephonyService/QtiTelephonyService.apk|2d1588b58ed5854986430d44a2f31fcc3bf634c7
--app/datastatusnotification/datastatusnotification.apk|67afde50cd8ca137105f8da3d3bc0c3edf9fbb66
--app/fastdormancy/fastdormancy.apk|13b604b080309fa56277328f741894044678bebe
--app/shutdownlistener/shutdownlistener.apk|e0beb76b43f439e28ffdbe13960a8e4268a0d2f9
-bin/netmgrd|1e9eb370de9fad242e643ac81a3688f43067e914
-bin/port-bridge|a9f3d5ede6e2b7c9c7e39b992f62aa5c311f7542
-bin/radish|5a4247d8db53406fea57d913309e1550e35c6ae9
-bin/rmt_storage|bd74d491f0e178e57a5aab91c695dda459ed1d5f
-bin/tftp_server|7396c57358d9d1dcf599c4ba9e34f1b59765aa4a
+# Radio - from Redmi 4x (santoni)
+-app/QtiTelephonyService/QtiTelephonyService.apk|eccae26a9ce7dd5da7108d6c49499ec3fbc57bf2
+-app/datastatusnotification/datastatusnotification.apk|8c6c437e425681ca8acf14edc42d132870de2121
+-app/fastdormancy/fastdormancy.apk|c1eb40a68c7a56cf28fc8ee74c36db2ec2a5f64e
+-app/shutdownlistener/shutdownlistener.apk|f276b418be6427b02f698d15a927e354c1e6d8c7
+bin/netmgrd|00f085c33ae12f93375a7736c6f82daf3724403d
+bin/port-bridge|10fdfbfcd58632273dc1999a81213ff3406c5cec
+bin/radish|b8fa8ab7149548a16f24d38c013e2ca66bb7bb3a
+bin/rmt_storage|7d2e4aee736e980e373dac4bdba2349344de2051
+bin/tftp_server|f2b8e205d42ac8c673b42b8f7f598fd5a419f340
 etc/data/dsi_config.xml|c4f6518596a519e9838159b1eaa99fa2ad86e24d
-etc/data/netmgr_config.xml|824c5c864d1639215d7f325f4577493f769a27f6
+etc/data/netmgr_config.xml|11460248c7205863b95be2fe98739ba4c061329e
 etc/permissions/embms.xml|5e1b492874c221a7e1188fc3a5369d32b3e67969
 etc/permissions/qcrilhook.xml|9fc58a3d54d20ac1d53bab14608815121aefbce5
 etc/permissions/telephonyservice.xml|b297c8a27443570377d78586b00198839ce326bb
-framework/QtiTelephonyServicelibrary.jar|ffa067588e04779702f37cd6465547e2fb5a9ec9
+framework/QtiTelephonyServicelibrary.jar|fc47f4b4bffa66023e76407aca341683fb5d58ee
 framework/embmslibrary.jar|a06799495515305de3e5d432ec62a1f692200c99
--framework/qcrilhook.jar|58424bd3cde045b605b6493c449a80c35a1fa253
-framework/qti-telephony-common.jar|fdbf4482b029cf4bc57e1f19d9f62c0783166de8
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|68b621be3a8f75fdf283766170a339528e292c20
-vendor/bin/qti|37606d1816632b83c3c4dd0e8cc024fec2a237d0
-vendor/lib/liblqe.so|c8382404fb17f51e8299eefa8253191016d94618
-vendor/lib/libmdmdetect.so|ab2469bdf487aae16ea83f1e973b3a18602921ed
-vendor/lib64/libconfigdb.so|99a33fbbadeb85f966c983b84413a4a981cc3b75
-vendor/lib64/liblqe.so|2b9da9a67554b915bc6086af7ba6c4995a2a93a3
-vendor/lib64/libmdmdetect.so|460f033824c63173a946a7112039f417f22d0150
-vendor/lib64/libnetmgr.so|072140c28d6f61c869b7f8676856ee517e655ec1
-vendor/lib64/libril-qc-ltedirectdisc.so|5f24f2ca5f1aac6adfb4f97f478fd2726ada61cd
-vendor/lib64/libril-qc-qmi-1.so|7fe3ab9d30c73253b4d4c1b5e049b613d86253ea
-vendor/lib64/libril-qc-radioconfig.so|54b255638caa9be2f14aad990d41d6832677beb1
-vendor/lib64/libril-qcril-hook-oem.so|ec73e3c895630039bbf890882ef02761ecf2b1c9
-vendor/lib64/librilqmiservices.so|a3ba7243404583b64f2b2a2444bb6458cbb2330e
-vendor/lib64/libsettings.so|c763cafb33a41a7d82f6f67506355a37dee386e2
-vendor/lib64/libsystem_health_mon.so|1b0488d2aa7a8500f9e8def0c9e8c9ddbb0bb3fc
-vendor/qcril.db|c33dbcb0dd5c3deeae801fb1fc01d80ad6d68441
+-framework/qcrilhook.jar|e1d605f9fa3dad93b73dadc7df1dc9532277f675
+framework/qti-telephony-common.jar|ac95ab90260c3467d2c09adafa9c8863fa95b997
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|19b574fb99873883060912df5d2fe26c376aeb80
+vendor/bin/qti|2fac2daca6acf041e1b67cef7679b09ba1c3a62e
+vendor/lib/liblqe.so|46a8eb12198602908c8b63e6dba03c20f20ae4de
+vendor/lib/libmdmdetect.so|de69f0149ddade89f5aca9030ca2377e431c67fe
+vendor/lib64/libconfigdb.so|aa8c82751bc3fa079747d08a9db2b282e7eeef57
+vendor/lib64/liblqe.so|bd10967493873325b895e0eab4d57d4fa2f1f93b
+vendor/lib64/libmdmdetect.so|def4252a902b5729e3623a7628a507c44df0a55b
+vendor/lib64/libnetmgr.so|27cf1cd2ac200a975d53a4b423456fd6fe6a35e2
+vendor/lib64/libril-qc-ltedirectdisc.so|154d34ed412b0cbe4f4bc7917bc9f46c3710c34a
+vendor/lib64/libril-qc-qmi-1.so|15895485cdd549cff3cc2d6010147af811d72103
+vendor/lib64/libril-qc-radioconfig.so|a0b78df4a97e07edc939d9930f7b5007d26bf8bb
+vendor/lib64/libril-qcril-hook-oem.so|3c7a641f957c25257285e0f002ec9a4f177145b7
+vendor/lib64/librilqmiservices.so|150f2b3d8beb8abfbdaee4a0c5036efcc5c85f17
+vendor/lib64/libsettings.so|7303c19bfd246c035051a5611219a16309146a81
+vendor/lib64/libsystem_health_mon.so|79229bc23be731ddab58232198727e81dfc545fb
+vendor/qcril.db|44db32ebc2c221ff721c8f5486944dc40066dda5
 
-# Radio - IMS - from oxygen (MiMax 2)
-bin/ims_rtp_daemon|2155d928832594933ebfb79ee29319ff5d3e250c
-bin/imscmservice|0b3cc1e3dedcbcfa60633db344c0f622f1812459
-bin/imsdatadaemon|e44dabe3dc093dade15691df8b4329495e614b1e
-bin/imsqmidaemon|35826dc5a6ad5a50a8df384884264156c85af782
+# Radio - IMS - from Redmi 4x (santoni)
+bin/ims_rtp_daemon|1a3dc8ba908e614ca8d8dcd691c1f6288bc481e7
+bin/imscmservice|8c1340911fbaf588656ddcd714090eb02d4bd2a2
+bin/imsdatadaemon|28b2586436889f6fb7feb1e674285841a8204daa
+bin/imsqmidaemon|e6406fd94063d7262604f660ec0595b07dc91717
 etc/permissions/imscm.xml|8b99ec26c783966bbea1fcb8e72c7c0206a4e802
 framework/imscmlibrary.jar|0c24d6540c06efede52169c1445272f43748180f
 framework/rcsimssettings.jar|566a0f637344ca3182aca33753e404977fc77ecc
--vendor/app/ims/ims.apk|d9e709f6e4c5bb971ec33ea3538c8bc23856806a
--vendor/app/imssettings/imssettings.apk|e652c67b7bf6863e0c3cddc9b80439788883ffd2
-vendor/lib64/lib-dplmedia.so|9f8c41a42240397f54441ba6cc1d975a22eefec5
-vendor/lib64/lib-ims-rcscmjni.so|af39ee3bd691d5316632a2d449254fbb42e30a09
-vendor/lib64/lib-imsSDP.so|270ba6d653e22fbae26cba740e55d62e02626569
-vendor/lib64/lib-imscamera.so|367a3dac5ba9fb426c1c42f46ac7447b7ee54285
-vendor/lib64/lib-imsdpl.so|a068014f6da6e909802e55c8196a3426fdf85464
-vendor/lib64/lib-imsqimf.so|59110009ea2dd9342107ed5efc8e8a69de7e5a2e
-vendor/lib64/lib-imsrcs.so|4fe3246b06b020400e303425c16eb054ac254ab6
-vendor/lib64/lib-imsrcscm.so|88dbc281980af7c357985024c8af7d1cd808f2a4
-vendor/lib64/lib-imsrcscmclient.so|a2e107589cbcb1c9093b9be9d6c641e5cd7ab9d7
-vendor/lib64/lib-imsrcscmservice.so|6e98d7b53bbd6595ff3adbc1daf4705dcdea2cb8
-vendor/lib64/lib-imss.so|291cd52ebbb726eba32ff1c0a35f67bd9f21a4a2
-vendor/lib64/lib-imsvt.so|ac8f07231bc9695de79bf33c63e800d190a47e22
-vendor/lib64/lib-imsxml.so|56709523b9a40af12a82310fbc80acb22fc67615
-vendor/lib64/lib-rcsimssjni.so|bb761b16808c895f4ea3e5a5e3d145a1a1530495
-vendor/lib64/lib-rcsjni.so|09d5ba4080ae73772e7d91a131b793a3f4dcb05b
-vendor/lib64/lib-rtpcommon.so|68212261f6630de34221f3936b16f71a6998c4f9
-vendor/lib64/lib-rtpcore.so|8be3e0beaeebd657283538d3498f4b800f889165
-vendor/lib64/lib-rtpdaemoninterface.so|a40b4a3f5ea4a6fc80191d35a3ec70653a724a06
-vendor/lib64/lib-rtpsl.so|132dd568be5b72e8e18f805e3d5542a5582a4f95
-vendor/lib64/libimscamera_jni.so|495e448209c2d57cb3a700d608f1bc0f0613baa5
-vendor/lib64/libimsmedia_jni.so|4d15b6dc9d583e4babec268a9ad4ab74af6c04f3
-vendor/lib64/librcc.so|c15caf544223810717267535eb375ae8ec2cc4b7
-vendor/lib64/libvoice-svc.so|33ccad4068cb4e4903c1408ffe8bd22033aefd27
+-vendor/app/ims/ims.apk|447be4cb730bfadcb5d88ba970353c2f772889b9
+-vendor/app/imssettings/imssettings.apk|0c7fb378b3d9a6252a2b108882f01f087d9300dc
+vendor/lib64/lib-dplmedia.so|2bbfd71561f9f218855b1ef279d671a1033b8a48
+vendor/lib64/lib-ims-rcscmjni.so|646dd28ba785bdc9a0b1a49f468ae6cbc1804d5a
+vendor/lib64/lib-imsSDP.so|8b33852eef6511fbd25a26938c8b32ef8fd8f5da
+vendor/lib64/lib-imscamera.so|472c2cfc7d11a3f01e2796f31d46363bdd86c889
+vendor/lib64/lib-imsdpl.so|bea80fc8c54cb975d35357fbc86131e40458ab8f
+vendor/lib64/lib-imsqimf.so|fb721698e9551a6dcd4c44de3913e21ded54d702
+vendor/lib64/lib-imsrcs.so|945bc31afd8920b43833101e97e3586d4e69e53a
+vendor/lib64/lib-imsrcscm.so|9df9a7cb2eae38f4f98264ebb7dda89ebdea054c
+vendor/lib64/lib-imsrcscmclient.so|df7450460a61167c20436f7d76f5d32159bb5071
+vendor/lib64/lib-imsrcscmservice.so|9df9a7cb2eae38f4f98264ebb7dda89ebdea054c
+vendor/lib64/lib-imss.so|823a53e3c0dd31465ad4f9df81c8f66307a6b28d
+vendor/lib64/lib-imsvt.so|759456f6200edda1ff3ab5b053288fedab3ca034
+vendor/lib64/lib-imsxml.so|0c532634c0001aeb741de05b9889d70cafedb1ef
+vendor/lib64/lib-rcsimssjni.so|cbe01553a416f34fc7e6e72ed3e60be08cc71745
+vendor/lib64/lib-rcsjni.so|15ea55d164c00be1373d461955a8b9c03b0d7277
+vendor/lib64/lib-rtpcommon.so|dd7e5fdfa37af17b26a721b364ad04c5433bb8f4
+vendor/lib64/lib-rtpcore.so|7d1608e3faedfde2f71f77d0415b80277ff81ff4
+vendor/lib64/lib-rtpdaemoninterface.so|81c58e6bd3f15cb790f039c596a9206cda964b0f
+vendor/lib64/lib-rtpsl.so|15431549520b01ad944e16320e235ff3c676da3e
+vendor/lib64/libimscamera_jni.so|e5de314df7d716b1ac1ee4d4333e87463d1341ca
+vendor/lib64/libimsmedia_jni.so|252a8e6a3d8acb7f966715c04c7d9668ab268998
+vendor/lib64/librcc.so|aca1095ebc27692488f8a09f619541695655bc2b
+vendor/lib64/libvoice-svc.so|9ae02470057d8ecd46a3e43940fc9df9c2633c4a
 
 # Radio - MBN
 etc/firmware/modem_config/S88537AA1/cmcc_mcfg_sw.mbn
@@ -1481,8 +1473,8 @@ etc/firmware/modem_config/S88537CA1/row_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn
 
-# Sensors - Redmi 4x (santoni)
-bin/sensors.qcom|66d9d0a68a54c47d968172f3e1363dbd0c4be933
+# Sensors - from Redmi 4x (santoni)
+bin/sensors.qcom|d9a5c78dd1e8312412943ff9ab289b3a37617bda
 vendor/lib/hw/activity_recognition.msm8937.so|fadf5cb62913aedcb9605074023eb8e1e66563b4
 vendor/lib/libsensor1.so|5e677de1b2f5d343ef1a649a7eb15373bb40e74d
 vendor/lib/libsensor_reg.so|77c17234d8cf9e40c8be77be4982164b9db3401e
@@ -1494,22 +1486,22 @@ vendor/lib64/libsensor_reg.so|3b56ecae4104312c8787abc38ad5a93939be9aed
 vendor/lib64/sensor_calibrate.so|4117e78ad63faeb9a3bb1ac0d951524c781e1802
 vendor/lib64/sensors.ssc.so|d701204e9f6840d27488d91beb927b81a52250de
 
-# Subsystem restart
-bin/ssr_diag
+# Subsystem restart - from Redmi 4x (santoni)
+bin/ssr_diag|d1c4e13e06f0d4787ae774ea7d9a43aa60ef4c81
 
-# Thermal - Redmi 4x (santoni)
+# Thermal - from Redmi 4x (santoni)
 vendor/bin/thermal-engine|ae3ab44dc3c56e88c0f386da8ca971a8397871d3
 vendor/lib/libthermalclient.so|580966926e8045632d196dcc21fb5ca49b5eba4e
 vendor/lib64/libthermalclient.so|bcd8215fcbf7be2922970c77c73979830a9cd1f3
 vendor/lib64/libthermalioctl.so|d5c12338e56e05d3ddbffbba915b8ce6878a9485
 
-# Time services
--app/TimeService/TimeService.apk
-bin/time_daemon
--vendor/lib/libtime_genoff.so
-vendor/lib/libTimeService.so
--vendor/lib64/libtime_genoff.so
-vendor/lib64/libTimeService.so
+# Time services - from Redmi 4x (santoni)
+-app/TimeService/TimeService.apk|6bcd99d045cf8e5e717f5c48fafe1b34d3db1a82  
+bin/time_daemon|f8a7da44ae33e2506c30725f752be595f24c3f0d
+-vendor/lib/libtime_genoff.so|b24eb6563980cd05296b60e73cc3a970d1336357
+vendor/lib/libTimeService.so|d9132545767a5379b611bdce615ab6f18582f902
+-vendor/lib64/libtime_genoff.so|7c300ea21df671efbf94a41c7687c1af16029817
+vendor/lib64/libTimeService.so|e85f693c78808e20e9ae54117277bb2a89316bf5
 
 # Touchscreen
 etc/ft5336_biel_720p.ini
