@@ -51,6 +51,12 @@ failed ()
   exit $2
 }
 
+program_bdaddr ()
+{
+  /system/bin/btnvtool -O
+  logi "Bluetooth Address programmed successfully"
+}
+
 #
 # enable bluetooth profiles dynamically
 #
@@ -147,14 +153,14 @@ config_bt ()
            setprop ro.qualcomm.bt.hci_transport smd
        fi
        ;;
-    "msm8974" | "msm8226" | "msm8610" | "msm8916" | "msm8909" | "msm8952" )
+    "msm8974" | "msm8226" | "msm8610" | "msm8916" | "msm8909" | "msm8952" | "msm8937" | "msm8953" )
        if [ "$btsoc" != "ath3k" ]
        then
            setprop ro.bluetooth.hfp.ver 1.7
            setprop ro.qualcomm.bt.hci_transport smd
        fi
        ;;
-    "apq8084" | "mpq8092" | "msm8994" )
+    "apq8084" | "mpq8092" | "msm8994" | "msm8992" )
        if [ "$btsoc" != "rome" ]
        then
            setprop ro.qualcomm.bt.hci_transport smd
@@ -162,6 +168,18 @@ config_bt ()
        then
            setprop ro.bluetooth.hfp.ver 1.6
        fi
+       ;;
+    "msm8996" )
+       if [ "$btsoc" != "rome" ]
+       then
+           setprop ro.qualcomm.bt.hci_transport smd
+       elif [ "$btsoc" = "rome" ]
+       then
+           setprop ro.bluetooth.hfp.ver 1.7
+       fi
+       ;;
+    "msm8998")
+       setprop ro.bluetooth.hfp.ver 1.6
        ;;
     *)
        ;;
@@ -173,17 +191,17 @@ fi
 
 case "$stack" in
     "bluez")
-     logi "Bluetooth stack is $stack"
-     setprop ro.qc.bluetooth.stack $stack
-     reason=`getprop vold.decrypt`
-     case "$reason" in
-         "trigger_restart_framework")
-             start dbus
-             ;;
-     esac
+	   logi "Bluetooth stack is $stack"
+	   setprop ro.qc.bluetooth.stack $stack
+	   reason=`getprop vold.decrypt`
+	   case "$reason" in
+	       "trigger_restart_framework")
+	           start dbus
+	           ;;
+	   esac
         ;;
     *)
-     logi "Bluetooth stack is Bluedroid"
+	   logi "Bluetooth stack is Bluedroid"
         ;;
 esac
 
@@ -281,8 +299,9 @@ esac
 
 eval $(/system/bin/hci_qcomm_init -e $PWR_CLASS $LE_PWR_CLASS && echo "exit_code_hci_qcomm_init=0" || echo "exit_code_hci_qcomm_init=1")
 
+	#bug272479 ,fanhongen.wt, hide bt mac ,20170630
 case $exit_code_hci_qcomm_init in
-  0) logi "Bluetooth QSoC firmware download succeeded, $BTS_DEVICE $BTS_TYPE $BTS_BAUD $BTS_ADDRESS";;
+  0) logi "Bluetooth QSoC firmware download succeeded, $BTS_DEVICE $BTS_TYPE $BTS_BAUD";;
   *) failed "Bluetooth QSoC firmware download failed" $exit_code_hci_qcomm_init;
      case $STACK in
          "bluez")
