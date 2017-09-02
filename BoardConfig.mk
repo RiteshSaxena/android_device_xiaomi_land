@@ -17,5 +17,8 @@
 # Inherit device-specific board fragments
 include $(DEVICE_PATH)/board/*.mk
 
+# Properties
+TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
+
 # Inherit the proprietary files
 -include vendor/xiaomi/land/BoardConfigVendor.mk
