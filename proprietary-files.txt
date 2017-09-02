@@ -1087,29 +1087,29 @@ vendor/lib64/libdpmframework.so|3ac49fb28f81f476a7c0a60f3bf4ecdf2be812c5
 vendor/lib64/libdpmnsrm.so|550a09e9da986311178876cceaf71167b01d70b4
 vendor/lib64/libdpmtcm.so|4c2025b0882276ff7e742591b45c6e728ffedb11
 
-# DRM
-bin/qseecomd
-vendor/bin/mdtpd
-vendor/bin/qseeproxydaemon
-vendor/lib/libcppf.so
-vendor/lib/libQSEEComAPI.so
-vendor/lib64/lib-sec-disp.so
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libGPTEE.so
-vendor/lib64/libmdtp.so
-vendor/lib64/libmdtp_crypto.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/libSecureUILib.so
-vendor/lib64/libStDrvInt.so
-vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so
-vendor/lib64/libqisl.so
-vendor/lib64/librpmb.so
-vendor/lib64/libsecureui.so
-vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libssd.so
-vendor/lib64/libtzdrmgenprov.so
+# DRM - from Redmi 4x (santoni)
+bin/qseecomd|68ae01eaee55d70351479733366d06a6ca70c5cf
+vendor/bin/mdtpd|4787a1957073f6df3f41e570c000dcebfa88a6c4
+vendor/bin/qseeproxydaemon|3bcecc1b1e8c384d92f6f4fbceea9269f55e1c68
+vendor/lib/libcppf.so|eb3d08b467fd60221d7553b9c1044452d9529f1a
+vendor/lib/libQSEEComAPI.so|24f4b4dd22e5f9fd8c294daa5cd5f61164daece1
+vendor/lib64/lib-sec-disp.so|b63079bae59950547b3eff35a25e3d6df60b201a
+vendor/lib64/libGPreqcancel.so|5704727e4273bfc8d76adc6afec7033add63cf74
+vendor/lib64/libGPreqcancel_svc.so|831404b1b4e665f96af9eb7a19d1395a692e1f17
+vendor/lib64/libGPTEE.so|358528521b139414830e0546a6489747ec984648
+vendor/lib64/libmdtp.so|9f52e29ebfdb5067d2f0a99e77724cb039687ff2
+vendor/lib64/libmdtp_crypto.so|4d9745bb4228f24b29c8edfefcdb9338fbf7a2e1
+vendor/lib64/libQSEEComAPI.so|c9a2520406cc8b2604653918b05739de20c65e0c
+vendor/lib64/libSecureUILib.so|8f3ad5efda01d463e356b9162b7bf014967e03dc
+vendor/lib64/libStDrvInt.so|fbf4fbbba53bb5a37150a57d93febc3423ca03b4
+vendor/lib64/libdrmfs.so|26793d1eac0152389e6109078ec7c7165911a6c5
+vendor/lib64/libdrmtime.so|c1169d9a47c768ab722a961db4c614584e9e08d8
+vendor/lib64/libqisl.so|ec58d28d0764005385d19f0a5a7378af05f9a3e9
+vendor/lib64/librpmb.so|aa4a8a24fcd64902d3553220f3f281ce6b5899a4
+vendor/lib64/libsecureui.so|2d6c069f3af5bf43f5b9617069a4dd623f9f59f7
+vendor/lib64/libsecureui_svcsock.so|fcf1955031fdaee82f695a1eae5fa412359bd2bf
+vendor/lib64/libssd.so|c1b6da24786138f8a2f19b797d2f16f88da434f2
+vendor/lib64/libtzdrmgenprov.so|28476f814435420885c4b9551e88b016e9705c54
 
 # Display calibration
 -etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml
@@ -1295,14 +1295,14 @@ usr/keylayout/qpnp_pon.kl
 usr/keylayout/synaptics_dsx.kl
 usr/keylayout/synaptics_rmi4_i2c.kl
 
-# Keystore
-vendor/lib/hw/keystore.msm8937.so
-vendor/lib64/hw/keystore.msm8937.so
+# Keystore - from Redmi 4x (santoni)
+vendor/lib/hw/keystore.msm8937.so|2e93bba00f17931a02354f05ab83b25da4cc172a
+vendor/lib64/hw/keystore.msm8937.so|c3a99d799c53c153f4d7f3f758d60923b8c1cda5
 
-# Listen
-vendor/lib/hw/sound_trigger.primary.msm8937.so
-vendor/lib/libadpcmdec.so
-vendor/lib/libsmwrapper.so
+# Listena - from Redmi 4x (santoni)
+vendor/lib/hw/sound_trigger.primary.msm8937.so|7b9487553d99862f3597a9c8ee91ba9a39ad1fb1
+vendor/lib/libadpcmdec.so|28e0b1ce5c48b3fa6cf1a67af7219ee52f563b1e
+vendor/lib/libsmwrapper.so|013eb0f6080e939b387ef0257379594075d3913f
 
 # Media - from Redmi 4x (santoni)
 etc/firmware/DE.o.msm8937|62c8a6ce7e6d81c3b9778d92db126e02a54e692f
@@ -1430,37 +1430,40 @@ vendor/lib64/libqti-wl.so|104cef51b83c70a04f0bae59c85c9c09709b08f6
 vendor/lib64/libquipc_os_api.so|dc85ee4e026b852ddaca580aaf2596e4ee44a520
 vendor/lib64/libsmemlog.so|72dd453c4bda2d0ec721983de71b2ddb613e29c0
 
-# Radio
--app/datastatusnotification/datastatusnotification.apk
--app/fastdormancy/fastdormancy.apk
--app/shutdownlistener/shutdownlistener.apk
-bin/netmgrd
-bin/qmuxd
-bin/radish
-bin/rmt_storage
-bin/tftp_server
+# Radio - from Redmi 4x (santoni)
+-app/QtiTelephonyService/QtiTelephonyService.apk|eccae26a9ce7dd5da7108d6c49499ec3fbc57bf2
+-app/datastatusnotification/datastatusnotification.apk|8c6c437e425681ca8acf14edc42d132870de2121
+-app/fastdormancy/fastdormancy.apk|c1eb40a68c7a56cf28fc8ee74c36db2ec2a5f64e
+-app/shutdownlistener/shutdownlistener.apk|f276b418be6427b02f698d15a927e354c1e6d8c7
+bin/netmgrd|00f085c33ae12f93375a7736c6f82daf3724403d
+bin/radish|b8fa8ab7149548a16f24d38c013e2ca66bb7bb3a
+bin/rmt_storage|7d2e4aee736e980e373dac4bdba2349344de2051
+bin/tftp_server|f2b8e205d42ac8c673b42b8f7f598fd5a419f340
 etc/data/dsi_config.xml|c4f6518596a519e9838159b1eaa99fa2ad86e24d
 etc/data/netmgr_config.xml|11460248c7205863b95be2fe98739ba4c061329e
-etc/data/qmi_config.xml
-etc/permissions/embms.xml
-etc/permissions/qcnvitems.xml
-etc/permissions/qcrilhook.xml
-etc/permissions/telephonyservice.xml
-framework/embmslibrary.jar
--framework/qcnvitems.jar
--framework/qcrilhook.jar
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-vendor/lib/liblqe.so
-vendor/lib/libmdmdetect.so
-vendor/lib64/libconfigdb.so
-vendor/lib64/liblqe.so
-vendor/lib64/libmdmdetect.so
-vendor/lib64/libnetmgr.so
-vendor/lib64/libril-qc-qmi-1.so
-vendor/lib64/libril-qc-radioconfig.so
-vendor/lib64/libril-qcril-hook-oem.so
-vendor/lib64/libsystem_health_mon.so
-vendor/qcril.db
+etc/permissions/embms.xml|5e1b492874c221a7e1188fc3a5369d32b3e67969
+etc/permissions/qcrilhook.xml|9fc58a3d54d20ac1d53bab14608815121aefbce5
+etc/permissions/telephonyservice.xml|b297c8a27443570377d78586b00198839ce326bb
+framework/QtiTelephonyServicelibrary.jar|fc47f4b4bffa66023e76407aca341683fb5d58ee
+framework/embmslibrary.jar|a06799495515305de3e5d432ec62a1f692200c99
+-framework/qcrilhook.jar|e1d605f9fa3dad93b73dadc7df1dc9532277f675
+framework/qti-telephony-common.jar|ac95ab90260c3467d2c09adafa9c8863fa95b997
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|19b574fb99873883060912df5d2fe26c376aeb80
+vendor/bin/qti|2fac2daca6acf041e1b67cef7679b09ba1c3a62e
+vendor/lib/liblqe.so|46a8eb12198602908c8b63e6dba03c20f20ae4de
+vendor/lib/libmdmdetect.so|de69f0149ddade89f5aca9030ca2377e431c67fe
+vendor/lib64/libconfigdb.so|aa8c82751bc3fa079747d08a9db2b282e7eeef57
+vendor/lib64/liblqe.so|bd10967493873325b895e0eab4d57d4fa2f1f93b
+vendor/lib64/libmdmdetect.so|def4252a902b5729e3623a7628a507c44df0a55b
+vendor/lib64/libnetmgr.so|27cf1cd2ac200a975d53a4b423456fd6fe6a35e2
+vendor/lib64/libril-qc-ltedirectdisc.so|154d34ed412b0cbe4f4bc7917bc9f46c3710c34a
+vendor/lib64/libril-qc-qmi-1.so|15895485cdd549cff3cc2d6010147af811d72103
+vendor/lib64/libril-qc-radioconfig.so|a0b78df4a97e07edc939d9930f7b5007d26bf8bb
+vendor/lib64/libril-qcril-hook-oem.so|3c7a641f957c25257285e0f002ec9a4f177145b7
+vendor/lib64/librilqmiservices.so|150f2b3d8beb8abfbdaee4a0c5036efcc5c85f17
+vendor/lib64/libsettings.so|7303c19bfd246c035051a5611219a16309146a81
+vendor/lib64/libsystem_health_mon.so|79229bc23be731ddab58232198727e81dfc545fb
+vendor/qcril.db|44db32ebc2c221ff721c8f5486944dc40066dda5
 
 # Radio - IMS - from Redmi 4x (santoni)
 bin/ims_rtp_daemon|1a3dc8ba908e614ca8d8dcd691c1f6288bc481e7
@@ -1525,8 +1528,8 @@ vendor/lib64/libsensor_reg.so|3b56ecae4104312c8787abc38ad5a93939be9aed
 vendor/lib64/sensor_calibrate.so|4117e78ad63faeb9a3bb1ac0d951524c781e1802
 vendor/lib64/sensors.ssc.so|d701204e9f6840d27488d91beb927b81a52250de
 
-# Subsystem restart
-bin/ssr_diag
+# Subsystem restart - from Redmi 4x (santoni)
+bin/ssr_diag|d1c4e13e06f0d4787ae774ea7d9a43aa60ef4c81
 
 # Thermal - from Redmi 4x (santoni)
 vendor/bin/thermal-engine|ae3ab44dc3c56e88c0f386da8ca971a8397871d3
@@ -1534,13 +1537,13 @@ vendor/lib/libthermalclient.so|580966926e8045632d196dcc21fb5ca49b5eba4e
 vendor/lib64/libthermalclient.so|bcd8215fcbf7be2922970c77c73979830a9cd1f3
 vendor/lib64/libthermalioctl.so|d5c12338e56e05d3ddbffbba915b8ce6878a9485
 
-# Time services
--app/TimeService/TimeService.apk
-bin/time_daemon
--vendor/lib/libtime_genoff.so
-vendor/lib/libTimeService.so
--vendor/lib64/libtime_genoff.so
-vendor/lib64/libTimeService.so
+# Time services - from Redmi 4x (santoni)
+-app/TimeService/TimeService.apk|6bcd99d045cf8e5e717f5c48fafe1b34d3db1a82  
+bin/time_daemon|f8a7da44ae33e2506c30725f752be595f24c3f0d
+-vendor/lib/libtime_genoff.so|b24eb6563980cd05296b60e73cc3a970d1336357
+vendor/lib/libTimeService.so|d9132545767a5379b611bdce615ab6f18582f902
+-vendor/lib64/libtime_genoff.so|7c300ea21df671efbf94a41c7687c1af16029817
+vendor/lib64/libTimeService.so|e85f693c78808e20e9ae54117277bb2a89316bf5
 
 # Touchscreen
 etc/ft5336_biel_720p.ini
@@ -1567,4 +1570,3 @@ vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmplugin_customer.so|e7a998ee
 bin/cnss-daemon
 bin/cnss_diag
 bin/wcnss_service
-
