@@ -4,8 +4,7 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_PACKAGES += \
     gps.msm8937 \
-    libcurl \
-    libgnsspps
+    libcurl
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/gps/etc/flp.conf:system/etc/flp.conf \
