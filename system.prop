@@ -3,56 +3,58 @@
 #
 
 # Audio
-voice.playback.conc.disabled=true
-voice.record.conc.disabled=false
-voice.voip.conc.disabled=true
-voice.conc.fallbackpath=deep-buffer
-audio.parser.ip.buffer.size=0
-audio_hal.period_size=192
-ro.qc.sdk.audio.ssr=false
-ro.qc.sdk.audio.fluencetype=fluence
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicerec=true
-persist.audio.fluence.speaker=true
+af.fast_track_multiplier=1
+audio.deep_buffer.media=true
+audio.dolby.ds2.enabled=true
+audio.dolby.ds2.hardbypass=true
 audio.offload.disable = true
-tunnel.audio.encode = false
 audio.offload.buffer.size.kb=64
+audio.offload.gapless.enabled=true
 audio.offload.min.duration.secs=30
-audio.offload.video=true
+audio.offload.multiaac.enable=true
+audio.offload.multiple.enabled=false
+audio.offload.passthrough=false
 audio.offload.pcm.16bit.enable=true
 audio.offload.pcm.24bit.enable=true
 audio.offload.track.enable=true
-audio.deep_buffer.media=true
+#QC property used when calculating client heap size in audio flinger
+audio.heap.size.multiplier=7
+audio.offload.video=true
 audio.playback.mch.downsample=true
-use.voice.path.for.pcm.voip=true
+audio.safx.pbe.enabled=true
+audio_hal.period_size=192
+ro.qc.sdk.audio.fluencetype=fluence
+persist.audio.fluence.voicecall=false
+persist.audio.fluence.speaker=true
+persist.audio.fluence.voicerec=false
 use.qti.sw.alac.decoder=true
 use.qti.sw.ape.decoder=true
-audio.offload.gapless.enabled=true
-audio.offload.multiple.enabled=false
-audio.safx.pbe.enabled=true
-audio.pp.asphere.enabled=false
-audio.dolby.ds2.enabled=true
-af.fast_track_multiplier=2
+use.voice.path.for.pcm.voip=true
+voice.conc.fallbackpath=deep-buffer
+voice.playback.conc.disabled=true
+voice.record.conc.disabled=false
+voice.voip.conc.disabled=false
 persist.speaker.prot.enable=false
-audio.offload.multiaac.enable=true
-audio.dolby.ds2.hardbypass=true
-flac.sw.decoder.24bit.support=true
+audio.pp.asphere.enabled=false
+audio.safx.pbe.enabled=true
+tunnel.audio.encode = false
+audio.parser.ip.buffer.size=262144
+ro.qc.sdk.audio.ssr=false
 
 # Bluetooth
 bluetooth.hfp.client=1
 qcom.bluetooth.soc=smd
 
 # Camera
-persist.camera.isp.clock.optmz=0
-vidc.enc.dcvs.extra-buff-count=2
-media.camera.ts.monotonic=1
 camera.display.umax=1920x1080
 camera.display.lmax=1280x720
-persist.camera.stats.test=5
-persist.camera.feature.cac=1
-persist.camera.imglib.cac3=2
-camera.lowpower.record.enable=1
-persist.camera.gyro.disable=0
+persist.camera.is_type=1
+persist.camera.is_type=1
+persist.camera.gyro.android=1
+media.camera.ts.monotonic=0
+vidc.debug.perf.mode=2
+vidc.enc.dcvs.extra-buff-count=2
+vidc.enc.disable.pq=true
 camera.hal1.packagelist=com.skype.raider,com.google.android.talk
 
 # CNE/DPM
@@ -73,10 +75,12 @@ debug.mdpcomp.logs=0
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 debug.enable.sglscale=1
-debug.gralloc.enable_fb_ubwc=1
 ro.opengles.version=196610
 ro.qualcomm.cabl=0
 ro.sf.lcd_density=320
+ro.qualcomm.svi=1
+ro.qcom.svi.sensortype=2
+video.disable.ubwc=1
 
 # DRM
 drm.service.enabled=true
@@ -102,20 +106,20 @@ media.msm8956hw=0
 mm.enable.smoothstreaming=true
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
-media.stagefright.audio.sink=280
-av.debug.disable.pers.cache=1
 qcom.hw.aac.encoder=true
 mm.enable.qcom_parser=1048575
-vidc.enc.disable_bframes=1
-vidc.dec.downscalar_width=1920
-vidc.dec.downscalar_height=1088
 vidc.disable.split.mode=1
-vidc.enc.disable.pq=true
 
 # Perf
+ro.vendor.gt_library=libqti-gt.so
+ro.vendor.at_library=libqti-at.so
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.am.reschedule_service=true
 ro.sys.fw.dex2oat_thread_count=4
+ro.config.swap=true
+ro.config.zram=true
+ro.core_ctl_max_cpu=4
+ro.core_ctl_min_cpu=2
 
 # Netmgrd
 ro.use_data_netmgrd=true
@@ -178,3 +182,4 @@ ro.sys.fw.trim_enable_memory=2147483648
 
 # Wifi
 wifi.interface=wlan0
+
