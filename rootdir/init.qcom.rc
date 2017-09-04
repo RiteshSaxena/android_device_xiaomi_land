@@ -42,6 +42,7 @@ on init
     mkdir /persist 0771 root system
 
     # Support legacy paths
+    symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
@@ -92,6 +93,10 @@ on post-fs-data
     mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
+
+    #create port-bridge log dir
+    mkdir /data/misc/port_bridge 0770 radio radio
+    chmod 0770 /data/misc/port_bridge
 
     #create netmgr log dir
     mkdir /data/misc/netmgr 0770 radio radio
@@ -461,6 +466,12 @@ on property:hw.fm.init=0
 on property:hw.fm.init=1
      write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
+service port-bridge /system/bin/port-bridge
+    class main
+    user radio system
+    group radio system inet
+    oneshot
+
 service netmgrd /system/bin/netmgrd
     class main
     group system wakelock
@@ -469,7 +480,7 @@ service netmgrd /system/bin/netmgrd
 service qti /system/vendor/bin/qti
     class main
     user radio
-    group radio qcom_diag usb
+    group radio net_raw qcom_diag usb net_admin
     writepid /dev/cpuset/system-background/tasks
 
 service sensors /system/bin/sensors.qcom
@@ -552,6 +563,12 @@ service charger /charger
     group graphics system
     seclabel u:r:healthd:s0
     writepid /dev/cpuset/system-background/tasks
+
+service ssr_diag /system/bin/ssr_diag
+    class late_start
+    user system
+    group system
+    disabled
 
 #+first boot,jiangtao.wt,add 20150810
 on property:sys.installed.running=1
@@ -678,7 +695,8 @@ service imsqmidaemon /system/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
-    group radio log diag
+    group radio net_raw log diag
+    disabled
 
 on property:service.qti.ims.enabled=1
     start imsqmidaemon
@@ -687,7 +705,7 @@ service imsdatadaemon /system/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
-    group system wifi radio inet log diag
+    group system wifi radio inet net_raw log diag net_admin
     writepid /dev/cpuset/system-background/tasks
     disabled
 
@@ -698,13 +716,13 @@ service ims_rtp_daemon /system/bin/ims_rtp_daemon
     class main
     user system
     socket ims_rtpd stream 0660 system radio
-    group radio diag diag inet log
+    group radio net_raw diag diag inet log
     disabled
 
 service imscmservice /system/bin/imscmservice
     class main
     user system
-    group radio diag inet log
+    group radio net_raw diag diag log
     writepid /dev/cpuset/system-background/tasks
     disabled
 
@@ -756,6 +774,18 @@ service per_mgr /system/bin/pm-service
     group system net_raw
     writepid /dev/cpuset/system-background/tasks
 
+service per_proxy /system/bin/pm-proxy
+    class core
+    user system
+    group system
+    disabled
+
+on property:init.svc.per_mgr=running
+    start per_proxy
+
+on property:sys.shutdown.requested=*
+    stop per_proxy
+
 service hvdcp_opti /system/bin/hvdcp_opti
     class main
     user root
@@ -768,3 +798,6 @@ service mdtpd /system/vendor/bin/mdtpd
 
 service mtservice /system/bin/mtd
     class late_start
+
+on property:vold.decrypt=trigger_restart_min_framework
+    start time_daemon 
