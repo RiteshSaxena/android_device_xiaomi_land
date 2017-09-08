@@ -34,6 +34,8 @@
 #include <sstream>
 #include <sys/sysinfo.h>
 
+#include <android-base/strings.h>
+
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
@@ -47,6 +49,8 @@ char const *heapmaxfree;
 char const *large_cache_height;
 
 static std::string board_id;
+
+using android::base::Trim;
 
 static void import_cmdline(const std::string& key,
         const std::string& value, bool for_emulator __attribute__((unused)))
@@ -63,33 +67,31 @@ static void import_cmdline(const std::string& key,
 
 static void init_alarm_boot_properties()
 {
-    int boot_reason;
-    FILE *fp;
+    char const *boot_reason_file = "/proc/sys/kernel/boot_reason";
+    std::string boot_reason;
+    std::string tmp = property_get("ro.boot.alarmboot");
 
-    fp = fopen("/proc/sys/kernel/boot_reason", "r");
-    fscanf(fp, "%d", &boot_reason);
-    fclose(fp);
-
-    /*
-     * Setup ro.alarm_boot value to true when it is RTC triggered boot up
-     * For existing PMIC chips, the following mapping applies
-     * for the value of boot_reason:
-     *
-     * 0 -> unknown
-     * 1 -> hard reset
-     * 2 -> sudden momentary power loss (SMPL)
-     * 3 -> real time clock (RTC)
-     * 4 -> DC charger inserted
-     * 5 -> USB charger inserted
-     * 6 -> PON1 pin toggled (for secondary PMICs)
-     * 7 -> CBLPWR_N pin toggled (for external power supply)
-     * 8 -> KPDPWR_N pin toggled (power key pressed)
-     */
-     if (boot_reason == 3) {
-        property_set("ro.alarm_boot", "true");
-     } else {
-        property_set("ro.alarm_boot", "false");
-     }
+    if (read_file(boot_reason_file, &boot_reason)) {
+        /*
+         * Setup ro.alarm_boot value to true when it is RTC triggered boot up
+         * For existing PMIC chips, the following mapping applies
+         * for the value of boot_reason:
+         *
+         * 0 -> unknown
+         * 1 -> hard reset
+         * 2 -> sudden momentary power loss (SMPL)
+         * 3 -> real time clock (RTC)
+         * 4 -> DC charger inserted
+         * 5 -> USB charger insertd
+         * 6 -> PON1 pin toggled (for secondary PMICs)
+         * 7 -> CBLPWR_N pin toggled (for external power supply)
+         * 8 -> KPDPWR_N pin toggled (power key pressed)
+         */
+        if (Trim(boot_reason) == "3" || tmp == "true")
+            property_set("ro.alarm_boot", "true");
+        else
+            property_set("ro.alarm_boot", "false");
+    }
 }
 
 void check_device()
