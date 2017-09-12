@@ -140,15 +140,12 @@ void init_variant_properties()
     } else if (board_id == "S88537BA1") {
         property_set("ro.build.display.wtid", "SW_S88537BA1_V079_M20_MP_XM");
         property_set("persist.sys.fp.vendor", "switchf");
-        property_set("mm.enable.qcom_parser", "196495");
     } else if (board_id == "S88537CA1") {
         property_set("ro.build.display.wtid", "SW_S88537CA1_V079_M20_MP_XM");
         property_set("persist.sys.fp.vendor", "switchf");
-        property_set("mm.enable.qcom_parser", "196495");
     } else if (board_id == "S88537EC1") {
         property_set("ro.build.display.wtid", "SW_S88537EC1_V079_M20_MP_XM");
         property_set("persist.sys.fp.vendor", "switchf");
-        property_set("mm.enable.qcom_parser", "196495");
     }
 
     // Variants
