@@ -628,7 +628,6 @@ on property:persist.sys.fp.vendor=switchf
 on property:persist.sys.fp.vendor=searchf
     setprop ro.boot.fpsensor fpc
     setprop persist.sys.fp.goodix 0
-    setprop ro.hardware.fingerprint fpc
 
 # Fingerprint Goodix
 on property:persist.sys.fp.vendor=goodix
@@ -637,7 +636,6 @@ on property:persist.sys.fp.vendor=goodix
 
 on property:ro.boot.fpsensor=gdx
     setprop persist.sys.fp.goodix 1
-    setprop ro.hardware.fingerprint goodix
 
 # Start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
