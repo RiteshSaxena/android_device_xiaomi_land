@@ -1106,10 +1106,10 @@ vendor/lib64/libtzdrmgenprov.so|28476f814435420885c4b9551e88b016e9705c54
 # Fingerprint
 bin/gx_fpcmd
 bin/gx_fpd
-lib/hw/fingerprint.default.so
+lib/hw/fingerprint.default.so:lib/hw/fingerprint.msm8937.so
 lib/libcom_fingerprints_service.so
 lib64/hw/fingerprint.default.so
-lib64/hw/fingerprint.goodix.so
+lib64/hw/fingerprint.goodix.so:lib64/hw/fingerprint.msm8937.so
 lib64/hw/gxfingerprint.default.so
 lib64/libcom_fingerprints_service.so
 lib64/libfp_client.so
