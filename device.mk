@@ -122,6 +122,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
+    fingerprint.msm8937 \
     fingerprintd
 
 # FM
