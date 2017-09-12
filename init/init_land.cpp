@@ -124,28 +124,34 @@ void init_variant_properties()
         return;
 
     import_kernel_cmdline(0, import_cmdline);
-    
+
     // Set board
     property_set("ro.product.wt.boardid", board_id.c_str());
 
     if (board_id == "S88537AA1") {
         property_set("ro.build.display.wtid", "SW_S88537AA1_V079_M20_MP_XM");
+        property_set("persist.sys.fp.vendor", "goodix");
     } else if (board_id == "S88537AB1") {
         property_set("ro.build.display.wtid", "SW_S88537AB1_V079_M20_MP_XM");
+        property_set("persist.sys.fp.vendor", "switchf");
     } else if (board_id == "S88537AC1") {
         property_set("ro.build.display.wtid", "SW_S88537AC1_V079_M20_MP_XM");
+        property_set("persist.sys.fp.vendor", "switchf");
     } else if (board_id == "S88537BA1") {
         property_set("ro.build.display.wtid", "SW_S88537BA1_V079_M20_MP_XM");
+        property_set("persist.sys.fp.vendor", "switchf");
         property_set("mm.enable.qcom_parser", "196495");
     } else if (board_id == "S88537CA1") {
         property_set("ro.build.display.wtid", "SW_S88537CA1_V079_M20_MP_XM");
+        property_set("persist.sys.fp.vendor", "switchf");
         property_set("mm.enable.qcom_parser", "196495");
     } else if (board_id == "S88537EC1") {
         property_set("ro.build.display.wtid", "SW_S88537EC1_V079_M20_MP_XM");
+        property_set("persist.sys.fp.vendor", "switchf");
         property_set("mm.enable.qcom_parser", "196495");
     }
 
-    // Variants   
+    // Variants
     if (board_id == "S88537AB1"){
         property_set("ro.product.model", "Redmi 3X");
     } else {
