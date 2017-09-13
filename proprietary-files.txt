@@ -183,12 +183,7 @@ etc/camera/s5k3l8_mono_chromatix.xml
 etc/camera/s5k3m2xm_chromatix.xml
 etc/camera/s5k3m2xm_chromatix_bear.xml
 etc/camera/s5k3m2xx_chromatix.xml
-lib/libRecoFace.so
-lib/libmorpho_memory_allocator.so
-lib/libmorpho_panorama.so
-vendor/lib/libFaceGrade.so
-vendor/lib/libFaceProc.so
-vendor/lib/libarcsoft_beauty_shot.so
+vendor/lib/libChamomilePA.so
 vendor/lib/libchromaflash.so
 vendor/lib/libflash_pmic.so
 vendor/lib/libjpegdhw.so
@@ -285,10 +280,6 @@ vendor/lib/libmmsw_detail_enhancement.so
 vendor/lib/libmmsw_math.so
 vendor/lib/libmmsw_opencl.so
 vendor/lib/libmmsw_platform.so
-vendor/lib/libmorpho_easy_hdr.so
-vendor/lib/libmorpho_hdr_checker.so
-vendor/lib/libmorpho_image_stab4.so
-vendor/lib/libmorpho_panorama_gp.so
 vendor/lib/libois_lc898122.so
 vendor/lib/liboptizoom.so
 vendor/lib/libqomx_jpegdec.so
