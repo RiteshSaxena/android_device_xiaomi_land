@@ -1527,8 +1527,8 @@ vendor/lib/libthermalclient.so|580966926e8045632d196dcc21fb5ca49b5eba4e
 vendor/lib64/libthermalclient.so|bcd8215fcbf7be2922970c77c73979830a9cd1f3
 vendor/lib64/libthermalioctl.so|d5c12338e56e05d3ddbffbba915b8ce6878a9485
 
-# Time services - from Redmi 4x (santoni)
--app/TimeService/TimeService.apk|6bcd99d045cf8e5e717f5c48fafe1b34d3db1a82  
+# Time services - from garlic (Yu Yureka Black)
+-app/TimeService/TimeService.apk|cf992f00c8e73463b26f0ea6828522a3edfcdbb4
 bin/time_daemon|f8a7da44ae33e2506c30725f752be595f24c3f0d
 -vendor/lib/libtime_genoff.so|b24eb6563980cd05296b60e73cc3a970d1336357
 vendor/lib/libTimeService.so|d9132545767a5379b611bdce615ab6f18582f902
