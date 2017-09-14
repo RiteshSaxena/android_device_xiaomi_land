@@ -183,8 +183,14 @@ etc/camera/s5k3l8_mono_chromatix.xml
 etc/camera/s5k3m2xm_chromatix.xml
 etc/camera/s5k3m2xm_chromatix_bear.xml
 etc/camera/s5k3m2xx_chromatix.xml
+lib/libRecoFace.so
+lib/libmorpho_memory_allocator.so
+lib/libmorpho_panorama.so
 vendor/lib/libChamomilePA.so
 vendor/lib/libchromaflash.so
+vendor/lib/libFaceGrade.so
+vendor/lib/libFaceProc.so
+vendor/lib/libarcsoft_beauty_shot.so
 vendor/lib/libflash_pmic.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
@@ -276,6 +282,14 @@ vendor/lib/libmmcamera2_wnr_module.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmqjpegdma.so
+vendor/lib/libmmsw_detail_enhancement.so
+vendor/lib/libmmsw_math.so
+vendor/lib/libmmsw_opencl.so
+vendor/lib/libmmsw_platform.so
+vendor/lib/libmorpho_easy_hdr.so
+vendor/lib/libmorpho_hdr_checker.so
+vendor/lib/libmorpho_image_stab4.so
+vendor/lib/libmorpho_panorama_gp.so
 vendor/lib/libois_lc898122.so
 vendor/lib/liboptizoom.so
 vendor/lib/libqomx_jpegdec.so
@@ -287,6 +301,10 @@ vendor/lib/libtm_interface.so
 -vendor/lib/libts_face_beautify_hal.so
 vendor/lib/libtrueportrait.so
 vendor/lib/libubifocus.so
+vendor/lib64/libmmsw_detail_enhancement.so
+vendor/lib64/libmmsw_math.so
+vendor/lib64/libmmsw_opencl.so
+vendor/lib64/libmmsw_platform.so
 
 # Camera actuators
 vendor/lib/libactuator_ad5816g.so
@@ -1298,10 +1316,6 @@ vendor/lib/libApeSwDec.so|5185623c3ebc0c814d6339ec646a0757da6a49b4
 vendor/lib/libFlacSwDec.so|89c0b9af3d56cd73e07393f2c88ac657659ebf5c
 vendor/lib/libI420colorconvert.so|87e6014400b4878c4df3eb7ad6f9085010a2be99
 vendor/lib/libmmosal.so|64008dcc866e67c5afff22eae5f9969dc1cf4884
-vendor/lib/libmmsw_detail_enhancement.so|da0f01b53a7ddf2768a7e8567b6a48a3403ce81b
-vendor/lib/libmmsw_math.so|ad490034b9936a3bae9a505c8993b79c90d85947
-vendor/lib/libmmsw_opencl.so|6101f82838685935dfd7d14b5f0184ba6ef4abb9
-vendor/lib/libmmsw_platform.so|723fe94817b18717db484702c9ccaeb655603a6f
 vendor/lib/libMpeg4SwEncoder.so|197bebfe233f137f1a80bca43a0f79c89f0af19f
 vendor/lib/libomx-dts.so|ad49ef05c67af4ed8b488d77992d7f76b2e66f85
 vendor/lib/libOmxAacDec.so|3dfc65c3561419e2bb8eeec2f9a7cdaf47e22a11
