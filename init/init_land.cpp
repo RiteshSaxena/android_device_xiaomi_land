@@ -140,12 +140,6 @@ void init_variant_properties()
         property_set("ro.build.display.wtid", "SW_S88537EC1_V083_M20_MP_XM");
     }
 
-    if (board_id == "S88537AA1"){
-        property_set("persist.sys.fp.vendor", "goodix");
-    } else {
-        property_set("persist.sys.fp.vendor", "switchf");
-    }
-
     if (board_id == "S88537AB1"){
         property_set("ro.product.model", "Redmi 3X");
     } else {

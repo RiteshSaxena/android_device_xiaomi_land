@@ -27,6 +27,7 @@
 
 import init.qcom.power.rc
 import init.qcom.usb.rc
+import init.qcom.fingerprint.rc
 
 on early-init
     mkdir /firmware 0771 system system
@@ -631,7 +632,7 @@ on property:persist.sys.fp.vendor=searchf
 
 # Fingerprint Goodix
 on property:persist.sys.fp.vendor=goodix
-	start gx_fpd
+    start gx_fpd
     setprop ro.boot.fpsensor gdx
 
 on property:ro.boot.fpsensor=gdx
