@@ -48,8 +48,15 @@ qcom.bluetooth.soc=smd
 # Camera
 camera.display.umax=1920x1080
 camera.display.lmax=1280x720
-persist.camera.is_type=1
+camera.lowpower.record.enable=1
+media.camera.ts.monotonic=1
+persist.camera.imglib.cac3=2
+persist.camera.gyro.disable=0
 persist.camera.gyro.android=1
+persist.camera.isp.clock.optmz=0
+persist.camera.is_type=1
+persist.ts.postmakeup=true
+persist.ts.rtmakeup=true
 vidc.enc.narrow.searchrange=1
 camera.hal1.packagelist=com.skype.raider,com.google.android.talk
 
