@@ -26,7 +26,7 @@ done
 
 on boot
 
-if [ "$board_id" = "S88537AA1" ]; then
+if [ "$board_id" = "S88537AA1" ]; || [ "$board_id" = "S88537AB1"]; then
     setprop persist.sys.fp.vendor goodix
     exit
 else
