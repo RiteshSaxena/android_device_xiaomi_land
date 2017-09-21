@@ -348,3 +348,18 @@ case "$buildvariant" in
         echo "4 4 1 4" > /proc/sys/kernel/printk
         ;;
 esac
+
+# Set fp vendor to 'none' for S88537AC1
+board_id="";
+for e in $(cat /proc/cmdline);
+do
+    tmp=$(echo $e | grep "board_id" > /dev/null);
+    if [ "0" == "$?" ]; then
+        board_id=$(echo $e |cut -d":" -f0 |cut -d"=" -f2);
+    fi
+done
+
+if [ "$board_id" = "S88537AC1" ]; then
+    setprop ro.boot.fpsensor none
+    setprop persist.sys.fp.vendor none
+fi
