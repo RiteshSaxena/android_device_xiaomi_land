@@ -343,3 +343,18 @@ if [ "$prev_version_info" != "$cur_version_info" ]; then
     chown radio.radio /data/misc/radio/ver_info.txt
 fi
 echo 1 > /data/misc/radio/copy_complete
+
+# Set fp vendor to 'none' for S88537AC1
+board_id="";
+for e in $(cat /proc/cmdline);
+do
+    tmp=$(echo $e | grep "board_id" > /dev/null);
+    if [ "0" == "$?" ]; then
+        board_id=$(echo $e |cut -d":" -f0 |cut -d"=" -f2);
+    fi
+done
+
+if [ "$board_id" = "S88537AC1" ]; then
+    setprop ro.boot.fpsensor none
+    setprop persist.sys.fp.vendor none
+fi
