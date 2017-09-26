@@ -59,6 +59,8 @@ persist.ts.postmakeup=true
 persist.ts.rtmakeup=true
 vidc.enc.narrow.searchrange=1
 camera.hal1.packagelist=com.skype.raider,com.google.android.talk
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
 
 # CNE/DPM
 persist.cne.feature=1
