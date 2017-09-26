@@ -57,6 +57,8 @@ persist.camera.gyro.android=1
 persist.camera.is_type=1
 vidc.enc.narrow.searchrange=1
 camera.hal1.packagelist=com.skype.raider,com.google.android.talk
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
 
 # CNE
 persist.cne.feature=1
