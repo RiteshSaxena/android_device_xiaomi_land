@@ -119,9 +119,6 @@ void check_device()
 
 void init_variant_properties()
 {
-    if (property_get("ro.cm.device") != "land")
-        return;
-
     import_kernel_cmdline(0, import_cmdline);
 
     property_set("ro.product.wt.boardid", board_id.c_str());
