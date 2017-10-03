@@ -1,2 +1,9 @@
 allow mediaserver cameraserver_service:service_manager { add };
 allow mediaserver cameraproxy_service:service_manager { find };
+allow mediaserver camera_data_file:dir { search };
+allow mediaserver proc:file read;
+allow mediaserver audio_device:chr_file { open read write ioctl };
+allow mediaserver sensorservice_service:service_manager { find };
+binder_call(mediaserver, sensorservice_service);
+allow mediacodec mpctl_socket:dir { search };
+allow mediacodec firmware_file:dir { search };

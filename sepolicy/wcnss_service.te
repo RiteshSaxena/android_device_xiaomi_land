@@ -1,0 +1,1 @@
+allow wcnss_service wcnss_service:capability { net_raw dac_override setgid };
