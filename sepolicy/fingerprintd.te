@@ -1,4 +1,3 @@
-#============= fingerprintd ==============
 type fpc_socket, file_type;
 
 allow fingerprintd firmware_file:dir search;
