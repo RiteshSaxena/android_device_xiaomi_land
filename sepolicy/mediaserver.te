@@ -1,3 +1,4 @@
 allow mediaserver cameraserver_service:service_manager { add };
 allow mediaserver cameraproxy_service:service_manager { find };
 allow mediaserver camera_data_file:dir { search };
+allow mediaserver proc:file read;

@@ -1,0 +1,1 @@
+allow untrusted_app rootfs:dir { read };

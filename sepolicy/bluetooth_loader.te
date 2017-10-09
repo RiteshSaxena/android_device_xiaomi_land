@@ -1,5 +1,3 @@
-allow bluetooth_loader ylparams_device:chr_file r_file_perms;
-
 # Read mac address from persist partition
 allow bluetooth_loader persist_file:dir search;
 r_dir_file(bluetooth_loader, bluetooth_data_file)
