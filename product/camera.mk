@@ -10,4 +10,4 @@ PRODUCT_PACKAGES += \
     libshims_camera \
     libshim_ims_camera \
     libshims_ims \
-    Snap
+    SnapdragonCamera
