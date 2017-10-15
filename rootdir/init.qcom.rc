@@ -628,6 +628,7 @@ service gx_fpd /system/bin/gx_fpd
 
 # Fingerprint Fpc
 on property:persist.sys.fp.vendor=switchf
+    stop gx_fpd
     start fingerprintd
     setprop persist.sys.fp.vendor searchf
 
