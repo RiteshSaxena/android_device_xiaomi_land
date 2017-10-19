@@ -45,8 +45,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.carbon.maintainer="RiteshSaxena"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=Xiaomi/land/land:6.0.1/MMB29M/V8.2.5.0.MALMIDL:user/release-keys \
-    PRIVATE_BUILD_DESC="land-user 6.0.1 MMB29M V8.2.5.0.MALMIDL release-keys"
+    BUILD_FINGERPRINT=Xiaomi/land/land:6.0.1/MMB29M/V8.5.4.0.MALMIED:user/release-keys \
+    PRIVATE_BUILD_DESC="land-user 6.0.1 MMB29M V8.5.4.0.MALMIED release-keys"
 
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
     ro.product.model
