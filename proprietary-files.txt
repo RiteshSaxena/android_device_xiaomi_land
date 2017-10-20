@@ -1,27 +1,29 @@
 # ADSP
-bin/adsprpcd|71d86e9bb37476e8440d79a7a8e45548372211e2
-vendor/lib/libadsp_default_listener.so|b427880a95928cc66fb81405a898c39adb519ae1
-vendor/lib/libadsprpc.so|97db91154c01c11ff3c2bb4f6c9c20f84619de0a
-vendor/lib/libfastcvadsp_stub.so|cbd9dba16c284505342b868969d1c165564e05f4
-vendor/lib/libfastcvopt.so|7155e7f75d1f19e3df7b961b3cb01db6a418b3fd
-vendor/lib64/libadsp_default_listener.so|4de494fde71aae92abd1fad8bc681665ff3ccf01
-vendor/lib64/libadsprpc.so|5d25a40568dc831624d13578b6d66464dae25714
-vendor/lib64/libfastcvadsp_stub.so|45abb01ed5ef38df31dd9a174ae157f9bb2b67b4
-vendor/lib64/libfastcvopt.so|288f5e7420eea370bd217e75fefdda976dcf6b64
+bin/adsprpcd
+vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libadsprpc.so
+vendor/lib64/libfastcvadsp_stub.so
+vendor/lib64/libfastcvopt.so
+vendor/lib/libadsp_default_listener.so
+vendor/lib/libadsprpc.so
+vendor/lib/libfastcvadsp_stub.so
+vendor/lib/libfastcvopt.so
 
-# ADSP modules - Redmi 4x (santoni)
-vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so|b573056c2a9f5f9e1305c67a0661be229f1585cd
-vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_skel.so|71d54dfdb3465db53493a4b850b331b82cec6a1d
-vendor/lib/rfsa/adsp/libapps_mem_heap.so|5c82ad9cfe3f30105d899e2a4e90cc7566f81252
-vendor/lib/rfsa/adsp/libdspCV_skel.so|97dcaa2b83ac3beddd69f7bcffaf5f02d26a47af
-vendor/lib/rfsa/adsp/libfastcvadsp.so|9818625bfa018f517e32a8f4a1e7fb4b255e5049
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so|1ff4a48009e88435d93fd2b9b0c5ea59cedbb4f7
-vendor/lib/rfsa/adsp/libobjectMattingApp_skel.so|44876343c47bf533c7ccc781becbbdb19e325a60
-vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so|3e9c52069ff07e50191d3b3afb33b30409241ab6
-vendor/lib/rfsa/adsp/libscveCleverCapture_skel.so|849fdadd2b50ac8be2b26d27cc5c8b8512e4a29f
-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so|944169db3ac67056b92ef4f850f69346958370b5
-vendor/lib/rfsa/adsp/libscveT2T_skel.so|91b9200dbb982abf0d6b440668252d892a616f66
-vendor/lib/rfsa/adsp/libscveTextReco_skel.so|47ab455c11a7e8391ad768a9e21c9c60ab0d421b
+# ADSP modules
+vendor/lib/libscve.so
+vendor/lib/libscve_mv.so
+vendor/lib/libscve_stub.so
+vendor/lib/libscveTextRecoPostProcessing.so
+vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libobjectMattingApp_skel.so
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
+vendor/lib/rfsa/adsp/libscveCleverCapture_skel.so
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libscveT2T_skel.so
+vendor/lib/rfsa/adsp/libscveTextReco_skel.so
 
 # Audio
 etc/mixer_paths.xml
@@ -104,11 +106,12 @@ etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
 etc/acdbdata/QRD/QRD_Headset_cal.acdb
 etc/acdbdata/QRD/QRD_Speaker_cal.acdb
 
-# Bluetooth - from garlic (Yu Yureka Black)
-bin/btnvtool|35222e258d76fd1c886ab253b5eec779bcf03a9c
-bin/hci_qcomm_init|397851adc2ce5003515ed910863fe9335db9f0fa
-vendor/lib/libbtnv.so|53013e2601b12465cf2b21b01b2cfc13c4510e11
-vendor/lib64/libbtnv.so|53d9464bfabb81490f0f95f580b981beb5b606fa
+# Bluetooth
+bin/btnvtool
+bin/hci_qcomm_init
+vendor/lib/libbtnv.so
+vendor/lib64/libbtnv.so
+vendor/lib64/libbt-vendor.so
 
 # CNE - from garlic (Yu Yureka Black)
 -framework/cneapiclient.jar|3cb56a579341acfb16d2be2e41bac2c7b6ac34b4
@@ -1061,8 +1064,8 @@ vendor/lib/libmmcamera_isp_fovcrop_viewfinder40.so
 vendor/lib/libmmcamera_isp_color_xform_encoder40.so
 vendor/lib/libmmcamera_isp_color_xform_viewfinder40.so
 
-# Charger - from Redmi 4x (santoni)
-bin/hvdcp_opti|3c4d88ac5703f86c707851303a6ecd8819359f10
+# Charger
+bin/hvdcp_opti
 
 # Consumer Ir
 lib/hw/consumerir.default.so
@@ -1129,9 +1132,9 @@ lib64/libfp_client.so
 lib64/libfpnav.so
 lib64/libfpservice.so
 
-# Gatekeeper - from Redmi 4x (santoni)
-vendor/lib/hw/gatekeeper.msm8937.so|f98f0302c40ff0f444aa2280dc152a8f62a89a78
-vendor/lib64/hw/gatekeeper.msm8937.so|c75ddcce6b39cb4d0d2f65e7cc9b603f8f68b5d2
+# Gatekeeper
+vendor/lib/hw/gatekeeper.msm8937.so
+vendor/lib64/hw/gatekeeper.msm8937.so
 
 # GPS - from garlic (Yu Yureka Black)
 -framework/com.qti.location.sdk.jar|d3e2fe0bbdf040c183ae0e4a5b7d99c0d96295f7
@@ -1293,69 +1296,69 @@ etc/firmware/a530v2_seq.fw2|63b6d25594a5c1f4217d996a2b636e17a29fc840
 etc/firmware/a530v3_gpmu.fw2|0a2f6f450231673d75ba39e5d28776db3becf810
 etc/firmware/a530v3_seq.fw2|8963a53acc689725dee4b22881a4dd4b80e5def8
 
-# Keystore - from Redmi 4x (santoni)
-vendor/lib/hw/keystore.msm8937.so|2e93bba00f17931a02354f05ab83b25da4cc172a
-vendor/lib64/hw/keystore.msm8937.so|c3a99d799c53c153f4d7f3f758d60923b8c1cda5
+# Keystore
+vendor/lib/hw/keystore.msm8937.so
+vendor/lib64/hw/keystore.msm8937.so
 
-# Listena - from garlic (Yu Yureka Black)
-vendor/lib/hw/sound_trigger.primary.msm8937.so|ef07406f1965b5c3c9fc62fe926d2b4ffc77a81a
-vendor/lib/libadpcmdec.so|28e0b1ce5c48b3fa6cf1a67af7219ee52f563b1e
-vendor/lib/libsmwrapper.so|013eb0f6080e939b387ef0257379594075d3913f
+# Listen
+vendor/lib/hw/sound_trigger.primary.msm8937.so
+vendor/lib/libadpcmdec.so
+vendor/lib/libsmwrapper.so
 
-# Media - from garlic (Yu Yureka Black)
-etc/firmware/DE.o.msm8937|62c8a6ce7e6d81c3b9778d92db126e02a54e692f
-lib/libOmxSwVdec.so|62f07b3e9c89557874f6cdd93d52726a1a1a82ef
-lib/libOmxSwVencMpeg4.so|4ae12d3c69387fbf96e9017fa7ece6eea49630db
-lib/libOmxVpp.so|80dce1909e100a4a04bbb046ab325d24d651a78c
-lib/libvpplibrary.so|b54a480dcf2b8c09baef88d4479446581fecb2c1
-lib64/libOmxSwVdec.so|71915063fcbf8ee1b61ee84fdeaceadb61903934
-lib64/libOmxSwVencMpeg4.so|02cbaaed875087dbb8ab4b61249a326bd0f1c5dc
-lib64/libOmxVpp.so|cbdfaba9d466860347a864e870e56903c380d2c0
-lib64/libvpplibrary.so|b2cf10bc5df33eed17b4aa25fa2d15cb9e8ab03e
-vendor/lib/libAlacSwDec.so|9e19cdf730a1279f3cdfafc23d0385cecc15840d
-vendor/lib/libApeSwDec.so|5185623c3ebc0c814d6339ec646a0757da6a49b4
-vendor/lib/libFlacSwDec.so|89c0b9af3d56cd73e07393f2c88ac657659ebf5c
-vendor/lib/libI420colorconvert.so|87e6014400b4878c4df3eb7ad6f9085010a2be99
-vendor/lib/libmmosal.so|64008dcc866e67c5afff22eae5f9969dc1cf4884
-vendor/lib/libMpeg4SwEncoder.so|197bebfe233f137f1a80bca43a0f79c89f0af19f
-vendor/lib/libomx-dts.so|ad49ef05c67af4ed8b488d77992d7f76b2e66f85
-vendor/lib/libOmxAacDec.so|3dfc65c3561419e2bb8eeec2f9a7cdaf47e22a11
-vendor/lib/libOmxAlacDec.so|8e6a3413d41352e354838299e778aeb0fb54ba2f
-vendor/lib/libOmxAlacDecSw.so|2b4a419ca7fbb2a7501154c49d19bb8c51a3e597
-vendor/lib/libOmxAmrwbplusDec.so|6bdd81a93d4b7f8916ace42165f80f71d73ab1ae
-vendor/lib/libOmxApeDec.so|a1c37f6d9bb19cd391985049074f5ad9e94df815
-vendor/lib/libOmxApeDecSw.so|c23c0b6b0b82ee58edcd852b984862c6cb8ee317
-vendor/lib/libOmxEvrcDec.so|700989d4fbb775e44c0b27201fe77dc6621211ee
-vendor/lib/libOmxMux.so|b96194758137ce863a5c6e8f88d948a1cd4e0aea
-vendor/lib/libOmxQcelp13Dec.so|e2afcd0d0f6598e92585a629a16cf99469ec2b3a
-vendor/lib/libOmxVideoDSMode.so|9e24664c350e3e34c0f6a732abd3acb274185420
-vendor/lib/libOmxWmaDec.so|e2d29dab58cd18e8b0bdf37d99f13c5b35dbe4ba
-vendor/lib/libvqzip.so|f61d2c5e711ab4a06ec6d4038de81d38ad32299f
-vendor/lib64/libAlacSwDec.so|5c7374c5c5e70db046fcb1baff7de1cfca54492a
-vendor/lib64/libApeSwDec.so|edd347bf2e7fa68e4cd08afebf1e7af1372f7c7a
-vendor/lib64/libFlacSwDec.so|3029a270f91accb1ea9acd37cbdec6b30b5b6776
-vendor/lib64/libI420colorconvert.so|61b48cbccc5bf9396893f3ab7c3472a22462a766
-vendor/lib64/libmm-color-convertor.so|1dd6acb1f688dedac801fb1ea0e7a0f8fd8edde4
-vendor/lib64/libmmosal.so|b27d9a5e5d13b8bd38159b3f587abfbbad009a7f
-vendor/lib64/libMpeg4SwEncoder.so|727bbbda760c94aec50ca7f1b0cb2798085dabc6
-vendor/lib64/libOmxAacDec.so|06f1118f1abdf31900a1d3b0d96fc103f9be2332
-vendor/lib64/libOmxAlacDec.so|aaea6f78a25b07b11979c47e4a40f07b06220d58
-vendor/lib64/libOmxAlacDecSw.so|47933258561303acba218c2f5e8752895d05bd63
-vendor/lib64/libOmxAmrwbplusDec.so|6f52aa371b2f3c429974b4cdef4bb5c8333bb8d2
-vendor/lib64/libOmxApeDec.so|995a1b44d9b56848f81826b828d79b7bb5cec48b
-vendor/lib64/libOmxApeDecSw.so|62f0e33d6cdf32286e075863e92fbadbca61b1e9
-vendor/lib64/libOmxEvrcDec.so|7b732a2d5712b495752df88f12815c63ba0d2e4c
-vendor/lib64/libOmxMux.so|a0bcd4bf81649e9cd6191fb1b56e94c5d72433a7
-vendor/lib64/libOmxQcelp13Dec.so|05076719b67291caf83cf0312d01077df6908eb4
-vendor/lib64/libOmxWmaDec.so|e5b3a52261329757ab7d30230cdd88137a521d54
+# Media
+etc/firmware/DE.o.msm8937
+lib/libOmxSwVdec.so
+lib/libOmxSwVencMpeg4.so
+lib/libOmxVpp.so
+lib64/libOmxSwVdec.so
+lib64/libOmxSwVencMpeg4.so
+lib64/libOmxVpp.so
+lib64/libvpplibrary.so
+vendor/lib/libAlacSwDec.so
+vendor/lib/libApeSwDec.so
+vendor/lib/libFlacSwDec.so
+vendor/lib/libI420colorconvert.so
+vendor/lib/libmmosal.so
+vendor/lib/libMpeg4SwEncoder.so
+vendor/lib/libOmxAacDec.so
+vendor/lib/libOmxAlacDec.so
+vendor/lib/libOmxAlacDecSw.so
+vendor/lib/libOmxAmrwbplusDec.so
+vendor/lib/libOmxApeDec.so
+vendor/lib/libOmxApeDecSw.so
+vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxMux.so
+vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxVideoDSMode.so
+vendor/lib/libOmxWmaDec.so
+vendor/lib/libvqzip.so
+vendor/lib64/libAlacSwDec.so
+vendor/lib64/libApeSwDec.so
+vendor/lib64/libFlacSwDec.so
+vendor/lib64/libI420colorconvert.so
+vendor/lib64/libmm-color-convertor.so
+vendor/lib64/libmmosal.so
+vendor/lib64/libMpeg4SwEncoder.so
+vendor/lib64/libOmxAacDec.so
+vendor/lib64/libOmxAlacDec.so
+vendor/lib64/libOmxAlacDecSw.so
+vendor/lib64/libOmxAmrwbplusDec.so
+vendor/lib64/libOmxApeDec.so
+vendor/lib64/libOmxApeDecSw.so
+vendor/lib64/libOmxEvrcDec.so
+vendor/lib64/libOmxMux.so
+vendor/lib64/libOmxQcelp13Dec.so
+vendor/lib64/libOmxWmaDec.so
+vendor/media/LMspeed_508.emd
+vendor/media/PFFprec_600.emd
 
-# Misc firmware - from Redmi 4x (santoni)
-etc/firmware/leia_pfp_470.fw|46a8ce821d218359ff7e846db5dcc15b31bdd5ca
-etc/firmware/leia_pm4_470.fw|99364b0afd94e496ccc833ca0424dd6853b971d5
+# Misc firmware
+etc/firmware/leia_pfp_470.fw
+etc/firmware/leia_pm4_470.fw
 
-# Modem - from garlic (Yu Yureka Black)
-vendor/lib/libwms.so|faa3397b38c1c9e55030eb08de9a26b54d1cdf64
-vendor/lib64/libwms.so|07b7150b69e87bcf0b39ec1fca10bcc39d96e858
+# Modem
+vendor/lib/libwms.so
+vendor/lib64/libwms.so
 
 # Network - from garlic (Yu Yureka Black)
 -priv-app/QtiTetherService/QtiTetherService.apk|4b8cbc35e638fada9bc8f7708d64fd5c84dba707
@@ -1364,32 +1367,34 @@ vendor/lib/libQtiTether.so|fd264dfd66adcd2e9cd3cfede778f1387bdc6423
 vendor/lib64/libconnctrl.so|928acb9878e865493a37ad4a94ce29e95c616745
 vendor/lib64/libQtiTether.so|811873a0e84c5f2c064cbcd339e1e23263a4415f
 
-# Perf - from garlic (Yu Yureka Black)
-bin/iop|aef5fcd5664521ee82ccb2993df173030fac5287
-bin/msm_irqbalance|ab907828fa49dbc2f37e863ef877fdcef2cd1cf6
-vendor/bin/perfd|62505cc824a34f4a19bd09eb89e95cffebb13999
-vendor/lib/libqti-at.so|87b968f46bcd57b5c85680ec66e1bef398ad7169
-vendor/lib/libqti-iop-client.so|b83b7eda3f5cb9e6b403bf23d33aade6486eacbe
-vendor/lib/libqti-iop.so|8c63454a3c700ca994a3bdf6c3656867c4772c0c
-vendor/lib/libqti-perfd-client.so|006a867d373b58152f5ad5ebd86956957c85dfff
-vendor/lib/libqti-wl.so|a1a1b9e5177031c0002c13ecb0ad62f67e824680
-vendor/lib64/libqti-at.so|ec1423b0582f4fc9d5f66c199997fc0b8ac562c3
-vendor/lib64/libqti-iop-client.so|9ba41f72c090a217df24df15422a45834911bc31
-vendor/lib64/libqti-perfd-client.so|629e73eaec5d504fa31dd2e0fc7814b08d849093
+# Perf
+bin/iop
+bin/msm_irqbalance
+vendor/bin/perfd
+vendor/lib/libqti-at.so
+vendor/lib/libqti-iop-client.so
+vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti-wl.so
+vendor/lib64/libqti-at.so
+vendor/lib64/libqti-iop-client.so
+vendor/lib64/libqti-perfd-client.so
 
-# Peripheral manager  from Redmi 4x (santoni)
-bin/pm-proxy|5f085bf05e7b2aab4f41b1c005e27c3360d35aba
-bin/pm-service|5987e449873fb249efa0027bbe3067c97f070e4d
-vendor/lib/libperipheral_client.so|04c41cd6aeaf635bf999646a144496d033b499b2
-vendor/lib64/libperipheral_client.so|0a93aec8c80811c040b36cf52331a4e25426aad8
+# Peripheral manager
+bin/pm-proxy
+bin/pm-service
+vendor/lib/libperipheral_client.so
+vendor/lib64/libperipheral_client.so
 
-# Postprocessing - from Redmi 4x (santoni)
-etc/permissions/com.qti.snapdragon.sdk.display.xml|c7379e4fea71c2600f34b897cee760930ab0ce8b
-framework/com.qti.snapdragon.sdk.display.jar|e6387246d96376fd832fdcf14b65e149b6333bb2
--vendor/app/colorservice/colorservice.apk|138a57132ac342850df99e87b3eec92bac27a213  
-vendor/bin/mm-pp-dpps|7129f9ece3caa68862599490f281bb6c19a685ff
-vendor/lib/libdisp-aba.so|d0dc609b3d731e0b1ceef13c3e40a2fbca6af96b
-vendor/lib64/libdisp-aba.so|8862af5d1a6d12280d1df470664e2a6847da2203
+# Postprocessing
+etc/permissions/com.qti.snapdragon.sdk.display.xml
+framework/com.qti.snapdragon.sdk.display.jar
+-vendor/app/colorservice/colorservice.apk
+etc/permissions/com.qti.snapdragon.sdk.display.xml
+vendor/bin/mm-pp-daemon
+vendor/bin/mm-pp-dpps
+vendor/lib/libdisp-aba.so
+vendor/lib64/libdisp-aba.so
+vendor/lib64/libmm-als.so
 
 # QMI - from garlic (Yu Yureka Black)
 bin/irsc_util|cce1110bd8a638abd21798731a47d4a2f957e631
@@ -1520,7 +1525,7 @@ etc/firmware/modem_config/S88537CA1/row_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn
 
-# Sensors - from Redmi 4x (santoni)
+# Sensors - from santoni (Redmi 4)
 bin/sensors.qcom|d9a5c78dd1e8312412943ff9ab289b3a37617bda
 vendor/lib/hw/activity_recognition.msm8937.so|fadf5cb62913aedcb9605074023eb8e1e66563b4
 vendor/lib/libsensor1.so|5e677de1b2f5d343ef1a649a7eb15373bb40e74d
@@ -1533,37 +1538,37 @@ vendor/lib64/libsensor_reg.so|3b56ecae4104312c8787abc38ad5a93939be9aed
 vendor/lib64/sensor_calibrate.so|4117e78ad63faeb9a3bb1ac0d951524c781e1802
 vendor/lib64/sensors.ssc.so|d701204e9f6840d27488d91beb927b81a52250de
 
-# Subsystem restart - from garlic (Yu Yureka Black)
-bin/ssr_diag|042b6d12a557fb4b74fff73f276664e028202bff
+# Subsystem restart
+bin/ssr_diag
 
-# Thermal - from Redmi 4x (santoni)
-vendor/bin/thermal-engine|ae3ab44dc3c56e88c0f386da8ca971a8397871d3
-vendor/lib/libthermalclient.so|580966926e8045632d196dcc21fb5ca49b5eba4e
-vendor/lib64/libthermalclient.so|bcd8215fcbf7be2922970c77c73979830a9cd1f3
-vendor/lib64/libthermalioctl.so|d5c12338e56e05d3ddbffbba915b8ce6878a9485
+# Thermal
+vendor/bin/thermal-engine
+vendor/lib/libthermalclient.so
+vendor/lib64/libthermalclient.so
+vendor/lib64/libthermalioctl.so
 
-# Time services - from garlic (Yu Yureka Black)
--app/TimeService/TimeService.apk|cf992f00c8e73463b26f0ea6828522a3edfcdbb4
-bin/time_daemon|f8a7da44ae33e2506c30725f752be595f24c3f0d
--vendor/lib/libtime_genoff.so|b24eb6563980cd05296b60e73cc3a970d1336357
-vendor/lib/libTimeService.so|d9132545767a5379b611bdce615ab6f18582f902
--vendor/lib64/libtime_genoff.so|7c300ea21df671efbf94a41c7687c1af16029817
-vendor/lib64/libTimeService.so|e85f693c78808e20e9ae54117277bb2a89316bf5
+# Time services
+-app/TimeService/TimeService.apk
+bin/time_daemon
+-vendor/lib/libtime_genoff.so
+vendor/lib/libTimeService.so
+-vendor/lib64/libtime_genoff.so
+vendor/lib64/libTimeService.so
 
 # Touchscreen
 etc/ft5336_biel_720p.ini
 etc/ft5336_lens_720p.ini
 etc/ft5336_oufei_720p.ini
 
-# USB - from Redmi 4x (santoni)
-etc/firmware/ice40.bin|a29bdcdbfda7f7dae24a3c8921abe2bcda6ae38e
+# USB
+etc/firmware/ice40.bin
 
 # Widevine - from onePlus3
 vendor/lib/libWVStreamControlAPI_L3.so|61673304827483d44b735a3dd08f0783d10ce92d
 vendor/lib/libwvdrm_L3.so|7e77482481197997294a834bfbc817a01b6075cd
 vendor/lib/mediadrm/libwvdrmengine.so|70419ce1f8eb6bd3aa36234f8d7e8003569efc9c
 
-# Wi-Fi
-bin/cnss-daemon
-bin/cnss_diag
-bin/wcnss_service
+# Wi-Fi - from santoni (Redmi 4)
+bin/cnss-daemon|bde94e1929fa4612385b85d4afa734f555404353
+bin/cnss_diag|364434afd66b04a6f3f6d75a523c16174c379dc3
+bin/wcnss_service|397872f137e1f9a81f52f4fd0a8df9d93eef2320
