@@ -20,5 +20,8 @@ include $(DEVICE_PATH)/board/*.mk
 # Properties
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 
+# Enable Real time charging info
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+
 # Inherit the proprietary files
 -include vendor/xiaomi/land/BoardConfigVendor.mk
