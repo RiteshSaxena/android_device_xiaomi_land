@@ -1526,7 +1526,7 @@ etc/firmware/modem_config/S88537CA1/row_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn
 
-# Sensors - from Redmi 4x (santoni)
+# Sensors - from santoni (Redmi 4)
 bin/sensors.qcom|d9a5c78dd1e8312412943ff9ab289b3a37617bda
 vendor/lib/hw/activity_recognition.msm8937.so|fadf5cb62913aedcb9605074023eb8e1e66563b4
 vendor/lib/libsensor1.so|5e677de1b2f5d343ef1a649a7eb15373bb40e74d
