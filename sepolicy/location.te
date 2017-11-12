@@ -1,1 +1,2 @@
 allow location sysfs_wake_lock:file { write open };
+allow location self:capability { net_raw };
