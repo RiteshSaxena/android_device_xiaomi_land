@@ -7,7 +7,6 @@ PRODUCT_COPY_FILES += \
 
 # Libshims
 PRODUCT_PACKAGES += \
-    libshim_camera \
     libshims_camera \
     libshim_ims_camera \
     libshim_ims
