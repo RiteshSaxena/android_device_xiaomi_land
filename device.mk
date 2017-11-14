@@ -121,9 +121,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8937 \
-    libmm-qcamera \
-    libshim_cameraservice
+    camera.msm8937
 
 PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
@@ -132,7 +130,11 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
-    
+
+# Cameraservice shim
+PRODUCT_PACKAGES += \
+    libshim_cameraservice
+
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/cameraserver.rc:system/etc/init/cameraserver.rc \
 
