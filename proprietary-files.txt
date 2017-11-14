@@ -1374,17 +1374,17 @@ vendor/lib/libQtiTether.so|fd264dfd66adcd2e9cd3cfede778f1387bdc6423
 vendor/lib64/libconnctrl.so|928acb9878e865493a37ad4a94ce29e95c616745
 vendor/lib64/libQtiTether.so|811873a0e84c5f2c064cbcd339e1e23263a4415f
 
-# Perf
-bin/iop
-bin/msm_irqbalance
-vendor/bin/perfd
-vendor/lib/libqti-at.so
-vendor/lib/libqti-iop-client.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-wl.so
-vendor/lib64/libqti-at.so
-vendor/lib64/libqti-iop-client.so
-vendor/lib64/libqti-perfd-client.so
+# Perf - from santoni (Redmi 4)
+bin/iop|f2a1040ea51ed13769ba26b0abb7872e915b3919
+bin/msm_irqbalance|ab907828fa49dbc2f37e863ef877fdcef2cd1cf6
+vendor/bin/perfd|f20134d2f7e637040de086f988438404a4bbfd58
+vendor/lib/libqti-at.so|87b968f46bcd57b5c85680ec66e1bef398ad7169
+vendor/lib/libqti-iop-client.so|f1a2a457d69f5fc9164943e66e0cfe9aab5b17f2
+vendor/lib/libqti-perfd-client.so|006a867d373b58152f5ad5ebd86956957c85dfff
+vendor/lib/libqti-wl.so|a1a1b9e5177031c0002c13ecb0ad62f67e824680
+vendor/lib64/libqti-at.so|477177bed50e7aede0d8a84d7177a82f5dfb8f3e
+vendor/lib64/libqti-iop-client.so|cf60b7e000f97909dd7840c1e4580914aa02cbe9
+vendor/lib64/libqti-perfd-client.so|6362954b2208611ffe831fd747797d570141c595
 
 # Peripheral manager
 bin/pm-proxy
@@ -1548,11 +1548,11 @@ vendor/lib64/sensors.ssc.so|d701204e9f6840d27488d91beb927b81a52250de
 # Subsystem restart
 bin/ssr_diag
 
-# Thermal
-vendor/bin/thermal-engine
-vendor/lib/libthermalclient.so
-vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
+# Thermal - from santoni (Redmi 4)
+vendor/bin/thermal-engine|ae3ab44dc3c56e88c0f386da8ca971a8397871d3
+vendor/lib/libthermalclient.so|580966926e8045632d196dcc21fb5ca49b5eba4e
+vendor/lib64/libthermalclient.so|bcd8215fcbf7be2922970c77c73979830a9cd1f3
+vendor/lib64/libthermalioctl.so|d5c12338e56e05d3ddbffbba915b8ce6878a9485
 
 # Time services
 -app/TimeService/TimeService.apk
