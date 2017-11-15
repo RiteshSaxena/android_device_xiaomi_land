@@ -15,11 +15,7 @@
 # limitations under the License.
 #
 
-# Inherit device path
-$(call inherit-product, $(LOCAL_PATH)/DevicePath.mk)
-
-# Define platform before including any common things
-$(call inherit-product, $(LOCAL_PATH)/PlatformConfig.mk)
+LOCAL_PATH := device/xiaomi/land
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
