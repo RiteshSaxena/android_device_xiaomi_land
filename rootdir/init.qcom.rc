@@ -27,7 +27,6 @@
 
 import init.qcom.power.rc
 import init.qcom.usb.rc
-import init.qcom.fingerprint.rc
 
 on early-init
     mkdir /firmware 0771 system system
@@ -372,6 +371,9 @@ on boot
     # Goodix Fingerprint
     chown system system /dev/goodix_fp
     chmod 0644 /dev/goodix_fp
+    
+    setprop persist.sys.fp.vendor none
+    start gx_fpd
 
     # Notification LEDs
     chown root system /sys/class/leds/red/blink
@@ -617,6 +619,7 @@ service fingerprintd /system/bin/fingerprintd
     socket fpce stream 0666 system system
     user system
     group system sdcard_rw
+    system system
     writepid /dev/cpuset/system-background/tasks
     disabled
 
@@ -625,24 +628,26 @@ service gx_fpd /system/bin/gx_fpd
     user root
     group system system
     writepid /dev/cpuset/system-background/tasks
+    disabled
 
-# Fingerprint Fpc
 on property:persist.sys.fp.vendor=switchf
     stop gx_fpd
-    start fingerprintd
     setprop persist.sys.fp.vendor searchf
-
-on property:persist.sys.fp.vendor=searchf
+    start fingerprintd
     setprop ro.boot.fpsensor fpc
-    setprop persist.sys.fp.goodix 0
+    setprop ro.hardware.fingerprint searchf
+    setprop persist.sys.fp.onstart=1
 
-# Fingerprint Goodix
 on property:persist.sys.fp.vendor=goodix
-    start gx_fpd
-    setprop ro.boot.fpsensor gdx
+   setprop ro.boot.fpsensor gdx
+   setprop ro.hardware.fingerprint goodix
+   setprop persist.sys.fp.onstart=0
 
-on property:ro.boot.fpsensor=gdx
-    setprop persist.sys.fp.goodix 1
+on property:persist.sys.fp.onstart=0
+   start gx_fpd
+
+on property:persist.sys.fp.onstart=1
+   start fingerprintd 
 
 # Start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon

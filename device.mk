@@ -215,7 +215,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.bt.sh \
-    init.qcom.fingerprint.rc \
     init.qcom.power.rc \
     init.qcom.rc \
     init.qcom.sh \
