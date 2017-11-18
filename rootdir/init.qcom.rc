@@ -390,13 +390,6 @@ on boot
     write /sys/bus/msm_subsys/devices/subsys2/restart_level related
     write /sys/bus/msm_subsys/devices/subsys3/restart_level related
 
-on class_start:late_start
-    write /proc/sys/net/ipv6/conf/default/accept_ra_defrtr 1
-
-    copy /system/vendor/qcril.db /data/misc/radio/qcril.db
-    chown radio radio /data/misc/radio/qcril.db
-    write /data/misc/radio/db_check_done 1
-
 service iop /system/bin/iop
     class main
     user root
@@ -594,9 +587,10 @@ on property:persist.radio.otaconfig=1
     setprop persist.radio.start_ota_daemon 1
 
 service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
-    class late_start
+    class core
     user root
     group root
+    disabled
     writepid /dev/cpuset/system-background/tasks
 
 service wfdservice /system/bin/wfdservice
