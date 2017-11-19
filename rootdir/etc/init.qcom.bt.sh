@@ -299,9 +299,8 @@ esac
 
 eval $(/system/bin/hci_qcomm_init -e $PWR_CLASS $LE_PWR_CLASS && echo "exit_code_hci_qcomm_init=0" || echo "exit_code_hci_qcomm_init=1")
 
-	#bug272479 ,fanhongen.wt, hide bt mac ,20170630
 case $exit_code_hci_qcomm_init in
-  0) logi "Bluetooth QSoC firmware download succeeded, $BTS_DEVICE $BTS_TYPE $BTS_BAUD";;
+  0) logi "Bluetooth QSoC firmware download succeeded, $BTS_DEVICE $BTS_TYPE $BTS_BAUD $BTS_ADDRESS";;
   *) failed "Bluetooth QSoC firmware download failed" $exit_code_hci_qcomm_init;
      case $STACK in
          "bluez")
