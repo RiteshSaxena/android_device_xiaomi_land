@@ -10,5 +10,17 @@
     "repository": "LineageOS/android_device_qcom_common",
     "target_path": "device/qcom/common",
     "revision":"cm-14.1"
+  },
+  {
+    "remote":"gh",
+    "repository": "ThankYouMario/proprietary_vendor_qcom_sdclang-3.8_linux-x86",
+    "target_path": "vendor/qcom/sdclang-3.8/linux-x86",
+    "revision":"nougat-mr2"
+  },
+  {
+    "remote":"gh",
+    "repository": "RiteshSaxena/SnapdragonCamera",
+    "target_path": "packages/apps/SnapdragonCamera",
+    "revision":"LA.UM.5.6.r1"
   }
 ] 
