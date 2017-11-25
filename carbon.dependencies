@@ -1,10 +1,14 @@
 [
   {
-    "repository": "android_device_qcom_common",
-    "target_path": "device/qcom/common"
+    "remote": "lineage",
+    "repository": "LineageOS/android_hardware_cyanogen",
+    "target_path": "hardware/cyanogen",
+    "revision": "cm-14.1"
   },
   {
-    "repository": "android_packages_resources_devicesettings",
-    "target_path": "packages/resources/devicesettings"
+    "remote":"lineage",
+    "repository": "LineageOS/android_device_qcom_common",
+    "target_path": "device/qcom/common",
+    "revision":"cm-14.1"
   }
-]
+] 
