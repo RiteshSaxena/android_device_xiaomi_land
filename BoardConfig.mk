@@ -50,7 +50,7 @@ TARGET_KERNEL_CONFIG := lineageos_land_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 
 # ANT
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+#BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Audio
 AUDIO_FEATURE_ENABLED_ALAC_OFFLOAD := true
