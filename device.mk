@@ -164,12 +164,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
-# Libshims
-PRODUCT_PACKAGES += \
-    libshims_camera \
-    libshim_ims \
-    libshim_ims_camera
-
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8937
