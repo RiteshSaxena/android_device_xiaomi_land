@@ -176,6 +176,7 @@ persist.radio.hw_mbn_update=0 \
 persist.radio.jbims=0 \
 persist.radio.mt_sms_ack=20 \
 persist.radio.multisim.config=dsds \
+persist.radio.schd.cache=3500 \
 persist.radio.sw_mbn_update=0 \
 persist.radio.videopause.mode=1 \
 persist.vendor.radio.custom_ecc=1 \
