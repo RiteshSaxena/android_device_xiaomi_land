@@ -676,18 +676,13 @@ service gx_fpd /system/bin/gx_fpd
 on property:persist.sys.fp.vendor=switchf
     stop gx_fpd
     setprop persist.sys.fp.vendor searchf
-    setprop fpc.fp.miui.token 0
     setprop ro.boot.fpsensor fpc
     setprop ro.hardware.fingerprint searchf
     start fps_hal
 
 on property:persist.sys.fp.vendor=goodix
-    setprop goodix.fp.miui.analyse 1
-    setprop goodix.fp.miui.token 0
     setprop ro.boot.fpsensor gdx
     setprop ro.hardware.fingerprint goodix
-
-on property:persist.sys.fp.onstart=1
     start fps_hal
 
 # Start camera server as daemon
