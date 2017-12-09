@@ -42,6 +42,15 @@ on early-init
 
 on init
 
+    # QSEE rpmb listener need symlink for bootdevice
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+    # start qseecomd early as we mount system/ vendor/ early
+    # vold needs keymaster that needs qseecomd
+    start qseecomd
+
+
     # Set permissions for persist partition
     mkdir /persist 0771 root system
 
@@ -52,8 +61,6 @@ on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
 on fs
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     mount_all /vendor/etc/fstab.qcom
     swapon_all /vendor/etc/fstab.qcom
 
@@ -70,7 +77,6 @@ on post-fs
     chmod 0755 /sys/kernel/debug/tracing
 
 on post-fs
-    start qseecomd
 
 # msm specific files that need to be created on /data
 on post-fs-data
