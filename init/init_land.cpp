@@ -33,17 +33,21 @@
 #include <string>
 #include <sstream>
 
+#include <android-base/properties.h>
+#include <android-base/logging.h>
 #include <android-base/file.h>
 #include <android-base/strings.h>
 
-#include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
 #include "util.h"
+#include "vendor_init.h"
 
 static std::string board_id;
 
+using android::base::GetProperty;
 using android::base::Trim;
+using android::init::property_set;
+using android::init::import_kernel_cmdline;
 
 void import_kernel_cmdline1(bool in_qemu,
                            const std::function<void(const std::string&, const std::string&, bool)>& fn) {
@@ -77,10 +81,10 @@ static void init_alarm_boot_properties()
     char const *power_off_alarm_file = "/persist/alarm/powerOffAlarmSet";
     std::string boot_reason;
     std::string power_off_alarm;
-    std::string tmp = property_get("ro.boot.alarmboot");
+    std::string tmp = GetProperty("ro.boot.alarmboot", "");
 
-    if (read_file(boot_reason_file, &boot_reason)
-            && read_file(power_off_alarm_file, &power_off_alarm)) {
+    if (android::base::ReadFileToString(boot_reason_file, &boot_reason)
+            && android::base::ReadFileToString(power_off_alarm_file, &power_off_alarm)) {
         /*
          * Setup ro.alarm_boot value to true when it is RTC triggered boot up
          * For existing PMIC chips, the following mapping applies
@@ -106,8 +110,6 @@ static void init_alarm_boot_properties()
 
 void init_variant_properties()
 {
-    if (property_get("ro.product.device") != "land")
-        return;
 
     import_kernel_cmdline1(0, import_cmdline);
 
