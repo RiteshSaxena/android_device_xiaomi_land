@@ -20,7 +20,8 @@ include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES := \
         system/core/base/include \
-        system/core/init
+        system/core/init \
+        external/selinux/libselinux/include
 LOCAL_MODULE := libinit_land
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := init_land.cpp
