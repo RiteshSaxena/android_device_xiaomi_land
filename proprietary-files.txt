@@ -1,21 +1,4 @@
-# Audio
-etc/mixer_paths.xml:vendor/etc/mixer_paths.xml
-etc/mixer_paths_mtp.xml:vendor/etc/mixer_paths_mtp.xml
-etc/mixer_paths_skuk.xml:vendor/etc/mixer_paths_skuk.xml
-etc/mixer_paths_wcd9306.xml:vendor/etc/mixer_paths_wcd9306.xml
-etc/mixer_paths_wcd9326.xml:vendor/etc/mixer_paths_wcd9326.xml
-etc/mixer_paths_wcd9330.xml:vendor/etc/mixer_paths_wcd9330.xml
-etc/mixer_paths_wcd9335.xml:vendor/etc/mixer_paths_wcd9335.xml
-etc/mixer_paths_qrd_sku2.xml:vendor/etc/mixer_paths_qrd_sku2.xml
-etc/mixer_paths_qrd_skuh.xml:vendor/etc/mixer_paths_qrd_skuh.xml
-etc/mixer_paths_qrd_skui.xml:vendor/etc/mixer_paths_qrd_skui.xml
-etc/mixer_paths_qrd_skum.xml:vendor/etc/mixer_paths_qrd_skum.xml
-etc/mixer_paths_qrd_skun.xml:vendor/etc/mixer_paths_qrd_skun.xml
-etc/mixer_paths_qrd_skuhf.xml:vendor/etc/mixer_paths_qrd_skuhf.xml
-etc/sound_trigger_mixer_paths.xml:vendor/etc/sound_trigger_mixer_paths.xml
-etc/sound_trigger_mixer_paths_wcd9306.xml:vendor/etc/sound_trigger_mixer_paths_wcd9306.xml
-etc/sound_trigger_mixer_paths_wcd9330.xml:vendor/etc/sound_trigger_mixer_paths_wcd9330.xml
-etc/sound_trigger_mixer_paths_wcd9335.xml:vendor/etc/sound_trigger_mixer_paths_wcd9335.xml
+# Audio dirac
 lib/soundfx/libdirac.so
 lib/libDiracAPI_SHARED.so
 vendor/etc/diracmobile.config
@@ -949,9 +932,9 @@ lib64/hw/consumerir.default.so
 # Fingerprint
 bin/gx_fpcmd
 bin/gx_fpd
-lib/hw/fingerprint.msm8937.so
+lib/hw/fingerprint.default.so:lib/hw/fingerprint.msm8937.so
 lib/libcom_fingerprints_service.so
-lib64/hw/fingerprint.msm8937.so
+lib64/hw/fingerprint.default.so:lib64/hw/fingerprint.msm8937.so
 lib64/hw/fingerprint.goodix.so
 lib64/hw/gxfingerprint.default.so
 lib64/libcom_fingerprints_service.so

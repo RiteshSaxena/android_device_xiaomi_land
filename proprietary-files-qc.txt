@@ -37,7 +37,7 @@ vendor/etc/drc/drc_cfg_5.1.txt|01a86d1c8bd9123ccf763620031c800f624b54b3
 vendor/etc/drc/drc_cfg_AZ.txt|67d6ed8524c6aced5327f3d76141787af7858723
 vendor/etc/surround_sound_3mic/surround_sound_rec_5.1.cfg|ed2a1e071af7ed0ecdbb4f71c4b14c9ca4e5bf7e
 vendor/etc/surround_sound_3mic/surround_sound_rec_AZ.cfg|cc78904b69e85281b91c94f474bdd40b5c4d9907
-vendor/lib/libacdb-fts.so||1ebcdd5bee8fbd7e6b31608d3791d91b8f91ec22
+vendor/lib/libacdb-fts.so|1ebcdd5bee8fbd7e6b31608d3791d91b8f91ec22
 vendor/lib/libacdbloader.so|034a5cf03cccfb22e415832c7d6a043dc52d98c0
 vendor/lib/libacdbmapper.so|201959a45232c901e6291c77214e1489166c66b3
 vendor/lib/libacdbrtac.so|323798bbf0bb0883176b16135316f4d0cd8aa80a
@@ -62,11 +62,11 @@ vendor/lib64/soundfx/libqcreverb.so|5ed1b2a14a0df84e4a96b82e5fff262f1b8920aa
 vendor/lib64/soundfx/libqcvirt.so|78812c4c6356e2632865de5078ce028e362f4aa7
 
 # Bluetooth - from msm8996
-vendor/bin/btnvtool|a10f51f756d661342b29c70bd9da8c79bfb4c8b1
-vendor/bin/hci_qcomm_init|3f4b99cb6ee44e688916eee413d3c15f78d03a87
-vendor/bin/wcnss_filter|dc151b5fbf9bca3d807ec4ba0e256b0e5140fe39
-vendor/lib/libbtnv.so|026c66a94493fc784503784963fa1f2c8807802d
-vendor/lib64/libbtnv.so|d10d3351bfd946b1276b9735e569c6f1a795401d
+vendor/bin/btnvtool|a2d8a4b9de09bc06dcd5641511c156229c624ebc
+vendor/bin/hci_qcomm_init|e8c0b761c6d6cd085faf79f2a944f36a399ae87d
+vendor/bin/wcnss_filter|c0b343dc0f303adf28444f2448afe2dbb6c45c6b
+vendor/lib/libbtnv.so|4566af7729aa27a72d9c740911a7b8437d49cabe
+vendor/lib64/libbtnv.so|e6b80c883b48b8bb220ec18f296204eb5bfeb9ab
 
 # CNE - from msm8996
 etc/permissions/com.quicinc.cne.xml|e99e631d8b06ba4680529e9e4004d8d05baf6904
@@ -333,6 +333,7 @@ vendor/lib/libperipheral_client.so|7e54351ec6cae4a302330671e247a2487e36ff15
 vendor/lib64/libperipheral_client.so|1a8db83ca35bb8f9e973cd6d988456d5e6696888
 
 # Postprocessing - from msm8996
+etc/permissions/com.qti.snapdragon.sdk.display.xml|0bff16d681e75f203c1e11ff33afba82490e49b3
 vendor/bin/mm-pp-dpps|7436ff3c0e348b24410350bac230406f04850578
 vendor/lib/libdisp-aba.so|77f38cf1124067237ce2001c262f91dec09a7d38
 vendor/lib64/libdisp-aba.so|9769fec5526ab90836300fd3b305e9d458fb8868
@@ -374,6 +375,7 @@ vendor/lib64/libqmiservices.so|faa73371315493e773883cc34ece67590f536f7c
 vendor/lib64/libsmemlog.so|512653d3d9563fda55acb84d76006c298eb78ba2
 
 # Radio - from msm8996
+-app/SimSettings/SimSettings.apk|09eec5f9c778050ea03f0656fa1bb31247727172
 -app/QtiTelephonyService/QtiTelephonyService.apk|1573c58b37e3b9aca949ab5dcc562c0762db5e79
 etc/permissions/qcnvitems.xml|dc0e70cace2317b5169a454cbc2bbf8887c18d55
 etc/permissions/qcrilhook.xml|9fc58a3d54d20ac1d53bab14608815121aefbce5
@@ -381,9 +383,9 @@ etc/permissions/telephonyservice.xml|b297c8a27443570377d78586b00198839ce326bb
 -framework/QtiTelephonyServicelibrary.jar|8316212be23759e1f653cd9664aca648ffb90711
 -framework/qcnvitems.jar|4da175a16c8a193bfa213801d9ebde6898cb93b1
 -framework/qcrilhook.jar|3b1235376a1300562234873e20a1a0331a2214bb
--framework/qti-telephony-common.jar|bda668d6d7018c56cb399370b07e1a24c2b03db1
-framework/telephony-ext.jar|462ce8eaaaa566e2dd39683c8e0f3e0c9d27ef9e
-lib64/libparam.so||8b7b5582c032a933e14bbaa8ffedea52c8b8bec2
+-framework/qti-telephony-common.jar|7118b7365cff0297fb012bd6a19e75c185a4427a
+-framework/telephony-ext.jar|804819549661eaf514b367bb24f5ae79a08f212f
+lib64/libparam.so|8b7b5582c032a933e14bbaa8ffedea52c8b8bec2
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|54081596046b0582926f1adea93e0017a6ec2f7c
 vendor/bin/hw/rild|6eeacf9f71e41e8e41b215c33927b08fca43dc25
 vendor/bin/netmgrd|458f7933bfe2bdcb8fdddb4d7bc527d9c159ba3e
@@ -496,10 +498,11 @@ vendor/lib64/libsensor_user_cal.so|fe6fb4ae9388bf7b3cc6e98dd2b1c6426be1bb07
 vendor/lib64/sensors.ssc.so|f1cb1ce05b6a20f2346f75b4c671eb92e731624e
 
 # Thermal - from msm8996
+vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
 vendor/bin/thermal-engine|8598eb10cc3316f8fa00c9ba792b2102a5d646ed
-vendor/lib/libthermalclient.so|e14cd4d090e52394cb5a39912e71b50091873bcb
+-vendor/lib/libthermalclient.so|e14cd4d090e52394cb5a39912e71b50091873bcb
 -vendor/lib64/libthermalclient.so|9beae9671d80ee9b1d47689ed32b5780a863cb77
--vendor/lib64/libthermalioctl.so|17a44f42569ce02e36f155109f459638471d54ba
+vendor/lib64/libthermalioctl.so|17a44f42569ce02e36f155109f459638471d54ba
 
 # Time services - from msm8996
 -vendor/app/TimeService/TimeService.apk|ee71b426ade143660b333c21b9e0565c4191cce1
@@ -512,4 +515,4 @@ vendor/lib64/libTimeService.so|aabc4aca65203f0e32d6f5ca2e6bbb1ad3abef82
 # Widevine - from msm8996
 vendor/lib/libWVStreamControlAPI_L3.so|61673304827483d44b735a3dd08f0783d10ce92d
 vendor/lib/libwvdrm_L3.so|7e77482481197997294a834bfbc817a01b6075cd
-vendor/lib/mediadrm/libwvdrmengine.so|70419ce1f8eb6bd3aa36234f8d7e8003569efc9c
+vendor/lib/mediadrm/libwvdrmengine.so|0d8245220b20a39963c59d7469dfa3b48bb6d83d
