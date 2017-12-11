@@ -1,2 +1,0 @@
-add_lunch_combo carbon_land-user
-add_lunch_combo carbon_land-userdebug
