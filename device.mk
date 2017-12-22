@@ -85,7 +85,6 @@ PRODUCT_PACKAGES += \
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/audio/audio_tuning_mixer.txt:system/vendor/etc/audio_tuning_mixer.txt \
     $(DEVICE_PATH)/audio/audio_policy.conf:system/vendor/etc/audio_policy.conf \
     $(DEVICE_PATH)/audio/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
     $(DEVICE_PATH)/audio/audio_effects.xml:system/vendor/etc/audio_effects.xml \
