@@ -1015,5 +1015,5 @@ etc/ft5336_biel_720p.ini
 etc/ft5336_lens_720p.ini
 etc/ft5336_oufei_720p.ini
 
-# Wi-Fi
-bin/wcnss_service
+# Wi-Fi - from tissot (Redmi 4)
+vendor/bin/wcnss_service|828ff8b29fcc6a59644a7b9baf02f29eafe034a8
