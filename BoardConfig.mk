@@ -122,9 +122,6 @@ BOARD_HARDWARE_CLASS += \
 # CNE / DPM
 BOARD_USES_QCNE := true
 
-# Cpusets
-ENABLE_CPUSETS := true
-
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
