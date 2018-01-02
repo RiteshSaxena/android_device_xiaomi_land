@@ -252,4 +252,4 @@ on property:sys.shutdown.requested=*
 service hvdcp_opti /system/vendor/bin/hvdcp_opti
     class main
     user root
-    group root
+    group system wakelock
