@@ -223,6 +223,11 @@ PRODUCT_PACKAGES += \
     android.hardware.health@1.0-service \
     android.hardware.health@1.0
 
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.manager@1.0 \
+    android.hidl.base@1.0
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/keylayout/ft5x06_720p.kl:system/usr/keylayout/ft5x06_720p.kl \
