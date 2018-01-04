@@ -1009,7 +1009,6 @@ etc/firmware/modem_config/S88537CA1/row_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn
 
-
 # Touchscreen
 etc/ft5336_biel_720p.ini
 etc/ft5336_lens_720p.ini
