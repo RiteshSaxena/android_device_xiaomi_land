@@ -218,6 +218,7 @@ PRODUCT_PACKAGES += \
     
 
 PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/gps/etc/apdr.conf:system/vendor/etc/apdr.conf \
     $(DEVICE_PATH)/gps/etc/flp.conf:system/vendor/etc/flp.conf \
     $(DEVICE_PATH)/gps/etc/gps.conf:system/vendor/etc/gps.conf \
     $(DEVICE_PATH)/gps/etc/izat.conf:system/vendor/etc/izat.conf \
