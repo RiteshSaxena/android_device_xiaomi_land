@@ -44,7 +44,6 @@ on early-init
     write /proc/sys/vm/page-cluster 0
 
 on init
-
     # Set permissions for persist partition
     mkdir /persist 0771 root system
 
