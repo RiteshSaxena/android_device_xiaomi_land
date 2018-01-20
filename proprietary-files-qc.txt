@@ -328,7 +328,7 @@ vendor/lib/hw/vulkan.msm8996.so:vendor/lib/hw/vulkan.msm8937.so
 
 # IMS - from tissot (Mi A1)
 # ims.apk - from oneplus3
--app/ims/ims.apk|82664151cd00c90a0d414b01be8acd390a7ccf54
+-app/ims/ims.apk|d255b5dfe08b0287b338edde796b9a533b28fd81
 -app/imssettings/imssettings.apk
 etc/permissions/qti-vzw-ims-internal.xml
 lib/com.qualcomm.qti.imscmservice@1.0.so
