@@ -91,7 +91,6 @@ ro.gps.agps_provider=1
 # Media
 media.aac_51_output_enabled=true
 media.msm8956hw=0
-mm.enable.qcom_parser=17825791
 mm.enable.smoothstreaming=true
 mmp.enable.3g2=true
 media.stagefright.audio.sink=280
@@ -99,7 +98,6 @@ av.debug.disable.pers.cache=1
 mm.enable.qcom_parser=1048575
 vendor.vidc.enc.disable_bframes=1
 vendor.vidc.disable.split.mode=1
-persist.media.treble_omx=false
 
 # Netmgrd
 ro.use_data_netmgrd=true
