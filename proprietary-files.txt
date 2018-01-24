@@ -17,9 +17,6 @@ etc/sound_trigger_mixer_paths.xml:vendor/etc/sound_trigger_mixer_paths.xml
 etc/sound_trigger_mixer_paths_wcd9306.xml:vendor/etc/sound_trigger_mixer_paths_wcd9306.xml
 etc/sound_trigger_mixer_paths_wcd9330.xml:vendor/etc/sound_trigger_mixer_paths_wcd9330.xml
 etc/sound_trigger_mixer_paths_wcd9335.xml:vendor/etc/sound_trigger_mixer_paths_wcd9335.xml
-lib/soundfx/libdirac.so
-lib/libDiracAPI_SHARED.so
-vendor/etc/diracmobile.config
 vendor/lib/libhwdaphal.so
 vendor/lib64/libhwdaphal.so
 
