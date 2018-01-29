@@ -4704,6 +4704,7 @@ QCamera3HardwareInterface::translateFromHalMetadata(
     }
 
     IF_META_AVAILABLE(int32_t, sensorSensitivity, CAM_INTF_META_SENSOR_SENSITIVITY, metadata) {
+        if(*sensorSensitivity < 100) *sensorSensitivity = 100;
         LOGD("sensorSensitivity = %d", *sensorSensitivity);
         camMetadata.update(ANDROID_SENSOR_SENSITIVITY, sensorSensitivity, 1);
 
@@ -6271,8 +6272,14 @@ int QCamera3HardwareInterface::initStaticMetadata(uint32_t cameraId)
     staticInfo.update(ANDROID_SENSOR_INFO_WHITE_LEVEL,
             &gCamCapability[cameraId]->white_level, 1);
 
-    staticInfo.update(ANDROID_SENSOR_BLACK_LEVEL_PATTERN,
-            gCamCapability[cameraId]->black_level_pattern, BLACK_LEVEL_PATTERN_CNT);
+    if(facingBack && gCamCapability[cameraId]->black_level_pattern[0] < 32) {
+        int32_t black_level_pattern_custom[BLACK_LEVEL_PATTERN_CNT] = {64,64,64,64};
+        staticInfo.update(ANDROID_SENSOR_BLACK_LEVEL_PATTERN,
+                black_level_pattern_custom, BLACK_LEVEL_PATTERN_CNT);
+    } else {
+        staticInfo.update(ANDROID_SENSOR_BLACK_LEVEL_PATTERN,
+                gCamCapability[cameraId]->black_level_pattern, BLACK_LEVEL_PATTERN_CNT);
+    }
 
     staticInfo.update(ANDROID_FLASH_INFO_CHARGE_DURATION,
             &gCamCapability[cameraId]->flash_charge_duration, 1);
