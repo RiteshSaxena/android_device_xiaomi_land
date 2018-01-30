@@ -77,9 +77,11 @@ vendor/lib/libbtnv.so
 vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so
 vendor/lib64/libbtnv.so
 
-# Bluetooth (aptX) - from oneplus3
-vendor/lib64/libaptX_encoder.so
-vendor/lib64/libaptXHD_encoder.so
+# Bluetooth (aptX) - from marlin - OPM1.171019.011
+lib/libaptX_encoder.so
+lib/libaptXHD_encoder.so
+lib64/libaptX_encoder.so
+lib64/libaptXHD_encoder.so
 
 # CNE - from tissot (Mi A1)
 etc/cne/andsfCne.xml
@@ -87,8 +89,8 @@ etc/cne/SwimConfig.xml
 etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
 framework/cneapiclient.jar
-framework/com.quicinc.cne.api-V1.0-java.jar
-framework/com.quicinc.cne.jar
+-framework/com.quicinc.cne.api-V1.0-java.jar
+-framework/com.quicinc.cne.jar
 lib/libvendorconn.so
 lib64/libvendorconn.so
 -priv-app/CNEService/CNEService.apk
@@ -112,22 +114,22 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
-vendor/lib/com.quicinc.cne.api@1.0.so
-vendor/lib/com.quicinc.cne.constants@1.0.so
-vendor/lib/com.quicinc.cne.constants@2.0.so
-vendor/lib/com.quicinc.cne.server@1.0.so
-vendor/lib/com.quicinc.cne.server@2.0.so
+-vendor/lib/com.quicinc.cne.api@1.0.so
+-vendor/lib/com.quicinc.cne.constants@1.0.so
+-vendor/lib/com.quicinc.cne.constants@2.0.so
+-vendor/lib/com.quicinc.cne.server@1.0.so
+-vendor/lib/com.quicinc.cne.server@2.0.so
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneoplookup.so
 vendor/lib/libcneqmiutils.so
 vendor/lib/libwqe.so
 vendor/lib/libxml.so
-vendor/lib64/com.quicinc.cne.api@1.0.so
-vendor/lib64/com.quicinc.cne.constants@1.0.so
-vendor/lib64/com.quicinc.cne.constants@2.0.so
-vendor/lib64/com.quicinc.cne.server@1.0.so
-vendor/lib64/com.quicinc.cne.server@2.0.so
+-vendor/lib64/com.quicinc.cne.api@1.0.so
+-vendor/lib64/com.quicinc.cne.constants@1.0.so
+-vendor/lib64/com.quicinc.cne.constants@2.0.so
+-vendor/lib64/com.quicinc.cne.server@1.0.so
+-vendor/lib64/com.quicinc.cne.server@2.0.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneoplookup.so
@@ -333,8 +335,8 @@ vendor/lib/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
 
 # Graphics (Vulkan) - from nokia 6 (TA-1021)
-vendor/lib64/hw/vulkan.msm8937.so
 vendor/lib/hw/vulkan.msm8937.so
+vendor/lib64/hw/vulkan.msm8937.so
 
 # IMS - from tissot (Mi A1)
 # ims.apk - from oneplus3
@@ -454,6 +456,8 @@ vendor/bin/hw/vendor.qti.hardware.iop@1.0-service
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
 vendor/etc/init/vendor.qti.hardware.iop@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
+vendor/etc/perf/gamedwhitelist.xml
+vendor/etc/perf/perfboostsconfig.xml
 vendor/etc/perf/perf-profile0.conf
 vendor/etc/perf/perf-profile1.conf
 vendor/lib/hw/vendor.qti.hardware.iop@1.0-impl.so
@@ -550,6 +554,8 @@ etc/permissions/telephonyservice.xml
 -framework/qcrilhook.jar
 -framework/qti-telephony-common.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+lib/android.hidl.manager@1.0.so
+lib64/android.hidl.manager@1.0.so
 vendor/bin/netmgrd
 vendor/bin/qti
 vendor/bin/rmt_storage
@@ -603,7 +609,6 @@ vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 
 # Thermal - from nokia 6 (TA-1021)
-vendor/etc/thermal-engine.conf
 vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
@@ -615,7 +620,7 @@ vendor/bin/time_daemon
 -vendor/lib/libtime_genoff.so
 -vendor/lib64/libtime_genoff.so
 
-# Widevine DRM - from tissot (Mi A1)
+# Widevine DRM - from marlin - OPM1.171019.011
 vendor/bin/hw/android.hardware.drm@1.0-service.widevine
 vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc
 vendor/lib/libwvhidl.so
@@ -623,4 +628,5 @@ vendor/lib/libwvhidl.so
 # Wi-Fi - from tissot (Mi A1)
 vendor/bin/cnss-daemon
 vendor/bin/cnss_diag
+vendor/bin/wcnss_service
 vendor/lib64/vendor.qti.hardware.wifi.supplicant@1.0_vendor.so
