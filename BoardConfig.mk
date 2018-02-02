@@ -148,6 +148,9 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
 USE_OPENGL_RENDERER := true
 
+# DRM
+TARGET_ENABLE_MEDIADRM_64 := true
+
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/cryptfs_hw
