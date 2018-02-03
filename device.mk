@@ -77,9 +77,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
+    android.hardware.audio@2.0-service \
     android.hardware.audio.effect@2.0-impl \
-    android.hardware.broadcastradio@1.0-impl \
-    android.hardware.soundtrigger@2.0-impl
+    android.hardware.audio.effect@2.0-service \
+    android.hardware.soundtrigger@2.0-impl \
+    android.hardware.soundtrigger@2.0-service
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -170,12 +172,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     android.hardware.configstore@1.0-service \
-    android.hardware.broadcastradio@1.0-impl \
     vendor.display.color@1.0-service \
     vendor.display.color@1.0-impl
 
@@ -283,6 +285,9 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw  \
     libstagefright_soft_flacdec
+    
+PRODUCT_PACKAGES += \
+    android.hardware.media.omx@1.0-impl
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/media_codecs.xml:system/vendor/etc/media_codecs.xml \
@@ -302,7 +307,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
     android.system.net.netd@1.0 \
-    libandroid_net
+    libandroid_net \
+    libandroid_net_32
 
 # Power
 PRODUCT_PACKAGES += \
