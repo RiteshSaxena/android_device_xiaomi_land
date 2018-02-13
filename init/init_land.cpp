@@ -30,14 +30,17 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <sstream>
+
+#include <cstdlib>
+#include <fstream>
+#include <stdio.h>
 
 #include <android-base/properties.h>
 #include <android-base/logging.h>
-#include <android-base/file.h>
 #include <android-base/strings.h>
-
+#include <android-base/file.h>
 #include "property_service.h"
 #include "util.h"
 #include "vendor_init.h"
@@ -47,33 +50,6 @@ static std::string board_id;
 using android::base::GetProperty;
 using android::base::Trim;
 using android::init::property_set;
-using android::init::import_kernel_cmdline;
-
-void import_kernel_cmdline1(bool in_qemu,
-                           const std::function<void(const std::string&, const std::string&, bool)>& fn) {
-    std::string cmdline;
-    android::base::ReadFileToString("/proc/cmdline", &cmdline);
-
-    for (const auto& entry : android::base::Split(android::base::Trim(cmdline), " ")) {
-        std::vector<std::string> pieces = android::base::Split(entry, "=");
-        if (pieces.size() >= 2) { // lineage's : == 2
-            fn(pieces[0], pieces[1], in_qemu);
-        }
-    }
-}
-
-static void import_cmdline(const std::string& key,
-        const std::string& value, bool for_emulator __attribute__((unused)))
-{
-    if (key.empty()) return;
-
-    if (key == "board_id") {
-        std::istringstream iss(value);
-        std::string token;
-        std::getline(iss, token, ':');
-        board_id = token;
-    }
-}
 
 static void init_alarm_boot_properties()
 {
@@ -111,25 +87,34 @@ static void init_alarm_boot_properties()
 void init_variant_properties()
 {
 
-    import_kernel_cmdline1(0, import_cmdline);
+    std::ifstream fin;
+    std::string buf;
 
-    property_set("ro.product.wt.boardid", board_id.c_str());
+    std::string product = GetProperty("ro.product.name", "");
+    if (product.find("land") == std::string::npos)
+        return;
 
-    if (board_id == "S88537AA1") {
+    fin.open("/proc/cmdline");
+    while (std::getline(fin, buf, ' '))
+        if (buf.find("board_id") != std::string::npos)
+            break;
+    fin.close();
+
+    if (buf.find("S88537AA1") != std::string::npos) {
         property_set("ro.build.display.wtid", "SW_S88537AA1_V090_M20_MP_XM");
-    } else if (board_id == "S88537AB1") {
+    } else if (buf.find("S88537AB1") != std::string::npos) {
         property_set("ro.build.display.wtid", "SW_S88537AB1_V090_M20_MP_XM");
-    } else if (board_id == "S88537AC1") {
+    } else if (buf.find("S88537AC1") != std::string::npos) {
         property_set("ro.build.display.wtid", "SW_S88537AC1_V090_M20_MP_XM");
-    } else if (board_id == "S88537BA1") {
+    } else if (buf.find("S88537BA1") != std::string::npos) {
         property_set("ro.build.display.wtid", "SW_S88537BA1_V090_M20_MP_XM");
-    } else if (board_id == "S88537CA1") {
+    } else if (buf.find("S88537CA1") != std::string::npos) {
         property_set("ro.build.display.wtid", "SW_S88537CA1_V090_M20_MP_XM");
-    } else if (board_id == "S88537EC1") {
+    } else if (buf.find("S88537EC1") != std::string::npos) {
         property_set("ro.build.display.wtid", "SW_S88537EC1_V090_M20_MP_XM");
     }
 
-    if (board_id == "S88537AB1"){
+    if (buf.find("S88537AB1") != std::string::npos) {
         property_set("ro.product.model", "Redmi 3X");
     } else {
         property_set("ro.product.model", "Redmi 3S");
