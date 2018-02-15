@@ -25,8 +25,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import /system/vendor/etc/init/hw/init.qcom.usb.rc
-import /system/vendor/etc/init/hw/init.target.rc
+import /vendor/etc/init/hw/init.qcom.usb.rc
+import /vendor/etc/init/hw/init.target.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -134,6 +134,10 @@ on boot
 
     # Prevents permission denied error for telephony
     chmod 0644 /proc/cmdline
+    
+    #enable camera read sensors data
+    setprop persist.camera.gyro.disable 0
+    setprop persist.camera.stats.test 5
 
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
@@ -488,6 +492,13 @@ on property:bluetooth.hciattach=true
 
 on property:bluetooth.hciattach=false
     setprop bluetooth.status off
+
+# FM
+on property:hw.fm.init=0
+    write /sys/module/radio_iris_transport/parameters/fmsmd_set 0
+
+on property:hw.fm.init=1
+    write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
 service netmgrd /system/vendor/bin/netmgrd
     class main
