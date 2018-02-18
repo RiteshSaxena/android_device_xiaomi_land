@@ -1,22 +1,4 @@
 # Audio dirac
-etc/audio_platform_info_extcodec.xml:vendor/etc/audio_platform_info_extcodec.xml
-etc/mixer_paths.xml:vendor/etc/mixer_paths.xml
-etc/mixer_paths_mtp.xml:vendor/etc/mixer_paths_mtp.xml
-etc/mixer_paths_skuk.xml:vendor/etc/mixer_paths_skuk.xml
-etc/mixer_paths_wcd9306.xml:vendor/etc/mixer_paths_wcd9306.xml
-etc/mixer_paths_wcd9326.xml:vendor/etc/mixer_paths_wcd9326.xml
-etc/mixer_paths_wcd9330.xml:vendor/etc/mixer_paths_wcd9330.xml
-etc/mixer_paths_wcd9335.xml:vendor/etc/mixer_paths_wcd9335.xml
-etc/mixer_paths_qrd_sku2.xml:vendor/etc/mixer_paths_qrd_sku2.xml
-etc/mixer_paths_qrd_skuh.xml:vendor/etc/mixer_paths_qrd_skuh.xml
-etc/mixer_paths_qrd_skui.xml:vendor/etc/mixer_paths_qrd_skui.xml
-etc/mixer_paths_qrd_skum.xml:vendor/etc/mixer_paths_qrd_skum.xml
-etc/mixer_paths_qrd_skun.xml:vendor/etc/mixer_paths_qrd_skun.xml
-etc/mixer_paths_qrd_skuhf.xml:vendor/etc/mixer_paths_qrd_skuhf.xml
-etc/sound_trigger_mixer_paths.xml:vendor/etc/sound_trigger_mixer_paths.xml
-etc/sound_trigger_mixer_paths_wcd9306.xml:vendor/etc/sound_trigger_mixer_paths_wcd9306.xml
-etc/sound_trigger_mixer_paths_wcd9330.xml:vendor/etc/sound_trigger_mixer_paths_wcd9330.xml
-etc/sound_trigger_mixer_paths_wcd9335.xml:vendor/etc/sound_trigger_mixer_paths_wcd9335.xml
 vendor/lib/libhwdaphal.so
 vendor/lib64/libhwdaphal.so
 
@@ -956,7 +938,7 @@ vendor/lib/libmmcamera_isp_fovcrop_viewfinder40.so
 vendor/lib/libmmcamera_isp_color_xform_encoder40.so
 vendor/lib/libmmcamera_isp_color_xform_viewfinder40.so
 
-# Consumer Ir - from santoni (Redmi 4)
+# Consumer Ir
 lib/hw/consumerir.default.so
 lib64/hw/consumerir.default.so
 
@@ -968,9 +950,9 @@ lib64/hw/consumerir.default.so
 # Fingerprint
 bin/gx_fpcmd
 bin/gx_fpd
-lib/hw/fingerprint.default.so:lib/hw/fingerprint.msm8937.so
+lib/hw/fingerprint.default.so
 lib/libcom_fingerprints_service.so
-lib64/hw/fingerprint.default.so:lib64/hw/fingerprint.msm8937.so
+lib64/hw/fingerprint.default.so
 lib64/hw/fingerprint.goodix.so
 lib64/hw/gxfingerprint.default.so
 lib64/libcom_fingerprints_service.so
@@ -978,7 +960,7 @@ lib64/libfp_client.so
 lib64/libfpnav.so
 lib64/libfpservice.so
 
-# Graphics firmware - from santoni (Redmi 4)
+# Graphics firmware
 etc/firmware/a530_gpmu.fw2
 etc/firmware/a530_pfp.fw
 etc/firmware/a530_pm4.fw
@@ -987,7 +969,6 @@ etc/firmware/a530v1_pm4.fw
 etc/firmware/a530v2_seq.fw2
 etc/firmware/a530v3_gpmu.fw2
 etc/firmware/a530v3_seq.fw2
-etc/firmware/a540_gpmu.fw2
 
 # Radio - MBN
 etc/firmware/modem_config/S88537AA1/cmcc_mcfg_sw.mbn

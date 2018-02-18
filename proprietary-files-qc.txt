@@ -256,7 +256,7 @@ vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
 vendor/lib64/vendor.qti.gnss@1.0_vendor.so
 
-# Graphics - from mata - OPM1.170911.213
+# Graphics - from cheeseburger - OPR6.170623.013
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -280,7 +280,6 @@ vendor/lib/libqseed3.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
-vendor/lib/libsd_sdk_display.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
@@ -304,9 +303,8 @@ vendor/lib64/libqseed3.so
 vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/libRSDriver_adreno.so
-vendor/lib64/libsd_sdk_display.so
 
-# Graphics (HDR) - from mata - OPM1.170911.213
+# Graphics (HDR) - from cheeseburger - OPR6.170623.013
 vendor/lib/libhdr_tm.so
 vendor/lib64/libhdr_tm.so
 
@@ -490,8 +488,10 @@ vendor/lib64/libperipheral_client.so
 # Postprocessing - from nokia 6 (TA-1021)
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
+lib/libsd_sdk_display.so:vendor/lib/libsd_sdk_display.so
 lib/vendor.display.color@1.0.so
 lib/vendor.display.postproc@1.0.so
+lib64/libsd_sdk_display.so:vendor/lib64/libsd_sdk_display.so
 lib64/vendor.display.color@1.0.so
 lib64/vendor.display.postproc@1.0.so
 -vendor/app/colorservice/colorservice.apk
