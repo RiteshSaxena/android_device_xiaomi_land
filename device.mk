@@ -133,15 +133,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl
 
-# Dalvik
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=192m \
-    dalvik.vm.heapmaxfree=8m \
-    dalvik.vm.heapminfree=4m \
-    dalvik.vm.heapsize=384m \
-    dalvik.vm.heapstartsize=16m \
-    dalvik.vm.heaptargetutilization=0.75
-
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8937 \
