@@ -118,7 +118,8 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8937 \
-    libmm-qcamera
+    libmm-qcamera \
+    libshim_camera
 
 PRODUCT_PACKAGES += \
     camera.device@1.0-impl \

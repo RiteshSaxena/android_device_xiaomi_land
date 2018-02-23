@@ -74,6 +74,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
+    setenv LD_PRELOAD "/vendor/lib/libshim_camera.so"
     writepid /dev/cpuset/camera-daemon/tasks
 
 on init
