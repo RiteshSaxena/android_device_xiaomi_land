@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-    Copyright (c) 2015-16 The Linux Foundation. All rights reserved.
+    Copyright (c) 2015-2016 The Linux Foundation. All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
     modification, are permitted provided that the following conditions are
@@ -82,7 +82,7 @@
     <ctl name="EAR_S" value="ZERO" />
     <ctl name="HPHL" value="ZERO" />
     <ctl name="HPHR" value="ZERO" />
-    <ctl name="Lineout_1 amp" value="DISABLE"/> 
+    <ctl name="Lineout_1 amp" value="DISABLE"/>
     <ctl name="headset amp" value="DISABLE"/>
     <ctl name="SPK DAC Switch" value="0" />
     <ctl name="SPK" value="ZERO" />
@@ -289,16 +289,6 @@
         <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
         <path name="deep-buffer-playback bt-sco" />
     </path>
-    
-    <path name="deep-buffer-playback speaker-and-bt-sco">
-         <path name="deep-buffer-playback bt-sco" />
-         <path name="deep-buffer-playback" />
-    </path>
-
-   <path name="deep-buffer-playback speaker-and-bt-sco-wb">
-        <path name="deep-buffer-playback bt-sco-wb" />
-        <path name="deep-buffer-playback" />
-   </path>
 
     <path name="deep-buffer-playback afe-proxy">
         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="1" />
@@ -333,16 +323,6 @@
         <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
         <path name="low-latency-playback bt-sco" />
     </path>
-    
-    <path name="low-latency-playback speaker-and-bt-sco">
-         <path name="low-latency-playback bt-sco" />
-         <path name="low-latency-playback" />
-    </path>
-
-    <path name="low-latency-playback speaker-and-bt-sco-wb">
-         <path name="low-latency-playback bt-sco-wb" />
-         <path name="low-latency-playback" />
-    </path>
 
     <path name="low-latency-playback afe-proxy">
         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia5" value="1" />
@@ -376,7 +356,7 @@
         <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
         <path name="compress-offload-playback bt-sco" />
     </path>
-    
+
     <path name="compress-offload-playback speaker-and-bt-sco">
          <path name="compress-offload-playback bt-sco" />
          <path name="compress-offload-playback" />
@@ -407,7 +387,7 @@
     <path name="compress-offload-playback2 bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia7" value="1" />
     </path>
-    
+
     <path name="compress-offload-playback2 speaker-and-bt-sco">
          <path name="compress-offload-playback2 bt-sco" />
          <path name="compress-offload-playback2" />
@@ -433,7 +413,7 @@
     <path name="compress-offload-playback3 bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia10" value="1" />
     </path>
-    
+
     <path name="compress-offload-playback3 speaker-and-bt-sco">
          <path name="compress-offload-playback3 bt-sco" />
          <path name="compress-offload-playback3" />
@@ -451,7 +431,7 @@
     <path name="compress-offload-playback4 bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia11" value="1" />
     </path>
-    
+
     <path name="compress-offload-playback4 speaker-and-bt-sco">
          <path name="compress-offload-playback4 bt-sco" />
          <path name="compress-offload-playback4" />
@@ -469,7 +449,7 @@
     <path name="compress-offload-playback5 bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia12" value="1" />
     </path>
-    
+
     <path name="compress-offload-playback5 speaker-and-bt-sco">
          <path name="compress-offload-playback5 bt-sco" />
          <path name="compress-offload-playback5" />
@@ -487,7 +467,7 @@
     <path name="compress-offload-playback6 bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia13" value="1" />
     </path>
-    
+
     <path name="compress-offload-playback6 speaker-and-bt-sco">
          <path name="compress-offload-playback6 bt-sco" />
          <path name="compress-offload-playback6" />
@@ -505,7 +485,7 @@
     <path name="compress-offload-playback7 bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia14" value="1" />
     </path>
-    
+
     <path name="compress-offload-playback7 speaker-and-bt-sco">
          <path name="compress-offload-playback7 bt-sco" />
          <path name="compress-offload-playback7" />
@@ -934,18 +914,17 @@
 
     <!-- These are actual sound device specific mixer settings -->
     <path name="adc1">
-<!-- +bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
+        <!-- +bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
         <ctl name="ADC1 Volume" value="6" />
+        <!-- -bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
         <ctl name="DEC1 MUX" value="ADC1" />
-<!-- -bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
     </path>
 
     <path name="adc2">
-<!-- +bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
+        <!-- +bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
         <ctl name="ADC2 Volume" value="6" />
-<!-- -bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
+        <!-- -bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
         <ctl name="DEC1 MUX" value="ADC2" />
-        <ctl name="MICBIAS CAPLESS Switch" value="1" />
     </path>
     <path name="adc3">
         <ctl name="ADC3 Volume" value="6" />
@@ -1059,13 +1038,13 @@
 
     <!-- bug 212709,zhangjianming2.wt,modify,20160920,fixed is to voice voulme smaller-->
     <path name="handfree-mic">
-	<path name="adc3" />
-	<ctl name="DEC1 MUX" value="ADC2" />
-	<ctl name="ADC2 MUX" value="INP3" />
+    	<path name="adc3" />
+    	<ctl name="DEC1 MUX" value="ADC2" />
+    	<ctl name="ADC2 MUX" value="INP3" />
     </path>
 
     <path name="voice-speaker-mic">
-      <path name="handfree-mic" />
+        <path name="handfree-mic" />
     </path>
 
     <path name="voice-headphones">
@@ -1108,7 +1087,7 @@
 
     <path name="bt-sco-mic">
     </path>
-    
+
     <path name="speaker-and-bt-sco">
          <path name="speaker" />
          <path name="bt-sco-headset" />
@@ -1133,9 +1112,9 @@
     <!-- Dual MIC devices -->
     <path name="speaker-dmic-endfire">
         <path name="adc1" />
-<!-- +bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
+        <!-- +bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
         <ctl name="ADC3 Volume" value="6" />
-<!-- -bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
+        <!-- -bug 196716,zhangjianming.wt,ADD,20160111,other can not reciving sound  -->
         <ctl name="DEC2 MUX" value="ADC2" />
         <ctl name="MI2S_TX Channels" value="Two" />
         <ctl name="ADC2 MUX" value="INP3" />
@@ -1264,10 +1243,10 @@
         <ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
         <path name="audio-ull-playback bt-sco" />
     </path>
-    
+
     <path name="audio-ull-playback speaker-and-bt-sco">
          <path name="audio-ull-playback bt-sco" />
-         <path name="audio-ull-playback" />
+          <path name="audio-ull-playback" />
     </path>
 
     <path name="audio-ull-playback speaker-and-bt-sco-wb">
