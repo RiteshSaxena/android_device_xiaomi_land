@@ -186,7 +186,7 @@ rild.libargs=-d/dev/smd0 \
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
 ro.telephony.call_ring.multiple=false \
 ro.telephony.default_network=20 \
-service.qti.ims.enabled=1 \
+vendor.service.qti.ims.enabled=1 \
 telephony.lteOnCdmaDevice=1
 
 # Time Services
