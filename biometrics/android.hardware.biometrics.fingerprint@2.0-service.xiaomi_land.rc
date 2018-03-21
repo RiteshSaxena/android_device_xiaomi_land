@@ -6,6 +6,7 @@ service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.
     user system
     group system input
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.gx_fpd /system/vendor/bin/gx_fpd
     class core
