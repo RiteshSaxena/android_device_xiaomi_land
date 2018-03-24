@@ -1,4 +1,4 @@
-# ADSP - from tissot - OPR1.170623.026 - 8.2.8
+# ADSP - from tissot - V9.5.4.0.ODHMIFA
 vendor/bin/adsprpcd
 vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsprpc.so
@@ -13,7 +13,7 @@ vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
 vendor/lib64/libqtigef.so
 
-# ADSP modules - from tissot - OPR1.170623.026 - 8.2.8
+# ADSP modules - from tissot - V9.5.4.0.ODHMIFA
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libexternal_dog_skel.so
@@ -24,7 +24,7 @@ vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 
-# Audio - from tissot - OPR1.170623.026 - 8.2.8
+# Audio - from tissot - V9.5.4.0.ODHMIFA
 etc/permissions/audiosphere.xml
 framework/audiosphere.jar
 lib/libqct_resampler.so
@@ -62,13 +62,13 @@ vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 vendor/lib64/soundfx/libshoebox.so
 
-# Bluetooth - from tissot - OPR1.170623.026 - 8.2.8
+# Bluetooth - from tissot - V9.5.4.0.ODHMIFA
 vendor/bin/hci_qcomm_init
 vendor/bin/wcnss_filter
 vendor/lib/libbtnv.so
 vendor/lib64/libbtnv.so
 
-# CNE - from tissot - OPR1.170623.026 - 8.2.8
+# CNE - from tissot - V9.5.4.0.ODHMIFA
 etc/cne/andsfCne.xml
 etc/cne/SwimConfig.xml
 etc/permissions/cneapiclient.xml
@@ -120,17 +120,17 @@ vendor/lib64/libcneqmiutils.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
-# Charger - from tissot - OPR1.170623.026 - 8.2.8
+# Charger - from tissot - V9.5.4.0.ODHMIFA
 vendor/bin/hvdcp_opti
 
-# DPM - from tissot - OPR1.170623.026 - 8.2.8
+# DPM - from tissot - V9.5.4.0.ODHMIFA
 vendor/bin/dpmQmiMgr
 vendor/lib/com.qualcomm.qti.dpm.api@1.0_vendor.so
 vendor/lib/libdpmqmihal.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0_vendor.so
 vendor/lib64/libdpmqmihal.so
 
-# DRM and SEE - from TA-1021 - OPR1.170623.026
+# DRM - from tissot - V9.5.4.0.ODHMIFA
 vendor/bin/qseecomd
 vendor/lib/libcppf.so
 vendor/lib/libQSEEComAPI.so
@@ -149,7 +149,17 @@ vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
 
-# FM - from tissot - OPR1.170623.026 - 8.2.8
+# DRM - Qualcomm Trusted Execution Enviornment - from tissot - V9.5.4.0.ODHMIFA
+lib/vendor.qti.hardware.qteeconnector@1.0.so
+lib64/vendor.qti.hardware.qteeconnector@1.0.so
+vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
+vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
+vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
+vendor/lib/vendor.qti.hardware.qteeconnector@1.0_vendor.so
+vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.qteeconnector@1.0_vendor.so
+
+# FM - from tissot - V9.5.4.0.ODHMIFA
 -lib/vendor.qti.hardware.fm@1.0.so
 -lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
@@ -281,7 +291,9 @@ vendor/lib64/hw/keystore.msm8937.so
 # Listen - from TA-1021 - OPR1.170623.026
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
+vendor/lib/vendor.qti.voiceprint@1.0.so
 vendor/lib/hw/sound_trigger.primary.msm8937.so
+vendor/lib64/vendor.qti.voiceprint@1.0.so
 vendor/lib64/hw/sound_trigger.primary.msm8937.so
 
 # Media - from TA-1021 - OPR1.170623.026
@@ -289,6 +301,7 @@ vendor/lib/libAlacSwDec.so
 vendor/lib/libApeSwDec.so
 vendor/lib/libFlacSwDec.so
 vendor/lib/libMpeg4SwEncoder.so
+vendor/lib/libmmosal_proprietary.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAlacDec.so
 vendor/lib/libOmxAlacDecSw.so
@@ -325,7 +338,7 @@ vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libvpplibrary.so
 
-# Modem - from tissot - OPR1.170623.026 - 8.2.8
+# Modem - from tissot - V9.5.4.0.ODHMIFA
 vendor/lib/libwms.so
 vendor/lib64/libwms.so
 
@@ -363,7 +376,7 @@ vendor/lib64/libqti-util.so
 vendor/lib64/vendor.qti.hardware.iop@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
 
-# Peripheral manager - from tissot - OPR1.170623.026 - 8.2.8
+# Peripheral manager - from tissot - V9.5.4.0.ODHMIFA
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
@@ -394,7 +407,7 @@ vendor/lib/vendor.display.color@1.0_vendor.so
 vendor/lib/vendor.display.postproc@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
 
-# QMI - from tissot - OPR1.170623.026 - 8.2.8
+# QMI - from tissot - V9.5.4.0.ODHMIFA
 etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 etc/permissions/qti_permissions.xml
 lib/libdiag_system.so
@@ -435,7 +448,7 @@ vendor/lib64/libqmi.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libsmemlog.so
 
-# Radio - from tissot - OPR1.170623.026 - 8.2.8
+# Radio - from tissot - V9.5.4.0.ODHMIFA
 -app/SimSettings/SimSettings.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
 etc/permissions/qcrilhook.xml
@@ -483,7 +496,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
-# Radio - IMS - from tissot - OPR1.170623.026 - 8.2.8
+# Radio - IMS - from tissot - V9.5.4.0.ODHMIFA
 # ims.apk - from oneplus3
 -app/ims/ims.apk|d255b5dfe08b0287b338edde796b9a533b28fd81
 -app/imssettings/imssettings.apk
@@ -491,6 +504,7 @@ etc/permissions/qti-vzw-ims-internal.xml
 lib/com.qualcomm.qti.imscmservice@1.0.so
 lib/lib-imscamera.so
 lib/lib-imsvideocodec.so
+lib/lib-imsvt.so
 lib/lib-imsvtextutils.so
 lib/lib-imsvtutils.so
 lib/libdiag_system.so
@@ -515,7 +529,12 @@ vendor/bin/imsqmidaemon
 vendor/bin/imsrcsd
 -vendor/framework/qti-vzw-ims-internal.jar
 vendor/lib/com.qualcomm.qti.imscmservice@1.0_vendor.so
+vendor/lib/lib-imsSDP.so
 vendor/lib/lib-imscmservice.so
+vendor/lib/lib-imsdpl.so
+vendor/lib/lib-imsqimf.so
+vendor/lib/lib-imsxml.so
+vendor/lib/lib-rtpcommon.so
 vendor/lib/lib-uceservice.so
 vendor/lib/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so
@@ -558,12 +577,12 @@ vendor/lib64/libthermalioctl.so
 vendor/bin/time_daemon
 vendor/lib64/libtime_genoff.so
 
-# Widevine DRM - from marlin - OPM1.171019.011
+# Widevine DRM - from tissot - V9.5.4.0.ODHMIFA
 vendor/bin/hw/android.hardware.drm@1.0-service.widevine
 vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc
 vendor/lib/libwvhidl.so
 
-# Wi-Fi - from tissot - OPR1.170623.026 - 8.2.8
+# Wi-Fi - from tissot - V9.5.4.0.ODHMIFA
 vendor/bin/cnss-daemon
 vendor/bin/cnss_diag
 vendor/bin/wcnss_service
