@@ -1,11 +1,11 @@
-# Audio dirac - from MIUI Beta - 8.3.1
+# Audio dirac - from MIUI Beta - V9.5.1.0.MALMIFA
 lib/soundfx/libdirac.so
 lib/libDiracAPI_SHARED.so
 vendor/etc/diracmobile.config
 vendor/lib/libhwdaphal.so
 vendor/lib64/libhwdaphal.so
 
-# Audio ACDB - from MIUI Beta - 8.3.1
+# Audio ACDB - from MIUI Beta - V9.5.1.0.MALMIFA
 etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb:vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb
 etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_General_cal.acdb:vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_General_cal.acdb
 etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Global_cal.acdb:vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Global_cal.acdb
@@ -35,7 +35,7 @@ etc/acdbdata/QRD/QRD_Hdmi_cal.acdb:vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
 etc/acdbdata/QRD/QRD_Headset_cal.acdb:vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
 etc/acdbdata/QRD/QRD_Speaker_cal.acdb:vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
 
-# Camera - from MIUI Beta - 8.3.1
+# Camera - from MIUI Beta - V9.5.1.0.MALMIFA
 bin/mm-qcamera-daemon
 lib/libmorpho_memory_allocator.so
 etc/camera/ofilm_s5k5e8_chromatix.xml
@@ -194,7 +194,7 @@ vendor/lib64/libmmsw_math.so
 vendor/lib64/libmmsw_opencl.so
 vendor/lib64/libmmsw_platform.so
 
-# Camera actuators - from MIUI Beta - 8.3.1
+# Camera actuators - from MIUI Beta - V9.5.1.0.MALMIFA
 vendor/lib/libactuator_ad5816g.so
 vendor/lib/libactuator_ad5823.so
 vendor/lib/libactuator_bu64291gwz.so
@@ -211,7 +211,7 @@ vendor/lib/libactuator_dw9718s.so
 vendor/lib/libactuator_dw9763.so
 vendor/lib/libactuator_dw9763_ov13853.so
 
-# Camera chromatix - from MIUI Beta - 8.3.1
+# Camera chromatix - from MIUI Beta - V9.5.1.0.MALMIFA
 vendor/lib/libchromatix_ov5670_f5670bq_a3_default_preview.so
 vendor/lib/libchromatix_ov5670_f5670bq_a3_default_video.so
 vendor/lib/libchromatix_ov5670_f5670bq_a3_hfr_120.so
@@ -894,7 +894,7 @@ vendor/lib/libchromatix_s5k3m2xx_video_4k.so
 vendor/lib/libchromatix_s5k3m2xx_zsl_preview_ad5816g.so
 vendor/lib/libchromatix_s5k3m2xx_zsl_video_ad5816g.so
 
-# Camera firmware - from MIUI Beta - 8.3.1
+# Camera firmware - from MIUI Beta - V9.5.1.0.MALMIFA
 etc/firmware/cpp_firmware_v1_1_1.fw
 etc/firmware/cpp_firmware_v1_1_6.fw
 etc/firmware/cpp_firmware_v1_2_0.fw
@@ -905,7 +905,7 @@ etc/firmware/cpp_firmware_v1_6_0.fw
 etc/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/cpp_firmware_v1_10_0.fw
 
-# Camera sensors - from MIUI Beta - 8.3.1
+# Camera sensors - from MIUI Beta - V9.5.1.0.MALMIFA
 vendor/lib/libmmcamera_isp_wb40.so
 vendor/lib/libmmcamera_isp_abf40.so
 vendor/lib/libmmcamera_isp_bcc40.so
@@ -941,16 +941,16 @@ vendor/lib/libmmcamera_isp_fovcrop_viewfinder40.so
 vendor/lib/libmmcamera_isp_color_xform_encoder40.so
 vendor/lib/libmmcamera_isp_color_xform_viewfinder40.so
 
-# Consumer IR - from MIUI Beta - 8.3.1
+# Consumer IR - from MIUI Beta - V9.5.1.0.MALMIFA
 lib/hw/consumerir.default.so
 lib64/hw/consumerir.default.so
 
-# Display calibration - from MIUI Beta - 8.3.1
+# Display calibration - from MIUI Beta - V9.5.1.0.MALMIFA
 -etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml
 -etc/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml
 -etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml
 
-# Fingerprint - from MIUI Beta - 8.3.1
+# Fingerprint - from MIUI Beta - V9.5.1.0.MALMIFA
 bin/gx_fpcmd
 bin/gx_fpd
 lib/hw/fingerprint.default.so
@@ -963,7 +963,7 @@ lib64/libfp_client.so
 lib64/libfpnav.so
 lib64/libfpservice.so
 
-# Graphics firmware - from MIUI Beta - 8.3.1
+# Graphics firmware - from MIUI Beta - V9.5.1.0.MALMIFA
 etc/firmware/a530_gpmu.fw2:vendor/firmware/a530_gpmu.fw2
 etc/firmware/a530_pfp.fw:vendor/firmware/a530_pfp.fw
 etc/firmware/a530_pm4.fw:vendor/firmware/a530_pm4.fw
@@ -973,7 +973,7 @@ etc/firmware/a530v2_seq.fw2:vendor/firmware/a530v2_seq.fw2
 etc/firmware/a530v3_gpmu.fw2:vendor/firmware/a530v3_gpmu.fw2
 etc/firmware/a530v3_seq.fw2:vendor/firmware/a530v3_seq.fw2
 
-# Radio - MBN - from MIUI Beta - 8.3.1
+# Radio - MBN - from MIUI Beta - V9.5.1.0.MALMIFA
 etc/firmware/modem_config/S88537AA1/cmcc_mcfg_sw.mbn
 etc/firmware/modem_config/S88537AA1/ct_mcfg_sw.mbn
 etc/firmware/modem_config/S88537AA1/cu_mcfg_sw.mbn
@@ -989,7 +989,7 @@ etc/firmware/modem_config/S88537CA1/row_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn
 
-# Touchscreen - from MIUI Beta - 8.3.1
+# Touchscreen - from MIUI Beta - V9.5.1.0.MALMIFA
 etc/ft5336_biel_720p.ini
 etc/ft5336_lens_720p.ini
 etc/ft5336_oufei_720p.ini
