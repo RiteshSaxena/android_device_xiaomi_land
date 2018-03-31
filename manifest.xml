@@ -37,14 +37,24 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.camera.provider</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>2.4</version>
         <interface>
             <name>ICameraProvider</name>
             <instance>legacy/0</instance>
         </interface>
     </hal>
-   <hal format="hidl">
+    <hal format="hidl">
+        <name>android.hardware.broadcastradio</name>
+        <transport>hwbinder</transport>
+        <impl level="generic"></impl>
+        <version>1.0</version>
+        <interface>
+            <name>IBroadcastRadioFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.cas</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -109,7 +119,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.composer</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>2.1</version>
         <interface>
             <name>IComposer</name>
@@ -136,7 +146,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.ir</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IConsumerIr</name>
