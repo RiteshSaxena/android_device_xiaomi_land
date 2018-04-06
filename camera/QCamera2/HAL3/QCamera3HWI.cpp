@@ -89,8 +89,6 @@ namespace qcamera {
 #define MAX_HFR_BATCH_SIZE     (8)
 #define REGIONS_TUPLE_COUNT    5
 #define HDR_PLUS_PERF_TIME_OUT  (7000) // milliseconds
-#define BURST_REPROCESS_PERF_TIME_OUT  (1000) // milliseconds
-
 #define FLUSH_TIMEOUT 3
 
 #define METADATA_MAP_SIZE(MAP) (sizeof(MAP)/sizeof(MAP[0]))
@@ -1603,6 +1601,7 @@ int QCamera3HardwareInterface::configureStreamsPerfLocked(
                 "stream size : %d x %d, stream rotation = %d",
                  newStream->stream_type, newStream->format,
                 newStream->width, newStream->height, newStream->rotation);
+
         //if the stream is in the mStreamList validate it
         bool stream_exists = false;
         for (List<stream_info_t*>::iterator it=mStreamInfo.begin();
@@ -1782,6 +1781,9 @@ int QCamera3HardwareInterface::configureStreamsPerfLocked(
                     if (m_bTnrEnabled && m_bTnrVideo) {
                         mStreamConfigInfo.postprocess_mask[mStreamConfigInfo.num_streams] |=
                             CAM_QCOM_FEATURE_CPP_TNR;
+                        //TNR and CDS are mutually exclusive. So reset CDS from feature mask
+                        mStreamConfigInfo.postprocess_mask[mStreamConfigInfo.num_streams] &=
+                                ~CAM_QCOM_FEATURE_CDS;
                     }
                 } else {
                         mStreamConfigInfo.type[mStreamConfigInfo.num_streams] =
@@ -1789,6 +1791,9 @@ int QCamera3HardwareInterface::configureStreamsPerfLocked(
                     if (m_bTnrEnabled && m_bTnrPreview) {
                         mStreamConfigInfo.postprocess_mask[mStreamConfigInfo.num_streams] |=
                                 CAM_QCOM_FEATURE_CPP_TNR;
+                        //TNR and CDS are mutually exclusive. So reset CDS from feature mask
+                        mStreamConfigInfo.postprocess_mask[mStreamConfigInfo.num_streams] &=
+                                ~CAM_QCOM_FEATURE_CDS;
                     }
                     padding_info.width_padding = mSurfaceStridePadding;
                     padding_info.height_padding = CAM_PAD_TO_2;
@@ -2020,7 +2025,8 @@ int QCamera3HardwareInterface::configureStreamsPerfLocked(
 
                 default:
                     LOGE("not a supported format 0x%x", newStream->format);
-                    break;
+                    pthread_mutex_unlock(&mMutex);
+                    return -EINVAL;
                 }
             } else if (newStream->stream_type == CAMERA3_STREAM_INPUT) {
                 newStream->max_buffers = MAX_INFLIGHT_REPROCESS_REQUESTS;
@@ -3886,17 +3892,6 @@ no_error:
             }
         } else if (output.stream->format == HAL_PIXEL_FORMAT_YCbCr_420_888) {
             bool needMetadata = false;
-
-            if (m_perfLock.isPerfLockTimedAcquired()) {
-                if (m_perfLock.isTimerReset())
-                {
-                    m_perfLock.lock_rel_timed();
-                    m_perfLock.lock_acq_timed(BURST_REPROCESS_PERF_TIME_OUT);
-                }
-            } else {
-                m_perfLock.lock_acq_timed(BURST_REPROCESS_PERF_TIME_OUT);
-            }
-
             QCamera3YUVChannel *yuvChannel = (QCamera3YUVChannel *)channel;
             rc = yuvChannel->request(output.buffer, frameNumber,
                     pInputBuffer,
@@ -3985,9 +3980,6 @@ no_error:
         minInFlightRequests = MIN_INFLIGHT_HFR_REQUESTS;
         maxInFlightRequests = MAX_INFLIGHT_HFR_REQUESTS;
     }
-    if (m_perfLock.isPerfLockTimedAcquired() && m_perfLock.isTimerReset())
-        m_perfLock.lock_rel_timed();
-
     while ((mPendingLiveRequest >= minInFlightRequests) && !pInputBuffer &&
             (mState != ERROR) && (mState != DEINIT)) {
         if (!isValidTimeout) {
@@ -6360,7 +6352,10 @@ int QCamera3HardwareInterface::initStaticMetadata(uint32_t cameraId)
                       availableVstabModes.array(), availableVstabModes.size());
 
     /*HAL 1 and HAL 3 common*/
-    float maxZoom = 4;
+    uint32_t zoomSteps = gCamCapability[cameraId]->zoom_ratio_tbl_cnt;
+    uint32_t maxZoomStep = gCamCapability[cameraId]->zoom_ratio_tbl[zoomSteps - 1];
+    uint32_t minZoomStep = 100; //as per HAL1/API1 spec
+    float maxZoom = maxZoomStep/minZoomStep;
     staticInfo.update(ANDROID_SCALER_AVAILABLE_MAX_DIGITAL_ZOOM,
             &maxZoom, 1);
 
@@ -6381,6 +6376,10 @@ int QCamera3HardwareInterface::initStaticMetadata(uint32_t cameraId)
              supportedFaceDetectMode);
 
     int32_t maxFaces = gCamCapability[cameraId]->max_num_roi;
+    /* support mode should be OFF if max number of face is 0 */
+    if (maxFaces <= 0) {
+        supportedFaceDetectMode = 0;
+    }
     Vector<uint8_t> availableFaceDetectModes;
     availableFaceDetectModes.add(ANDROID_STATISTICS_FACE_DETECT_MODE_OFF);
     if (supportedFaceDetectMode == 1) {
@@ -7884,7 +7883,6 @@ camera_metadata_t* QCamera3HardwareInterface::translateCapabilityToMetadata(int 
 
         switch (type) {
             case CAMERA3_TEMPLATE_VIDEO_RECORD:
-            case CAMERA3_TEMPLATE_VIDEO_SNAPSHOT:
                     tnr_enable = 1;
                     break;
 
@@ -9666,6 +9664,14 @@ int QCamera3HardwareInterface::validateStreamRotations(
                 HAL_PIXEL_FORMAT_IMPLEMENTATION_DEFINED);
         bool isZsl = (newStream->stream_type == CAMERA3_STREAM_BIDIRECTIONAL &&
                 isImplDef);
+
+        if(newStream->rotation == -1) {
+            LOGE("ERROR: Invalid stream rotation requested for stream"
+                    "type %d and stream format: %d", newStream->stream_type,
+                    newStream->format);
+            rc = -EINVAL;
+            break;
+        }
 
         if (isRotated && (!isImplDef || isZsl)) {
             LOGE("Error: Unsupported rotation of %d requested for stream"

@@ -410,10 +410,8 @@ void QCamera2HardwareInterface::stop_preview(struct camera_device *device)
     LOGI("[KPI Perf]: E PROFILE_STOP_PREVIEW camera id %d",
              hw->getCameraId());
 
-#ifdef EXTRA_POWERHAL_HINTS
     // Disable power Hint for preview
     hw->m_perfLock.powerHint(POWER_HINT_VIDEO_ENCODE, false);
-#endif
 
     hw->m_perfLock.lock_acq();
     hw->lockAPI();
@@ -673,11 +671,6 @@ int QCamera2HardwareInterface::start_recording(struct camera_device *device)
     hw->m_bRecordStarted = true;
     LOGI("[KPI Perf]: X ret = %d", ret);
 
-    if (ret == NO_ERROR) {
-        // Set power Hint for video encoding
-        hw->m_perfLock.powerHint(POWER_HINT_VIDEO_ENCODE, true);
-    }
-
     return ret;
 }
 
@@ -702,9 +695,6 @@ void QCamera2HardwareInterface::stop_recording(struct camera_device *device)
     }
     LOGI("[KPI Perf]: E PROFILE_STOP_RECORDING camera id %d",
              hw->getCameraId());
-
-    // Disable power hint for video encoding
-    hw->m_perfLock.powerHint(POWER_HINT_VIDEO_ENCODE, false);
 
     hw->lockAPI();
     qcamera_api_result_t apiResult;
@@ -3463,12 +3453,10 @@ int QCamera2HardwareInterface::startPreview()
     }
     m_perfLock.lock_rel();
 
-#ifdef EXTRA_POWERHAL_HINTS
     if (rc == NO_ERROR) {
         // Set power Hint for preview
         m_perfLock.powerHint(POWER_HINT_VIDEO_ENCODE, true);
     }
-#endif
 
     LOGI("X rc = %d", rc);
     return rc;
@@ -3499,10 +3487,8 @@ int QCamera2HardwareInterface::stopPreview()
     mNumPreviewFaces = -1;
     mActiveAF = false;
 
-#ifdef EXTRA_POWERHAL_HINTS
     // Disable power Hint for preview
     m_perfLock.powerHint(POWER_HINT_VIDEO_ENCODE, false);
-#endif
 
     m_perfLock.lock_acq();
 
@@ -6616,7 +6602,7 @@ int32_t QCamera2HardwareInterface::addStreamToChannel(QCameraChannel *pChannel,
     } else {
         padding_info =
                 gCamCapability[mCameraId]->padding_info;
-        if (streamType == CAM_STREAM_TYPE_PREVIEW) {
+        if (streamType == CAM_STREAM_TYPE_PREVIEW || streamType == CAM_STREAM_TYPE_POSTVIEW) {
             padding_info.width_padding = mSurfaceStridePadding;
             padding_info.height_padding = CAM_PAD_TO_2;
         }

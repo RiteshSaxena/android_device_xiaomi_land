@@ -1202,20 +1202,9 @@ String8 QCameraParameters::createHfrValuesString(const cam_hfr_info_t *values,
     String8 str;
     int count = 0;
 
-    char value[PROPERTY_VALUE_MAX];
-    int8_t batch_count = 0;
-
-    property_get("persist.camera.batchcount", value, "0");
-    batch_count = atoi(value);
-
+    //Create HFR supported size string.
     for (size_t i = 0; i < len; i++ ) {
         for (size_t j = 0; j < map_len; j ++) {
-            if ((batch_count < CAMERA_MIN_BATCH_COUNT)
-                    && (map[j].val > CAM_HFR_MODE_120FPS)) {
-                /*TODO: Work around. Need to revert when we have
-                complete 240fps support*/
-                break;
-            }
             if (map[j].val == (int)values[i].mode) {
                 if (NULL != map[j].desc) {
                     if (count > 0) {
@@ -4887,13 +4876,13 @@ int32_t QCameraParameters::setLongshotParam(const QCameraParameters& params)
     if (str != NULL) {
         if (prev_str == NULL || strcmp(str, prev_str) != 0) {
             set(KEY_QC_LONG_SHOT, str);
-            if (!strcmp(str, "off")) {
-                if (m_bLongshotEnabled == true) {
-                    // We restart here, to reset the FPS and no
-                    // of buffers as per the requirement of single snapshot usecase.
-                    m_bNeedRestart = true;
-                }
-                m_bLongshotEnabled = false;
+            if (prev_str && !strcmp(str, "off") && !strcmp(prev_str, "on")) {
+                // We restart here, to reset the FPS and no
+                // of buffers as per the requirement of single snapshot usecase.
+                // Here restart happens when continuous shot is changed to off from on.
+                // In case of continuous shot on, restart is taken care when actual
+                // longshot command is triggered through sendCommand.
+                m_bNeedRestart = true;
             }
         }
     }
@@ -6360,7 +6349,10 @@ int32_t QCameraParameters::setPreviewFpsRange(int min_fps,
                  min_fps, max_fps, vid_min_fps, vid_max_fps);
 
     if(fixedFpsValue != 0) {
-      min_fps = max_fps = vid_min_fps = vid_max_fps = (int)fixedFpsValue*1000;
+        min_fps = max_fps = fixedFpsValue*1000;
+        if (!isHfrMode()) {
+             vid_min_fps = vid_max_fps = fixedFpsValue*1000;
+        }
     }
     min_fps=7000;
     vid_min_fps=7000;
@@ -7162,7 +7154,7 @@ int32_t QCameraParameters::setLongshotEnable(bool enable)
         return rc;
     }
 
-    if (enable == true) m_bLongshotEnabled = enable;
+    m_bLongshotEnabled = enable;
 
     return rc;
 }
@@ -11098,6 +11090,10 @@ int32_t QCameraParameters::setFaceDetection(bool enabled, bool initCommit)
     uint32_t faceProcMask = m_nFaceProcMask;
     // set face detection mask
     if (enabled) {
+        if (m_pCapability->max_num_roi == 0) {
+            LOGE("Face detection is not support becuase max number of face is 0");
+            return BAD_VALUE;
+        }
         faceProcMask |= CAM_FACE_PROCESS_MASK_DETECTION;
         if (getRecordingHintValue() > 0) {
             faceProcMask = 0;

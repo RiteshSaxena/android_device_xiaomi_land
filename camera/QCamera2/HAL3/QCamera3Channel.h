@@ -158,9 +158,9 @@ protected:
      * for this flag is true and is selectively set to false for the usecases
      * such as HFR to avoid any performance hit due to mapping/unmapping */
     bool    mPerFrameMapUnmapEnable;
-    uint32_t frm_num;
-    uint32_t dumpFrmCnt;
-    uint32_t skip_mode;
+    uint32_t mFrmNum;
+    uint32_t mDumpFrmCnt;
+    uint32_t mSkipMode;
     uint32_t mDumpSkipCnt;
 };
 
@@ -224,6 +224,8 @@ public:
 
     QCamera3PostProcessor m_postprocessor; // post processor
     void showDebugFPS(int32_t streamType);
+    bool isFwkInputBuffer(uint32_t resultFrameNumber);
+    int32_t releaseInputBuffer(uint32_t resultFrameNumber);
 
 protected:
     uint8_t mDebugFPS;
@@ -568,6 +570,8 @@ private:
     int32_t resetToCamPerfNormal(uint32_t frameNumber);
     android::List<OfflineBuffer> mOfflineBuffers;
     android::List<OfflineBuffer> mOfflineMetaBuffers;
+    Mutex mOfflineBuffersLock;
+    Mutex mOfflineMetaBuffersLock;
     int32_t mOfflineBuffersIndex;
     int32_t mOfflineMetaIndex;
     uint32_t mFrameLen;

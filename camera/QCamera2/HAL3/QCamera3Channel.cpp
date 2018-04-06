@@ -92,7 +92,7 @@ QCamera3Channel::QCamera3Channel(uint32_t cam_handle,
     mIsType = IS_TYPE_NONE;
     mNumBuffers = numBuffers;
     mPerFrameMapUnmapEnable = true;
-    dumpFrmCnt = 0;
+    mDumpFrmCnt = 0;
 }
 
 /*===========================================================================
@@ -499,24 +499,24 @@ void QCamera3Channel::dumpYUV(mm_camera_buf_def_t *frame, cam_dimension_t dim,
     static int counter = 0;
     char prop[PROPERTY_VALUE_MAX];
     property_get("persist.camera.dumpimg", prop, "0");
-    mYUVDump = (uint8_t) atoi(prop);
+    mYUVDump = (uint32_t)atoi(prop);
     if (mYUVDump & dump_type) {
-        frm_num = ((mYUVDump & 0xffff0000) >> 16);
-        if (frm_num == 0) {
-            frm_num = 10;
+        mFrmNum = ((mYUVDump & 0xffff0000) >> 16);
+        if (mFrmNum == 0) {
+            mFrmNum = 10;
         }
-        if (frm_num > 256) {
-            frm_num = 256;
+        if (mFrmNum > 256) {
+            mFrmNum = 256;
         }
-        skip_mode = ((mYUVDump & 0x0000ff00) >> 8);
-        if (skip_mode == 0) {
-            skip_mode = 1;
+        mSkipMode = ((mYUVDump & 0x0000ff00) >> 8);
+        if (mSkipMode == 0) {
+            mSkipMode = 1;
         }
         if (mDumpSkipCnt == 0) {
             mDumpSkipCnt = 1;
         }
-        if (mDumpSkipCnt % skip_mode == 0) {
-            if (dumpFrmCnt <= frm_num) {
+        if (mDumpSkipCnt % mSkipMode == 0) {
+            if (mDumpFrmCnt <= mFrmNum) {
                 /* Note that the image dimension will be the unrotated stream dimension.
                 * If you feel that the image would have been rotated during reprocess
                 * then swap the dimensions while opening the file
@@ -565,7 +565,7 @@ void QCamera3Channel::dumpYUV(mm_camera_buf_def_t *frame, cam_dimension_t dim,
                         }
                     }
                     LOGH("written number of bytes %ld\n", written_len);
-                    dumpFrmCnt++;
+                    mDumpFrmCnt++;
                     close(file_fd);
                 } else {
                     LOGE("failed to open file to dump image");
@@ -1616,6 +1616,34 @@ int32_t QCamera3ProcessingChannel::releaseOfflineMemory(uint32_t resultFrameNumb
     }
 
     return rc;
+}
+
+int32_t QCamera3ProcessingChannel::releaseInputBuffer(uint32_t resultFrameNumber)
+{
+    int32_t rc = NO_ERROR;
+    int32_t inputBufIndex =
+            mOfflineMemory.getGrallocBufferIndex(resultFrameNumber);
+    if (0 <= inputBufIndex) {
+        rc = mOfflineMemory.unregisterBuffer(inputBufIndex);
+    } else {
+        LOGW("Could not find offline input buffer, resultFrameNumber %d",
+                 resultFrameNumber);
+    }
+    if (rc != NO_ERROR) {
+        LOGE("Failed to unregister offline input buffer");
+    }
+
+    return rc;
+}
+
+bool QCamera3ProcessingChannel::isFwkInputBuffer(uint32_t resultFrameNumber)
+{
+    int32_t inputBufIndex =
+                mOfflineMemory.getGrallocBufferIndex(resultFrameNumber);
+    if (0 <= inputBufIndex)
+        return true;
+    else
+        return false;
 }
 
 /* Regular Channel methods */
@@ -3110,8 +3138,9 @@ void QCamera3PicChannel::jpegEvtHandle(jpeg_job_status_t status,
                     LOGE("could not find the input meta buf index, frame number %d",
                              resultFrameNumber);
                 }
+            } else {
+                obj->m_postprocessor.releaseOfflineBuffers(false);
             }
-            obj->m_postprocessor.releaseOfflineBuffers(false);
             obj->m_postprocessor.releaseJpegJobData(job);
             free(job);
         }
@@ -3775,6 +3804,12 @@ void QCamera3ReprocessChannel::streamCbRoutine(mm_camera_super_buf_t *super_fram
         stream->getFrameDimension(dim);
         stream->getFrameOffset(offset);
         dumpYUV(frame->bufs[0], dim, offset, QCAMERA_DUMP_FRM_SNAPSHOT);
+        bool isInputBuf = obj->isFwkInputBuffer((uint32_t)resultFrameNumber);
+        if (isInputBuf) {
+            obj->m_postprocessor.releaseOfflineBuffers(false);
+            obj->releaseInputBuffer(resultFrameNumber);
+        }
+
         /* Since reprocessing is done, send the callback to release the input buffer */
         if (mChannelCB) {
             mChannelCB(NULL, NULL, resultFrameNumber, true, mUserData);
@@ -3795,9 +3830,9 @@ void QCamera3ReprocessChannel::streamCbRoutine(mm_camera_super_buf_t *super_fram
             LOGE("Error %d unregistering stream buffer %d",
                      rc, frameIndex);
         }
-        obj->reprocessCbRoutine(resultBuffer, resultFrameNumber);
 
         obj->m_postprocessor.releaseOfflineBuffers(false);
+        obj->reprocessCbRoutine(resultBuffer, resultFrameNumber);
         qcamera_hal3_pp_data_t *pp_job = obj->m_postprocessor.dequeuePPJob(resultFrameNumber);
         if (pp_job != NULL) {
             obj->m_postprocessor.releasePPJobData(pp_job);
@@ -3964,10 +3999,9 @@ int32_t QCamera3ReprocessChannel::stop()
     int32_t rc = NO_ERROR;
 
     rc = QCamera3Channel::stop();
-    unmapOfflineBuffers(true);
-
     rc |= m_camOps->stop_channel(m_camHandle, m_handle);
-
+    // Unmapping the buffers
+    unmapOfflineBuffers(true);
     return rc;
 }
 
@@ -4035,31 +4069,35 @@ QCamera3Stream * QCamera3ReprocessChannel::getSrcStreamBySrcHandle(uint32_t srcH
 int32_t QCamera3ReprocessChannel::unmapOfflineBuffers(bool all)
 {
     int rc = NO_ERROR;
-    if (!mOfflineBuffers.empty()) {
-        QCamera3Stream *stream = NULL;
-        List<OfflineBuffer>::iterator it = mOfflineBuffers.begin();
-        for (; it != mOfflineBuffers.end(); it++) {
-           stream = (*it).stream;
-           if (NULL != stream) {
-               rc = stream->unmapBuf((*it).type,
-                                     (*it).index,
-                                        -1);
-               if (NO_ERROR != rc) {
-                   LOGE("Error during offline buffer unmap %d",
-                          rc);
+    {
+        Mutex::Autolock lock(mOfflineBuffersLock);
+        if (!mOfflineBuffers.empty()) {
+            QCamera3Stream *stream = NULL;
+            List<OfflineBuffer>::iterator it = mOfflineBuffers.begin();
+           for (; it != mOfflineBuffers.end(); it++) {
+               stream = (*it).stream;
+               if (NULL != stream) {
+                   rc = stream->unmapBuf((*it).type,
+                                         (*it).index,
+                                            -1);
+                   if (NO_ERROR != rc) {
+                       LOGE("Error during offline buffer unmap %d",
+                              rc);
+                   }
+                   LOGD("Unmapped buffer with index %d", (*it).index);
                }
-               LOGD("Unmapped buffer with index %d", (*it).index);
-           }
-           if (!all) {
-               mOfflineBuffers.erase(it);
-               break;
-           }
-        }
-        if (all) {
-           mOfflineBuffers.clear();
+               if (!all) {
+                   mOfflineBuffers.erase(it);
+                   break;
+               }
+            }
+            if (all) {
+               mOfflineBuffers.clear();
+            }
         }
     }
 
+    Mutex::Autolock lock(mOfflineMetaBuffersLock);
     if (!mOfflineMetaBuffers.empty()) {
         QCamera3Stream *stream = NULL;
         List<OfflineBuffer>::iterator it = mOfflineMetaBuffers.begin();
@@ -4438,6 +4476,7 @@ int32_t QCamera3ReprocessChannel::overrideFwkMetadata(
         mappedBuffer.index = buf_idx;
         mappedBuffer.stream = pStream;
         mappedBuffer.type = CAM_MAPPING_BUF_TYPE_OFFLINE_INPUT_BUF;
+        Mutex::Autolock lock(mOfflineBuffersLock);
         mOfflineBuffers.push_back(mappedBuffer);
         mOfflineBuffersIndex = (int32_t)buf_idx;
         LOGD("Mapped buffer with index %d", mOfflineBuffersIndex);
@@ -4457,6 +4496,7 @@ int32_t QCamera3ReprocessChannel::overrideFwkMetadata(
         mappedBuffer.index = meta_buf_idx;
         mappedBuffer.stream = pStream;
         mappedBuffer.type = CAM_MAPPING_BUF_TYPE_OFFLINE_META_BUF;
+        Mutex::Autolock lock(mOfflineMetaBuffersLock);
         mOfflineMetaBuffers.push_back(mappedBuffer);
         mOfflineMetaIndex = (int32_t)meta_buf_idx;
         LOGD("Mapped meta buffer with index %d", mOfflineMetaIndex);
