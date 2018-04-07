@@ -15,3 +15,7 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/reloaded_land.mk
+
+COMMON_LUNCH_CHOICES := \
+    reloaded_land-user \
+    reloaded_land-userdebug
