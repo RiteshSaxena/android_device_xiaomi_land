@@ -48,11 +48,6 @@ using android::base::GetProperty;
 using android::base::Trim;
 using android::init::property_set;
 
-char const *heapstartsize;
-char const *heapgrowthlimit;
-char const *heapsize;
-char const *heapminfree;
-
 static void init_alarm_boot_properties()
 {
     char const *boot_reason_file = "/proc/sys/kernel/boot_reason";
@@ -86,28 +81,6 @@ static void init_alarm_boot_properties()
     }
 }
 
-void check_device()
-{
-    struct sysinfo sys;
-
-    sysinfo(&sys);
-
-    if (sys.totalram > 2048ull * 1024 * 1024) {
-        // from - phone-xxhdpi-3072-dalvik-heap.mk
-        heapstartsize = "8m";
-        heapgrowthlimit = "288m";
-        heapsize = "768m";
-        heapminfree = "512k";
-    } else {
-        // from - phone-xxhdpi-2048-dalvik-heap.mk
-        heapstartsize = "16m";
-        heapgrowthlimit = "192m";
-        heapsize = "512m";
-        heapminfree = "2m";
-   }
-}
-
-
 void init_variant_properties()
 {
 
@@ -123,15 +96,6 @@ void init_variant_properties()
         if (buf.find("board_id") != std::string::npos)
             break;
     fin.close();
-    
-    check_device();
-    
-    property_set("dalvik.vm.heapstartsize", heapstartsize);
-    property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
-    property_set("dalvik.vm.heapsize", heapsize);
-    property_set("dalvik.vm.heaptargetutilization", "0.75");
-    property_set("dalvik.vm.heapminfree", heapminfree);
-    property_set("dalvik.vm.heapmaxfree", "8m");
 
     if (buf.find("S88537AA1") != std::string::npos) {
         property_set("ro.build.display.wtid", "SW_S88537AA1_V090_M20_MP_XM");
