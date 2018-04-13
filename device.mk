@@ -229,6 +229,11 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl \
     $(DEVICE_PATH)/keylayout/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl
 
+# IPA Manager
+PRODUCT_PACKAGES += \
+    ipacm \
+    IPACM_cfg.xml
+
 # IRQ
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf

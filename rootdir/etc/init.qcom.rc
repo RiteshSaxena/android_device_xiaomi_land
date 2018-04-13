@@ -290,6 +290,10 @@ on post-fs-data
     #create netmgr log dir
     mkdir /data/vendor/netmgr 0770 radio radio
     chmod 0770 /data/vendor/netmgr
+    
+    #create ipacm log dir
+    mkdir /data/vendor/ipa 0770 radio radio
+    chmod 0770 /data/vendor/ipa
 
     # Create the directories used by CnE subsystem
     mkdir /data/connectivity 0771 system system
@@ -502,6 +506,12 @@ on property:hw.fm.init=1
 service netmgrd /system/vendor/bin/netmgrd
     class main
     disabled
+    writepid /dev/cpuset/system-background/tasks
+    
+service ipacm /vendor/bin/ipacm
+    class main
+    user radio
+    group radio inet
     writepid /dev/cpuset/system-background/tasks
 
 service qti /system/vendor/bin/qti
