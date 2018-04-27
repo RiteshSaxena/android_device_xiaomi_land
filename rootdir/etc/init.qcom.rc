@@ -520,7 +520,7 @@ service vendor.ipacm /vendor/bin/ipacm
     user radio
     group radio inet
 
-service qti /system/vendor/bin/qti
+service vendor.dataqti /vendor/bin/qti
     class main
     user radio
     group radio oem_2901 diag usb net_admin
