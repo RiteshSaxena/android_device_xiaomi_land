@@ -69,6 +69,15 @@ on post-fs-data
 #Create folder for mm-qcamera-daemon
     mkdir /data/vendor/camera 0770 camera camera
 
+# redefine cameraserver to load shim
+service cameraserver /system/bin/cameraserver
+    class main 
+    user cameraserver
+    group audio camera input drmrpc
+    ioprio rt 4
+    setenv LD_PRELOAD "/vendor/lib/libshim_cameraservice.so"
+    writepid /dev/cpuset/camera-daemon/tasks /dev/stune/top-app/tasks
+
 #start camera server as daemon
 service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
