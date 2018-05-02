@@ -634,7 +634,7 @@ on property:init.svc.surfaceflinger=restarting
     stop hwcomposer-2-1
     start hwcomposer-2-1
 
-service gx_fpd /system/bin/gx_fpd
+service gx_fpd /system/vendor/bin/gx_fpd
     class core
     user root
     group system system
