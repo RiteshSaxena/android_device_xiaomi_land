@@ -18,7 +18,7 @@ vendor/lib/rfsa/adsp/libfastcvadsp.so
 vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
 vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
 
-# ANT+ - from tissot - OPM1.171019.019
+# ANT+ - from TA-1021 - OPR1.170623.026
 lib/com.qualcomm.qti.ant@1.0.so
 -lib/libantradio.so
 lib64/com.qualcomm.qti.ant@1.0.so
@@ -28,7 +28,7 @@ vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
-# Audio libraries - from tissot - OPM1.171019.019
+# Audio libraries - from TA-1021 - OPR1.170623.026
 etc/permissions/audiosphere.xml
 -framework/audiosphere.jar
 vendor/lib/libacdb-fts.so
@@ -131,7 +131,7 @@ vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 vendor/lib64/vendor.qti.hardware.data.latency@1.0_vendor.so
 
-# Charger - from tissot - OPM1.171019.019
+# Charger - from TA-1021 - OPR1.170623.026
 vendor/bin/hvdcp_opti
 
 # DPM - from TA-1021 - OPR1.170623.026
@@ -226,6 +226,7 @@ vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so
 vendor/lib64/libalarmservice_jni.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libdrplugin_client.so
+vendor/lib64/lib_drplugin_server.so
 vendor/lib64/libDRPlugin.so
 vendor/lib64/libevent_observer.so
 vendor/lib64/libflp.so
@@ -237,20 +238,18 @@ vendor/lib64/liblbs_core.so
 -vendor/lib64/libloc_api_v02.so
 vendor/lib64/libloc_ds_api.so
 vendor/lib64/libloc_externalDr.so
-vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblocationservice.so
+vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
 vendor/lib64/libquipc_os_api.so
+vendor/lib64/libslimclient.so
 vendor/lib64/libulp2.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
 vendor/lib64/vendor.qti.gnss@1.0_vendor.so
 
 # Graphics - from TA-1021 - OPR1.170623.026
-lib/egl/libGLES_android.so:vendor/lib/egl/libGLES_android.so
-lib64/egl/libGLES_android.so:vendor/lib64/egl/libGLES_android.so
-vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libESXEGL_adreno.so
@@ -283,7 +282,6 @@ vendor/lib/libOpenCL.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
-vendor/lib64/egl/eglsubAndroid.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libESXEGL_adreno.so
@@ -354,12 +352,12 @@ vendor/lib64/vendor.qti.voiceprint@1.0.so
 vendor/lib64/hw/sound_trigger.primary.msm8937.so
 
 # Media - from TA-1021 - OPR1.170623.026
+lib64/vendor.qti.hardware.vpp@1.1.so
+lib/vendor.qti.hardware.vpp@1.1.so
 vendor/lib/libI420colorconvert.so
-vendor/lib/libAlacSwDec.so
-vendor/lib/libApeSwDec.so
-vendor/lib/libFlacSwDec.so
-vendor/lib/libMpeg4SwEncoder.so
+vendor/lib/libmm-color-convertor.so
 vendor/lib/libmmosal_proprietary.so
+vendor/lib/libMpeg4SwEncoder.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAlacDec.so
 vendor/lib/libOmxAlacDecSw.so
@@ -375,16 +373,14 @@ vendor/lib/libOmxSwVencMpeg4.so
 vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxVpp.so
 vendor/lib/libOmxWmaDec.so
-vendor/lib/libmm-color-convertor.so
 vendor/lib/libswvdec.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libvqzip.so
+vendor/lib/vendor.qti.hardware.vpp@1.1_vendor.so
 vendor/lib64/libI420colorconvert.so
-vendor/lib64/libAlacSwDec.so
-vendor/lib64/libApeSwDec.so
-vendor/lib64/libFlacSwDec.so
-vendor/lib64/libMpeg4SwEncoder.so
+vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libmmosal_proprietary.so
+vendor/lib64/libMpeg4SwEncoder.so
 vendor/lib64/libOmxAacDec.so
 vendor/lib64/libOmxAlacDec.so
 vendor/lib64/libOmxAlacDecSw.so
@@ -398,23 +394,27 @@ vendor/lib64/libOmxSwVdec.so
 vendor/lib64/libOmxSwVencMpeg4.so
 vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
-vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libswvdec.so
 vendor/lib64/libvpplibrary.so
+vendor/lib64/vendor.qti.hardware.vpp@1.1_vendor.so
 
 # Modem - from TA-1021 - OPR1.170623.026
 vendor/lib/libwms.so
 vendor/lib64/libwms.so
 
 # Perf - from TA-1021 - OPR1.170623.026
-lib/vendor.qti.hardware.iop@1.0.so
-lib/vendor.qti.hardware.iop@2.0.so
+-lib/vendor.qti.hardware.iop@1.0.so
+-lib/vendor.qti.hardware.iop@2.0.so
 lib/vendor.qti.hardware.perf@1.0.so
-lib64/vendor.qti.hardware.iop@1.0.so
-lib64/vendor.qti.hardware.iop@2.0.so
+lib/libqti-perfd-client_system.so
+lib/libqti_performance.so
+-lib64/vendor.qti.hardware.iop@1.0.so
+-lib64/vendor.qti.hardware.iop@2.0.so
 lib64/vendor.qti.hardware.perf@1.0.so
-vendor/bin/msm_irqbalance
+lib64/libqti-perfd-client_system.so
+lib64/libqti_performance.so
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
+vendor/bin/msm_irqbalance
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
 vendor/etc/perf/perfboostsconfig.xml
 vendor/etc/perf/perf-profile0.conf
@@ -422,22 +422,24 @@ vendor/etc/perf/perf-profile1.conf
 vendor/lib/hw/vendor.qti.hardware.iop@1.0-impl.so
 vendor/lib/libfeedbackhandler.so
 vendor/lib/libperfgluelayer.so
-vendor/lib/libqti-iopd.so
 vendor/lib/libqti-iopd-client.so
-vendor/lib/libqti-perfd.so
+vendor/lib/libqti-iopd.so
 vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti-perfd.so
 vendor/lib/libqti-util.so
+vendor/lib/libqti-utils.so
 vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.iop@2.0_vendor.so
 vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
 vendor/lib64/hw/vendor.qti.hardware.iop@1.0-impl.so
 vendor/lib64/libfeedbackhandler.so
 vendor/lib64/libperfgluelayer.so
-vendor/lib64/libqti-iopd.so
 vendor/lib64/libqti-iopd-client.so
-vendor/lib64/libqti-perfd.so
+vendor/lib64/libqti-iopd.so
 vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-util.so
+vendor/lib64/libqti-utils.so
 vendor/lib64/vendor.qti.hardware.iop@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.iop@2.0_vendor.so
 vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
@@ -452,11 +454,11 @@ vendor/lib64/libperipheral_client.so
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
 lib/libsd_sdk_display.so:vendor/lib/libsd_sdk_display.so
-lib/vendor.display.color@1.0.so
+-lib/vendor.display.color@1.0.so
 lib/vendor.display.postproc@1.0.so
 lib/vendor.qti.hardware.qdutils_disp@1.0.so
 lib64/libsd_sdk_display.so:vendor/lib64/libsd_sdk_display.so
-lib64/vendor.display.color@1.0.so
+-lib64/vendor.display.color@1.0.so
 lib64/vendor.display.postproc@1.0.so
 lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 -vendor/app/colorservice/colorservice.apk
@@ -465,14 +467,14 @@ vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
 vendor/bin/mm-pp-dpps
 vendor/etc/init/vendor.display.color@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
-vendor/lib64/libdisp-aba.so
-vendor/lib64/vendor.display.color@1.0_vendor.so
-vendor/lib64/vendor.display.postproc@1.0_vendor.so
-vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
 vendor/lib/libdisp-aba.so
 vendor/lib/vendor.display.color@1.0_vendor.so
 vendor/lib/vendor.display.postproc@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
+vendor/lib64/libdisp-aba.so
+vendor/lib64/vendor.display.color@1.0_vendor.so
+vendor/lib64/vendor.display.postproc@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
 
 # QMI - from TA-1021 - OPR1.170623.026
 etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
@@ -516,14 +518,14 @@ vendor/lib64/libqmiservices.so
 vendor/lib64/libsmemlog.so
 
 # Radio - from TA-1021 - OPR1.170623.026
-# qti-telephony-common.jar from tissot
--app/SimSettings/SimSettings.apk
+-app/datastatusnotification/datastatusnotification.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
+-app/SimSettings/SimSettings.apk
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
+-framework/embmslibrary.jar
 -framework/QtiTelephonyServicelibrary.jar
 -framework/qcrilhook.jar
--framework/qti-telephony-common.jar|2eba987ae297a892e895ec1e9a302b41dbe0232e
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
@@ -546,6 +548,7 @@ vendor/lib/librilqmiservices.so
 vendor/lib/libsettings.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so
@@ -577,15 +580,20 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
-# Radio - HAL - from whyred - MIUI Beta 8.4.2
-vendor/lib/libril-qc-qmi-1.so
-vendor/lib64/libril-qc-qmi-1.so
+# Radio - HAL - from whyred - OPM1.171019.011
+-framework/qti-telephony-common.jar|2eba987ae297a892e895ec1e9a302b41dbe0232e
+vendor/lib/libril-qc-qmi-1.so|5ed805bb85c2de3ada736fb6605b5c4a794ee129 
+vendor/lib64/libril-qc-qmi-1.so|aa931366ff70ddb4a5fd02976bcc64e7208409f6
 
 # Radio - IMS - from TA-1021 - OPR1.170623.026
 -app/ims/ims.apk
 -app/imssettings/imssettings.apk
 -app/uceShimService/uceShimService.apk
 etc/permissions/qti-vzw-ims-internal.xml
+etc/permissions/com.qualcomm.qti.imscmservice.xml
+etc/permissions/com.qualcomm.qti.imscmservice_1_1.xml
+framework/com.qualcomm.qti.imscmservice@1.0-java.jar
+framework/com.qualcomm.qti.imscmservice@1.1-java.jar
 lib/com.qualcomm.qti.imscmservice@1.0.so
 lib/com.qualcomm.qti.imscmservice@1.1.so
 lib/lib-imscamera.so
@@ -623,6 +631,9 @@ vendor/lib/lib-imsdpl.so
 vendor/lib/lib-imsqimf.so
 vendor/lib/lib-imsxml.so
 vendor/lib/lib-rtpcommon.so
+vendor/lib/lib-rtpcore.so
+vendor/lib/lib-rtpdaemoninterface.so
+vendor/lib/lib-rtpsl.so
 vendor/lib/lib-siputility.so
 vendor/lib/lib-uceservice.so
 vendor/lib/vendor.qti.imsrtpservice@1.0-service-Impl.so
@@ -646,16 +657,22 @@ vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
 
 # Sensors - from TA-1021 - OPR1.170623.026
 vendor/bin/sensors.qcom
+-vendor/framework/vendor.qti.hardware.alarm-V1.0-java.jar
+-vendor/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 vendor/lib/hw/activity_recognition.msm8937.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor_user_cal.so
 vendor/lib/sensors.ssc.so
+vendor/lib/vendor.qti.hardware.alarm@1.0.so
+vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
 vendor/lib64/hw/activity_recognition.msm8937.so
 vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so
+vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
 # Thermal - from TA-1021 - OPR1.170623.026
 vendor/bin/thermal-engine
