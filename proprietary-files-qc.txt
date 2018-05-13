@@ -621,5 +621,4 @@ vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc
 vendor/lib/libwvhidl.so
 
 # Wi-Fi - from tissot - OPM1.171019.019.V9.6.3.0.ODHMIFE
-vendor/bin/cnss-daemon
 vendor/bin/wcnss_service
