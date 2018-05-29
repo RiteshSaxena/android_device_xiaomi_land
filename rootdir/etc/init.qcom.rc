@@ -641,8 +641,8 @@ on property:init.svc.surfaceflinger=restarting
 
 service gx_fpd /system/vendor/bin/gx_fpd
     class core
-    user root
-    group system system
+    user system
+    group system drmrpc
     writepid /dev/cpuset/system-background/tasks
     disabled
 
