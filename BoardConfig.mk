@@ -190,9 +190,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
-# Properties
-TARGET_VENDOR_PROP := $(DEVICE_PATH)/vendor.prop
-
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
