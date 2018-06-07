@@ -437,6 +437,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.data.factory</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.gnss</name>
         <transport>hwbinder</transport>
         <version>1.2</version>
