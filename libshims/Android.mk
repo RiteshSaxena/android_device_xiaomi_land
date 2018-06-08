@@ -36,7 +36,6 @@ LOCAL_C_INCLUDES:= \
     $(TOP)/frameworks/av/services/camera/libcameraservice 
 LOCAL_SHARED_LIBRARIES := libcameraservice
 LOCAL_MODULE := libshim_cameraservice
-LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 LOCAL_32_BIT_ONLY := true
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
