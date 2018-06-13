@@ -114,67 +114,42 @@ function sched_dcvs_hmp(){
 }
 
 function configure_zram_parameters() {
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
-
     if [ -f /sys/block/zram0/disksize ]; then
-        # Set Zram disk size to 512MB for <=3GB
-        # and 1GB for >3GB Non-Go targets.
-        if [ $MemTotal -gt 3145728 ]; then
-            echo 1073741824 > /sys/block/zram0/disksize
-        else
-            echo 536870912 > /sys/block/zram0/disksize
-        fi
+        # Set Zram disk size to 512MB
+        echo 536870912 > /sys/block/zram0/disksize
         mkswap /dev/block/zram0
         swapon /dev/block/zram0 -p 32758
-
-        # Set swappiness to 100 for all targets
-        echo 100 > /proc/sys/vm/swappiness
     fi
 }
 
 function configure_read_ahead_kb_values() {
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
-
-    # Set 128 for <= 3GB &
-    # Set 512 for > 3GB
-    if [ $MemTotal -le 3145728 ]; then
-        echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 128 > /sys/block/mmcblk0/queue/read_ahead_kb
-        echo 128 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
-        echo 128 > /sys/block/mmcblk0rpmb/queue/read_ahead_kb
-        echo 128 > /sys/block/dm-0/queue/read_ahead_kb
-        echo 128 > /sys/block/dm-1/queue/read_ahead_kb
-    else
-        echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 512 > /sys/block/mmcblk0/queue/read_ahead_kb
-        echo 512 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
-        echo 512 > /sys/block/mmcblk0rpmb/queue/read_ahead_kb
-        echo 512 > /sys/block/dm-0/queue/read_ahead_kb
-        echo 512 > /sys/block/dm-1/queue/read_ahead_kb
-    fi
+    echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
+    echo 128 > /sys/block/mmcblk0/queue/read_ahead_kb
+    echo 128 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
+    echo 128 > /sys/block/mmcblk0rpmb/queue/read_ahead_kb
+    echo 128 > /sys/block/dm-0/queue/read_ahead_kb
+    echo 128 > /sys/block/dm-1/queue/read_ahead_kb
 }
 
 function configure_memory_parameters() {
-    # Set Memory paremeters.
+    # Set Memory parameters.
     #
     # Set per_process_reclaim tuning parameters
-    # 2GB 64-bit will have aggressive settings when compared to 1GB 32-bit
-    # 1GB and less will use vmpressure range 50-70, 2GB will use 10-70
-    # 1GB and less will use 512 pages swap size, 2GB will use 1024
+    # All targets will use vmpressure range 50-70,
+    # All targets will use 512 pages swap size.
     #
     # Set Low memory killer minfree parameters
-    # 32 bit all memory configurations will use 15K series
-    # 64 bit up to 2GB with use 14K, and above 2GB will use 18K
+    # 32 bit Non-Go, all memory configurations will use 15K series
+    # 32 bit Go, all memory configurations will use uLMK + Memcg
+    # 64 bit will use Google default LMK series.
     #
     # Set ALMK parameters (usually above the highest minfree values)
-    # 32 bit will have 53K & 64 bit will have 81K
-    #
     # vmpressure_file_min threshold is always set slightly higher
-    # than LMK minfree's last bin value for 32-bit arch. It is calculated as
+    # than LMK minfree's last bin value for all targets. It is calculated as
     # vmpressure_file_min = (last bin - second last bin ) + last bin
-    # For 64-bit arch, vmpressure_file_min = LMK minfree's last bin value
+    #
+    # Set allocstall_threshold to 0 for all targets.
+    #
 
     MemTotalStr=`cat /proc/meminfo | grep MemTotal`
     MemTotal=${MemTotalStr:16:8}
@@ -192,34 +167,40 @@ function configure_memory_parameters() {
     # For uLMK + Memcg, this will be set as 6 since adj is zero.
     set_almk_ppr_adj=$(((set_almk_ppr_adj * 6) + 6))
     echo $set_almk_ppr_adj > /sys/module/lowmemorykiller/parameters/adj_max_shift
-    echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
 
-    #Set other memory parameters
-    echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
-    echo 70 > /sys/module/process_reclaim/parameters/pressure_max
-    echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
+    # Calculate vmpressure_file_min as below & set for 64 bit:
+    # vmpressure_file_min = last_lmk_bin + (last_lmk_bin - last_but_one_lmk_bin)
+    minfree_series=`cat /sys/module/lowmemorykiller/parameters/minfree`
+    minfree_1="${minfree_series#*,}" ; rem_minfree_1="${minfree_1%%,*}"
+    minfree_2="${minfree_1#*,}" ; rem_minfree_2="${minfree_2%%,*}"
+    minfree_3="${minfree_2#*,}" ; rem_minfree_3="${minfree_3%%,*}"
+    minfree_4="${minfree_3#*,}" ; rem_minfree_4="${minfree_4%%,*}"
+    minfree_5="${minfree_4#*,}"
+
+    vmpres_file_min=$((minfree_5 + (minfree_5 - rem_minfree_4)))
+    echo $vmpres_file_min > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
+    
+    # Enable adaptive LMK for all targets &
+    # use Google default LMK series for all 64-bit targets >=2GB.
     echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
-    if [ $MemTotal -gt 2097152 ]; then
-        echo 10 > /sys/module/process_reclaim/parameters/pressure_min
-        echo 1024 > /sys/module/process_reclaim/parameters/per_swap_size
-        echo "18432,23040,27648,32256,55296,80640" > /sys/module/lowmemorykiller/parameters/minfree
-        echo 80640 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
-    elif [ $MemTotal -gt 1048576 ]; then
-        echo 10 > /sys/module/process_reclaim/parameters/pressure_min
-        echo 1024 > /sys/module/process_reclaim/parameters/per_swap_size
-        echo "14746,18432,22118,25805,40000,55000" > /sys/module/lowmemorykiller/parameters/minfree
-        echo 55000 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
-    else
-        echo 50 > /sys/module/process_reclaim/parameters/pressure_min
-        echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
-        echo "14746,18432,22118,25805,40000,55000" > /sys/module/lowmemorykiller/parameters/minfree
-        echo 55000 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
-    fi
 
-    #Enable oom_reaper
+    # Enable oom_reaper
     if [ -f /sys/module/lowmemorykiller/parameters/oom_reaper ]; then
         echo 1 > /sys/module/lowmemorykiller/parameters/oom_reaper
     fi
+
+    #Set PPR parameters for all other targets.
+    echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
+    echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
+    echo 50 > /sys/module/process_reclaim/parameters/pressure_min
+    echo 70 > /sys/module/process_reclaim/parameters/pressure_max
+    echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
+    echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
+    
+    # Set allocstall_threshold to 0 for all targets.
+    # Set swappiness to 100 for all targets
+    echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
+    echo 100 > /proc/sys/vm/swappiness
 
     configure_zram_parameters
 
@@ -333,6 +314,7 @@ esac
 
 # Post-setup services
 setprop sys.post_boot.parsed 1
+setprop vendor.post_boot.parsed 1
 
 # Let kernel know our image version/variant/crm_version
 if [ -f /sys/devices/soc0/select_image ]; then
