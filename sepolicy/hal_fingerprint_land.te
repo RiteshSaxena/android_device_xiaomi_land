@@ -15,7 +15,10 @@ allow hal_fingerprint_land uhid_device:chr_file rw_file_perms;
 allow hal_fingerprint_land fpc_data_file:dir rw_dir_perms;
 allow hal_fingerprint_land fpc_data_file:sock_file create_file_perms;
 allow hal_fingerprint_land servicemanager:binder { transfer call };
-allow hal_fingerprint_land storage_file:dir r_dir_perms;
+allow hal_fingerprint_land storage_file:dir search;
+allow hal_fingerprint_land storage_file:lnk_file read;
+allow hal_fingerprint_land mnt_user_file:dir search;
+allow hal_fingerprint_land mnt_user_file:lnk_file read;
 
 set_prop(hal_fingerprint_land, system_prop)
 r_dir_file(hal_fingerprint_land, firmware_file)
