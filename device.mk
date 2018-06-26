@@ -312,11 +312,11 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.qcom
+    power.msm8937
     
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service
+    android.hardware.power@1.0-service \
+    android.hardware.power@1.0-impl
 
 # Ramdisk
 PRODUCT_PACKAGES += \
