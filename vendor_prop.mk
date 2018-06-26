@@ -201,6 +201,10 @@ ro.telephony.default_network=20 \
 service.qti.ims.enabled=1 \
 telephony.lteOnCdmaDevice=1
 
+# Security patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.build.security_patch=2017-04-01
+
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.timed.enable=true
