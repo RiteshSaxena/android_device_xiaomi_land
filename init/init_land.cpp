@@ -110,26 +110,6 @@ void init_variant_properties()
             break;
     fin.close();
 
-    if (buf.find("S88537AA1") != std::string::npos) {
-        property_override("ro.build.display.wtid", "SW_S88537AA1_V090_M20_MP_XM");
-        property_override("ro.vendor.build.display.wtid", "SW_S88537AA1_V090_M20_MP_XM");
-    } else if (buf.find("S88537AB1") != std::string::npos) {
-        property_override("ro.build.display.wtid", "SW_S88537AB1_V090_M20_MP_XM");
-        property_override("ro.vendor.build.display.wtid", "SW_S88537AB1_V090_M20_MP_XM");
-    } else if (buf.find("S88537AC1") != std::string::npos) {
-        property_override("ro.build.display.wtid", "SW_S88537AC1_V090_M20_MP_XM");
-        property_override("ro.vendor.build.display.wtid", "SW_S88537AC1_V090_M20_MP_XM");
-    } else if (buf.find("S88537BA1") != std::string::npos) {
-        property_override("ro.build.display.wtid", "SW_S88537BA1_V090_M20_MP_XM");
-        property_override("ro.vendor.build.display.wtid", "SW_S88537BA1_V090_M20_MP_XM");
-    } else if (buf.find("S88537CA1") != std::string::npos) {
-        property_override("ro.build.display.wtid", "SW_S88537CA1_V090_M20_MP_XM");
-        property_override("ro.vendor.build.display.wtid", "SW_S88537CA1_V090_M20_MP_XM");
-    } else if (buf.find("S88537EC1") != std::string::npos) {
-        property_override("ro.build.display.wtid", "SW_S88537EC1_V090_M20_MP_XM");
-        property_override("ro.vendor.build.display.wtid", "SW_S88537EC1_V090_M20_MP_XM");
-    }
-
     if (buf.find("S88537AB1") != std::string::npos) {
         property_override("ro.product.model", "Redmi 3X");
         property_override("ro.vendor.product.model", "Redmi 3X");
