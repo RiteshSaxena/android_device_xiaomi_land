@@ -151,15 +151,15 @@ case "$usb_config" in
 		      ;;
 	              "msm8937")
 			      if [ -d /config/usb_gadget ]; then
-				      setprop persist.sys.usb.config diag,adb
+				      setprop persist.sys.usb.config diag,serial_cdev,rmnet,dpl,adb
 			      else
 				      case "$soc_id" in
 					"313" | "320")
 				            setprop persist.sys.usb.config diag,serial_smd,rmnet_ipa,adb
-				      ;;
-				      *)
+				        ;;
+				        *)
 				            setprop persist.sys.usb.config diag,serial_smd,rmnet_qti_bam,adb
-				      ;;
+				        ;;
 				      esac
 			      fi
 		      ;;
@@ -198,21 +198,24 @@ esac
 # check configfs is mounted or not
 if [ -d /config/usb_gadget ]; then
 	# set USB controller's device node
+	setprop sys.usb.rndis.func.name "rndis_bam"
+	setprop sys.usb.rmnet.func.name "rmnet_bam"
+	setprop sys.usb.rmnet.inst.name "rmnet"
+	setprop sys.usb.dpl.inst.name "dpl"
 	case "$target" in
 	"msm8937")
 		setprop sys.usb.controller "msm_hsusb"
+		setprop sys.usb.rndis.func.name "rndis"
+		setprop sys.usb.rmnet.inst.name "rmnet_bam_dmux"
+		setprop sys.usb.dpl.inst.name "dpl_bam_dmux"
 		;;
 	"msm8953")
 		setprop sys.usb.controller "7000000.dwc3"
-		setprop sys.usb.rndis.func.name "rndis_bam"
-		setprop sys.usb.rmnet.func.name "rmnet_bam"
 		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_tx_req_len
 		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_rx_req_len
 		;;
 	"msm8996")
 		setprop sys.usb.controller "6a00000.dwc3"
-		setprop sys.usb.rndis.func.name "rndis_bam"
-		setprop sys.usb.rmnet.func.name "rmnet_bam"
 		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_tx_req_len
 		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_rx_req_len
 		;;
@@ -223,8 +226,6 @@ if [ -d /config/usb_gadget ]; then
 		;;
 	"sdm660")
 		setprop sys.usb.controller "a800000.dwc3"
-		setprop sys.usb.rndis.func.name "rndis_bam"
-		setprop sys.usb.rmnet.func.name "rmnet_bam"
 		echo 15916 > /sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size
 		;;
 	"sdm845")
@@ -382,7 +383,7 @@ fi
 # enable rps cpus on msm8937 target
 setprop sys.usb.rps_mask 0
 case "$soc_id" in
-	"294" | "295")
+	"294" | "295" | "353" | "354")
 		setprop sys.usb.rps_mask 40
 	;;
 esac
