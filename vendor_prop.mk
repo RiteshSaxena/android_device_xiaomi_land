@@ -60,6 +60,7 @@ camera.hal1.packagelist=com.skype.raider,com.google.android.talk \
 persist.camera.gyro.android=1 \
 persist.camera.is_type=1 \
 vendor.vidc.enc.narrow.searchrange=1 \
+persist.camera.HAL3.enabled=0 \
 persist.vendor.qti.telephony.vt_cam_interface=1
 
 # Cne/Dpm
