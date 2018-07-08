@@ -165,6 +165,7 @@ persist.dbg.ims_volte_enable=1 \
 persist.dbg.volte_avail_ovr=1 \
 persist.dbg.vt_avail_ovr=1 \
 persist.dbg.wfc_avail_ovr=0 \
+persist.radio.aosp_usr_pref_sel=true \
 persist.radio.apm_sim_not_pwdn=1 \
 persist.radio.calls.on.ims=0 \
 persist.radio.csvt.enabled=false \
