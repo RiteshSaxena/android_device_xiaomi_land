@@ -49,7 +49,7 @@ TARGET_KERNEL_CONFIG := land_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 
 # ANT+
-BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true

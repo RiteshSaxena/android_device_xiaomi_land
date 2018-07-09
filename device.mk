@@ -110,11 +110,13 @@ PRODUCT_COPY_FILES += \
 # ANT
 PRODUCT_PACKAGES += \
     AntHalService \
-    com.dsi.ant.antradio_library
+    com.dsi.ant.antradio_library \
+    libantradio
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0 \
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
 # Camera
