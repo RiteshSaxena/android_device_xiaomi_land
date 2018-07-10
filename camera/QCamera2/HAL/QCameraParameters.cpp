@@ -4333,10 +4333,10 @@ int32_t QCameraParameters::setWaveletDenoise(const QCameraParameters& params)
  *==========================================================================*/
 int32_t QCameraParameters::setTemporalDenoise(const QCameraParameters& params)
 {
-    if ((m_pCapability->qcom_supported_feature_mask & CAM_QCOM_FEATURE_CPP_TNR) == 0) {
-        LOGH("TNR is not supported");
-        return NO_ERROR;
-    }
+#if 1
+    LOGD("TNR is not supported.");
+    return NO_ERROR;
+#endif
 
     const char *str = params.get(KEY_QC_TNR_MODE);
     const char *prev_str = get(KEY_QC_TNR_MODE);
@@ -7805,6 +7805,11 @@ int32_t QCameraParameters::setCDSMode(const QCameraParameters& params)
     const char *video_str = params.get(KEY_QC_VIDEO_CDS_MODE);
     const char *video_prev_str = get(KEY_QC_VIDEO_CDS_MODE);
     int32_t rc = NO_ERROR;
+
+#if 1
+    LOGD("CDS is not supported. Not applying user params for this.");
+    return rc;
+#endif
 
     if (m_bRecordingHint_new == true) {
         if (video_str) {
@@ -13776,6 +13781,12 @@ int32_t QCameraParameters::setCDSMode(int32_t cds_mode, bool initCommit)
     }
 
     int32_t rc = NO_ERROR;
+
+#if 1
+    LOGD("CDS is not supported.");
+    return rc;
+#endif
+
     if (ADD_SET_PARAM_ENTRY_TO_BATCH(m_pParamBuf, CAM_INTF_PARM_CDS_MODE, cds_mode)) {
         LOGE("Failed to update cds mode");
         return BAD_VALUE;
