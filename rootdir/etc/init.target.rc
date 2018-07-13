@@ -78,7 +78,6 @@ service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
-    setenv LD_PRELOAD "/vendor/lib/libshim_camera.so"
 
 on init
    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
