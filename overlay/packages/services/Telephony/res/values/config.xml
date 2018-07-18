@@ -23,6 +23,12 @@
          successfully placing the OTA call -->
     <integer name="OtaShowListeningScreen">1</integer>
 
+    <!-- Flag indicating if the phone is a world phone -->
+    <bool name="world_phone">true</bool>
+
+    <!-- Flag indicating if dtmf tone type is enabled -->
+    <bool name="dtmf_type_enabled">true</bool>
+
     <!-- Determine whether calls to mute the microphone in PhoneUtils
          are routed through the android.media.AudioManager class (true) or through
          the com.android.internal.telephony.Phone interface (false). -->
@@ -36,7 +42,7 @@
 
     <!-- Show Preferred Network Type options in No SIM case -->
     <bool name="config_no_sim_display_network_modes">true</bool>
-
-    <!-- After a CDMA conference call is merged, the swap button should be displayed. -->
-    <bool name="support_swap_after_merge" translatable="false">false</bool>
+    
+    <!-- Show enabled lte option for lte device -->
+    <bool name="config_enabled_lte" translatable="false">true</bool>
 </resources>
