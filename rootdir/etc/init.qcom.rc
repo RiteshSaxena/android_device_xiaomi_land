@@ -408,6 +408,14 @@ on post-fs-data
     #Create SWAP related dirs
     mkdir /data/system/swap 0770 root system
     chmod 2770 /data/system/swap
+    
+    # Sensors
+    chmod 0775 /persist/sensors
+    chmod 0664 /persist/sensors/sensors_settings
+    chown system root /persist/sensors/sensors_settings
+    mkdir /persist/sensors/registry/registry
+    mkdir /data/misc/sensors
+    chmod 0775 /data/misc/sensors
 
     # set aggressive read ahead for dm-0 and dm-1 during boot up
     write /sys/block/dm-0/queue/read_ahead_kb 2048
@@ -435,15 +443,9 @@ on property:sys.boot_completed=1
     chown media audio /sys/kernel/wdsp0/boot
     chown media audio /sys/kernel/wcd_cpe0/fw_name
 
-service qcom-c_main-sh /vendor/bin/init.class_main.sh
-    class main
-    user root
-    oneshot
-
 on property:vold.decrypt=trigger_restart_framework
     stop camera-provider-2-4
     start camera-provider-2-4
-    start qcom-c_main-sh
     start wcnss-service
 
 on property:persist.env.fastdorm.enabled=true
@@ -510,7 +512,6 @@ on property:hw.fm.init=1
 
 service netmgrd /system/vendor/bin/netmgrd
     class main
-    disabled
     
 service ipacm /vendor/bin/ipacm
     class main
@@ -521,13 +522,11 @@ service qti /system/vendor/bin/qti
     class main
     user radio
     group radio oem_2901 diag usb net_admin
-    disabled
 
 service sensors /vendor/bin/sensors.qcom
     class core
     user root
     group root
-    disabled
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
@@ -567,11 +566,6 @@ service qcom-sh /system/vendor/bin/init.qcom.sh
     user root
     oneshot
 
-service sensor-sh /vendor/bin/init.qcom.sensors.sh
-    class core
-    user root
-    oneshot
-
 service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     class late_start
     user root
@@ -599,16 +593,6 @@ service ril-daemon2 /vendor/bin/hw/rild -c 2
     socket rild2 stream 660 root radio
     socket rild-debug2 stream 660 radio system
     user radio
-    disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
-
-service ril-daemon3 /vendor/bin/hw/rild -c 3
-    class main
-    socket rild3 stream 660 root radio
-    socket rild-debug3 stream 660 radio system
-    user radio
-    disabled
     group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 

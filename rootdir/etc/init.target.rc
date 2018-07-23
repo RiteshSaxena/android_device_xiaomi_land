@@ -99,11 +99,6 @@ service qseecomd /vendor/bin/qseecomd
    user root
    group root
 
-service perfd /system/vendor/bin/perfd
-   class main
-   user root
-   disabled
-
 service thermal-engine /system/vendor/bin/thermal-engine -c ${sys.qcom.thermalcfg:-/vendor/etc/thermal-engine.conf}
    class main
    user root
