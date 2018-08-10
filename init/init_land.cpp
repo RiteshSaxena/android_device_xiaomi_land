@@ -27,21 +27,17 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <cstdlib>
 #include <fstream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/sysinfo.h>
-#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
-#include <sys/_system_properties.h>
 
 #include <android-base/file.h>
 #include <android-base/properties.h>
 #include <android-base/strings.h>
 
 #include "property_service.h"
-#include "util.h"
 #include "vendor_init.h"
 
 static std::string board_id;
@@ -50,19 +46,7 @@ using android::base::GetProperty;
 using android::base::Trim;
 using android::init::property_set;
 
-void property_override(char const prop[], char const value[])
-{
-    prop_info *pi;
-
-    pi = (prop_info*) __system_property_find(prop);
-    if (pi)
-        __system_property_update(pi, value, strlen(value));
-    else
-        __system_property_add(prop, strlen(prop), value, strlen(value));
-}
-
-static void init_alarm_boot_properties()
-{
+static void init_alarm_boot_properties(){
     char const *boot_reason_file = "/proc/sys/kernel/boot_reason";
     char const *power_off_alarm_file = "/persist/alarm/powerOffAlarmSet";
     std::string boot_reason;
@@ -94,9 +78,7 @@ static void init_alarm_boot_properties()
     }
 }
 
-void init_variant_properties()
-{
-
+void init_variant_properties(){
     std::ifstream fin;
     std::string buf;
 
@@ -111,16 +93,15 @@ void init_variant_properties()
     fin.close();
 
     if (buf.find("S88537AB1") != std::string::npos) {
-        property_override("ro.product.model", "Redmi 3X");
-        property_override("ro.vendor.product.model", "Redmi 3X");
+        property_set("ro.product.model", "Redmi 3X");
+        property_set("ro.vendor.product.model", "Redmi 3X");
     } else {
-        property_override("ro.product.model", "Redmi 3S");
-        property_override("ro.vendor.product.model", "Redmi 3X");
+        property_set("ro.product.model", "Redmi 3S");
+        property_set("ro.vendor.product.model", "Redmi 3X");
     }
 }
 
-void vendor_load_properties()
-{
+void vendor_load_properties(){
     init_alarm_boot_properties();
     init_variant_properties();
 }
