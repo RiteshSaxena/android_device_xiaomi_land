@@ -166,6 +166,11 @@ vendor/lib64/libmmsw_math.so
 vendor/lib64/libmmsw_opencl.so
 vendor/lib64/libmmsw_platform.so
 
+# Camera TNR - from prada (Redmi 4)
+vendor/lib/libllvd_smore.so
+vendor/lib/libllvd_sw_tnr.so
+vendor/lib/libmmcamera_sw_tnr.so
+
 # Camera actuators - from stock - MIUI V9.5.8.0.MALMIFD
 vendor/lib/libactuator_ad5816g.so
 vendor/lib/libactuator_ad5823.so
