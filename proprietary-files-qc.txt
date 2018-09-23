@@ -1,4 +1,4 @@
-# ADSP - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# ADSP - from marmite - OPM5.171019.017 - UOS273C
 vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libadsp_default_listener.so
@@ -9,18 +9,14 @@ vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
 
-# ADSP modules - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# ADSP modules - from marmite - OPM5.171019.017 - UOS273C
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libexternal_dog_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
-vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
-vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
-vendor/lib/rfsa/adsp/libscveT2T_skel.so
 
-# Audio libraries - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# Audio libraries - from marmite - OPM5.171019.017 - UOS273C
 etc/permissions/audiosphere.xml
 framework/audiosphere.jar
 vendor/lib/libacdb-fts.so
@@ -67,7 +63,7 @@ vendor/lib64/libbt-hidlclient.so
 # Bluetooth (shared dependencies) - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
 vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
 
-# CNE - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# CNE - from marmite - OPM5.171019.017 - UOS273C
 etc/cne/andsfCne.xml
 etc/cne/SwimConfig.xml
 etc/permissions/cneapiclient.xml
@@ -123,17 +119,17 @@ vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 vendor/lib64/vendor.qti.hardware.data.latency@1.0_vendor.so
 
-# Charger - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# Charger - from marmite - OPM5.171019.017 - UOS273C
 vendor/bin/hvdcp_opti
 
-# DPM - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# DPM - from marmite - OPM5.171019.017 - UOS273C
 vendor/bin/dpmQmiMgr
 vendor/lib/com.qualcomm.qti.dpm.api@1.0_vendor.so
 vendor/lib/libdpmqmihal.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0_vendor.so
 vendor/lib64/libdpmqmihal.so
 
-# DRM - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# DRM - from marmite - OPM5.171019.017 - UOS273C
 vendor/bin/qseecomd
 vendor/lib/libQSEEComAPI.so
 vendor/lib64/libGPreqcancel.so
@@ -149,7 +145,7 @@ vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 
-# DRM - Qualcomm Trusted Execution Enviornment - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# DRM - Qualcomm Trusted Execution Enviornment - from marmite - OPM5.171019.017 - UOS273C
 lib/vendor.qti.hardware.qteeconnector@1.0.so
 lib64/vendor.qti.hardware.qteeconnector@1.0.so
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
@@ -357,7 +353,7 @@ vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libswvdec.so
 vendor/lib64/libvpplibrary.so
 
-# Modem - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# Modem - from marmite - OPM5.171019.017 - UOS273C
 vendor/lib/libwms.so
 vendor/lib64/libwms.so
 
@@ -403,7 +399,7 @@ vendor/lib64/vendor.qti.hardware.iop@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.iop@2.0_vendor.so
 vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
 
-# Peripheral manager - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# Peripheral manager - from marmite - OPM5.171019.017 - UOS273C
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
@@ -603,19 +599,19 @@ vendor/lib64/sensors.ssc.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
-# Thermal - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# Thermal - from marmite - OPM5.171019.017 - UOS273C
 vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 
-# Time services - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# Time services - from marmite - OPM5.171019.017 - UOS273C
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 -vendor/lib/libtime_genoff.so
 -vendor/lib64/libtime_genoff.so
 
-# TUI - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# TUI - from marmite - OPM5.171019.017 - UOS273C
 lib/vendor.qti.hardware.tui_comm@1.0.so
 lib64/vendor.qti.hardware.tui_comm@1.0.so
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
@@ -623,7 +619,7 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so
 
-# Widevine DRM - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# Widevine DRM - from marmite - OPM5.171019.017 - UOS273C
 vendor/bin/hw/android.hardware.drm@1.0-service.widevine
 vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc
 vendor/lib/libwvhidl.so
