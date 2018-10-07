@@ -1,7 +1,0 @@
-service cameraserver /system/bin/cameraserver
-    class main
-    user cameraserver
-    group audio camera input drmrpc
-    ioprio rt 4
-    setenv LD_PRELOAD "/system/lib/libshim_cameraservice.so"
-    writepid /dev/cpuset/camera-daemon/tasks /dev/stune/top-app/tasks

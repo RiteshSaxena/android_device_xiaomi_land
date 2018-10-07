@@ -129,13 +129,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
-# Cameraservice shim
-PRODUCT_PACKAGES += \
-    libshim_cameraservice
-
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/cameraserver.rc:system/etc/init/cameraserver.rc \
-
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service
