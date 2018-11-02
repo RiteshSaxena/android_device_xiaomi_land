@@ -184,7 +184,7 @@ lib64/vendor.qti.gnss@1.0.so|392c70592a5759063ee9e09ebcb637bff04aa4fd
 vendor/bin/hw/vendor.qti.gnss@1.0-service
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
-vendor/bin/slim_daemon
+vendor/bin/slim_daemon|7a35b4e052fb67bfa8016a588abd444fbf6c6870
 vendor/bin/xtra-daemon
 vendor/etc/cacert_location.pem
 vendor/etc/init/vendor.qti.gnss@1.0-service.rc
