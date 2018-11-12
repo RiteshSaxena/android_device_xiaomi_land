@@ -146,7 +146,6 @@ on boot
 
     mkdir /persist/drm 0770 system system
     mkdir /persist/misc 0770 system system
-    mkdir /persist/alarm 0770 system system
     mkdir /persist/secnvm 0770 system system
 
     #Create NETMGR daemon socket area
