@@ -135,6 +135,9 @@ PRODUCT_PACKAGES += \
     camera.msm8937
 
 PRODUCT_PACKAGES += \
+    Camera2
+
+PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
@@ -379,10 +382,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     $(DEVICE_PATH)/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
-
-# Snap
-PRODUCT_PACKAGES += \
-    Snap
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
