@@ -478,7 +478,6 @@ etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
 framework/QtiTelephonyServicelibrary.jar
 framework/qcrilhook.jar
-framework/qti-telephony-common.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
@@ -523,9 +522,10 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
+# Radio - QTI Telephony - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+framework/qti-telephony-common.jar
+
 # Radio - IMS - from tissot - OPR1.170623.026.V9.5.4.0.ODHMIFA
--app/ims/ims.apk
--app/imssettings/imssettings.apk
 -app/uceShimService/uceShimService.apk
 etc/permissions/qti-vzw-ims-internal.xml
 etc/permissions/com.qualcomm.qti.imscmservice.xml
@@ -581,6 +581,9 @@ vendor/lib64/lib-rtpsl.so
 vendor/lib64/lib-uceservice.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
+
+# Radio - ims.apk - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+-priv-app/ims/ims.apk
 
 # Sensors - from marmite - OPM5.171019.017 - UOS273C
 vendor/bin/sensors.qcom
