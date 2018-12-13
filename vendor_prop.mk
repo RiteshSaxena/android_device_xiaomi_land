@@ -143,7 +143,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.core_ctl_min_cpu=2 \
     ro.vendor.qti.core_ctl_max_cpu=4 \
     ro.vendor.at_library=libqti-at.so \
-    ro.vendor.gt_library=libqti-gt.so
+    ro.vendor.gt_library=libqti-gt.so \
+    vendor.perf.gestureflingboost.enable=true
 
 # Netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
