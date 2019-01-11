@@ -58,7 +58,7 @@ on fs
     setprop sys.usb.ffs.aio_compat 1
 
 on post-fs
-    start qseecomd
+    start vendor.qseecomd
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -96,7 +96,7 @@ on property:persist.usb.chgdisabled=1
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
 
-service qseecomd /vendor/bin/qseecomd
+service vendor.qseecomd /vendor/bin/qseecomd
    class core
    user root
    group root
