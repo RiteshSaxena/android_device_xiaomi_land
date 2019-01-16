@@ -501,12 +501,11 @@ service vendor.atfwd /vendor/bin/ATFWD-daemon
     disabled
     oneshot
 
-on property:bluetooth.hciattach=true
-    start hciattach
-    setprop bluetooth.status on
+on property:vendor.bluetooth.hciattach=true
+    setprop vendor.bluetooth.status on
 
-on property:bluetooth.hciattach=false
-    setprop bluetooth.status off
+on property:vendor.bluetooth.hciattach=false
+    setprop vendor.bluetooth.status off
 
 # FM
 on property:hw.fm.init=0
