@@ -22,4 +22,7 @@
          does not work well, particularly with noisy touchscreens. Note that disabling it may
          increase the rate of unintentional unlocks. -->
     <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
+    
+    <!-- Show volte icon -->
+    <bool name="config_display_volte">true</bool>
 </resources>
