@@ -62,10 +62,9 @@ persist.camera.is_type=1 \
 vendor.vidc.enc.narrow.searchrange=1 \
 persist.vendor.qti.telephony.vt_cam_interface=1
 
-# Cne/Dpm
+# CNE
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.cne.feature=1 \
-persist.dpm.feature=1
+persist.vendor.cne.feature=1
 
 # Coresight
 PRODUCT_PROPERTY_OVERRIDES += \
