@@ -1,4 +1,4 @@
-# ADSP - from marmite - OPM5.171019.017 - UOS273C
+# ADSP - from TA-1024 - PKQ1.181105.001
 vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libadsp_default_listener.so
@@ -9,36 +9,35 @@ vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
 
-# ADSP modules - from marmite - OPM5.171019.017 - UOS273C
+# ADSP modules - from TA-1024 - PKQ1.181105.001
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
-vendor/lib/rfsa/adsp/libexternal_dog_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libscveT2T_skel.so
 
-# Audio libraries - from marmite - OPM5.171019.017 - UOS273C
+# Audio libraries - from TA-1024 - PKQ1.181105.001
 etc/permissions/audiosphere.xml
 framework/audiosphere.jar
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
-vendor/lib/libacdbmapper.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
 vendor/lib/libmdsprpc.so
-vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
-vendor/lib/libsurround_3mic_proc.so
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
-vendor/lib/soundfx/libshoebox.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
-vendor/lib64/libacdbmapper.so
 vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
@@ -47,9 +46,7 @@ vendor/lib64/libmdsprpc.so
 vendor/lib64/libqtigef.so
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libqcbassboost.so
-vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
-vendor/lib64/soundfx/libshoebox.so
 
 # Bluetooth - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -63,7 +60,7 @@ vendor/lib64/libbt-hidlclient.so
 # Bluetooth (shared dependencies) - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
 vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
 
-# CNE - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+# CNE - from TA-1024 - PKQ1.181105.001
 etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
 framework/cneapiclient.jar
@@ -133,17 +130,17 @@ vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
 vendor/lib64/vendor.qti.latency@2.0.so
 
-# Charger - from marmite - OPM5.171019.017 - UOS273C
+# Charger - from TA-1024 - PKQ1.181105.001
 vendor/bin/hvdcp_opti
 
-# DPM - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+# DPM - from TA-1024 - PKQ1.181105.001
 vendor/bin/dpmQmiMgr
 vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib/libdpmqmihal.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
 
-# DRM - from marmite - OPM5.171019.017 - UOS273C
+# DRM - from TA-1024 - PKQ1.181105.001
 vendor/bin/qseecomd
 vendor/lib/libQSEEComAPI.so
 vendor/lib64/libGPreqcancel.so
@@ -159,17 +156,7 @@ vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 
-# DRM - Qualcomm Trusted Execution Enviornment - from marmite - OPM5.171019.017 - UOS273C
-lib/vendor.qti.hardware.qteeconnector@1.0.so
-lib64/vendor.qti.hardware.qteeconnector@1.0.so
-vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
-vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
-vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib/vendor.qti.hardware.qteeconnector@1.0_vendor.so
-vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.qteeconnector@1.0_vendor.so
-
-# FM - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# FM - from TA-1024 - PKQ1.181105.001
 -lib/vendor.qti.hardware.fm@1.0.so
 -lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
@@ -177,7 +164,7 @@ vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so
 
-# Gatekeeper - from marmite - OPM5.171019.017 - UOS273C
+# Gatekeeper - from TA-1024 - PKQ1.181105.001
 vendor/lib/hw/gatekeeper.msm8937.so
 vendor/lib64/hw/gatekeeper.msm8937.so
 
@@ -271,49 +258,57 @@ vendor/lib64/vendor.qti.gnss@1.2.so
 vendor/lib64/vendor.qti.gnss@2.0.so
 vendor/lib64/vendor.qti.gnss@2.1.so
 
-# Graphics - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+# Graphics - from TA-1024 - PKQ1.181105.001
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/egl/libq3dtools_esx.so
 vendor/lib/egl/libQTapGLES.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
 vendor/lib/libc2d30_bltlib.so
+vendor/lib/libc2d30-a3xx.so
 vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
+vendor/lib/libmm-hdcpmgr.so
 vendor/lib/libOpenCL.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
+vendor/lib/libscalar.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so
 vendor/lib64/egl/libq3dtools_adreno.so
+vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libbccQTI.so
 vendor/lib64/libC2D2.so
 vendor/lib64/libc2d30_bltlib.so
+vendor/lib64/libc2d30-a3xx.so
 vendor/lib64/libCB.so
 vendor/lib64/libgsl.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
+vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/libRSDriver_adreno.so
+vendor/lib64/libscalar.so
 
-# Graphics (HDR) - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+# Graphics (HDR) - from TA-1024 - PKQ1.181105.001
 vendor/lib/libhdr_tm.so
 vendor/lib64/libhdr_tm.so
 
-# Graphics (SDM) - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+# Graphics (SDM) - from TA-1024 - PKQ1.181105.001
 vendor/lib/libscalar.so
 vendor/lib/libsdm-color.so
 vendor/lib/libsdm-diag.so
@@ -327,15 +322,15 @@ vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
 
-# Graphics (Vulkan) - from marmite - OPM5.171019.017 - UOS273C
+# Graphics (Vulkan) - from TA-1024 - PKQ1.181105.001
 vendor/lib/hw/vulkan.msm8937.so
 vendor/lib64/hw/vulkan.msm8937.so
 
-# Keystore - from marmite - OPM5.171019.017 - UOS273C
+# Keystore - from TA-1024 - PKQ1.181105.001
 vendor/lib/hw/keystore.msm8937.so
 vendor/lib64/hw/keystore.msm8937.so
 
-# Listen - from marmite - OPM5.171019.017 - UOS273C
+# Listen - from TA-1024 - PKQ1.181105.001
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 vendor/lib/vendor.qti.voiceprint@1.0.so
@@ -343,7 +338,7 @@ vendor/lib/hw/sound_trigger.primary.msm8937.so
 vendor/lib64/vendor.qti.voiceprint@1.0.so
 vendor/lib64/hw/sound_trigger.primary.msm8937.so
 
-# Media - from marmite - OPM5.171019.017 - UOS273C
+# Media - from TA-1024 - PKQ1.181105.001
 vendor/lib/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libmmosal_proprietary.so
@@ -363,6 +358,7 @@ vendor/lib/libOmxSwVencMpeg4.so
 vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxVpp.so
 vendor/lib/libOmxWmaDec.so
+vendor/lib/libstagefright_soft_qtiflacdec.so
 vendor/lib/libswvdec.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libvqzip.so
@@ -383,68 +379,78 @@ vendor/lib64/libOmxSwVdec.so
 vendor/lib64/libOmxSwVencMpeg4.so
 vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
+vendor/lib64/libstagefright_soft_qtiflacdec.so
 vendor/lib64/libswvdec.so
 vendor/lib64/libvpplibrary.so
 
-# Modem - from marmite - OPM5.171019.017 - UOS273C
+# Modem - from TA-1024 - PKQ1.181105.001
 vendor/lib/libwms.so
 vendor/lib64/libwms.so
 
-# Perf - from marmite - OPM5.171019.017 - UOS273C
--lib/vendor.qti.hardware.iop@1.0.so
--lib/vendor.qti.hardware.iop@2.0.so
-lib/vendor.qti.hardware.perf@1.0.so
-lib/libqti-perfd-client_system.so
-lib/libqti_performance.so
--lib64/vendor.qti.hardware.iop@1.0.so
--lib64/vendor.qti.hardware.iop@2.0.so
-lib64/vendor.qti.hardware.perf@1.0.so
+# Perf - from TA-1024 - PKQ1.181105.001
+bin/perfservice
+etc/init/perfservice.rc
+-framework/QPerformance.jar
+-framework/UxPerformance.jar
+lib64/libqti-at.so
+lib64/libqti-iopd-client_system.so
 lib64/libqti-perfd-client_system.so
+lib64/libqti-util_system.so
 lib64/libqti_performance.so
+lib64/vendor.qti.hardware.iop@1.0.so
+lib64/vendor.qti.hardware.iop@2.0.so
+lib64/vendor.qti.hardware.perf@1.0.so
+lib/libqti-at.so
+lib/libqti-iopd-client_system.so
+lib/libqti-perfd-client_system.so
+lib/libqti-util_system.so
+lib/libqti_performance.so
+lib/vendor.qti.hardware.iop@1.0.so
+lib/vendor.qti.hardware.iop@2.0.so
+lib/vendor.qti.hardware.perf@1.0.so
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
 vendor/bin/msm_irqbalance
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
-vendor/etc/perf/perfboostsconfig.xml
+vendor/etc/perf/commonresourceconfigs.xml
 vendor/etc/perf/perf-profile0.conf
 vendor/etc/perf/perf-profile1.conf
-vendor/lib/hw/vendor.qti.hardware.iop@1.0-impl.so
-vendor/lib/libfeedbackhandler.so
+vendor/etc/perf/perfboostsconfig.xml
+vendor/etc/perf/targetconfig.xml
+vendor/etc/perf/targetresourceconfigs.xml
+vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so
 vendor/lib/libperfgluelayer.so
 vendor/lib/libqti-iopd-client.so
-vendor/lib/libqti-iopd.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-perfd.so
 vendor/lib/libqti-util.so
 vendor/lib/libqti-utils.so
-vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.iop@2.0_vendor.so
-vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
-vendor/lib64/hw/vendor.qti.hardware.iop@1.0-impl.so
-vendor/lib64/libfeedbackhandler.so
+vendor/lib/vendor.qti.hardware.iop@1.0.so
+vendor/lib/vendor.qti.hardware.iop@2.0.so
+vendor/lib/vendor.qti.hardware.perf@1.0.so
+vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so
 vendor/lib64/libperfgluelayer.so
 vendor/lib64/libqti-iopd-client.so
-vendor/lib64/libqti-iopd.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
-vendor/lib64/vendor.qti.hardware.iop@1.0_vendor.so
-vendor/lib64/vendor.qti.hardware.iop@2.0_vendor.so
-vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.iop@1.0.so
+vendor/lib64/vendor.qti.hardware.iop@2.0.so
+vendor/lib64/vendor.qti.hardware.perf@1.0.so
 
-# Peripheral manager - from marmite - OPM5.171019.017 - UOS273C
+# Peripheral manager - from TA-1024 - PKQ1.181105.001
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
-# Postprocessing - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+# Postprocessing - from TA-1024 - PKQ1.181105.001
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
-lib/vendor.display.color@1.0.so
+-lib/vendor.display.color@1.0.so
 lib/vendor.display.postproc@1.0.so
 lib/vendor.qti.hardware.qdutils_disp@1.0.so
-lib64/vendor.display.color@1.0.so
+-lib64/vendor.display.color@1.0.so
 lib64/vendor.display.postproc@1.0.so
 lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/bin/hw/vendor.display.color@1.0-service
@@ -454,18 +460,14 @@ vendor/etc/init/vendor.display.color@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
 vendor/lib/libdisp-aba.so
 vendor/lib/vendor.display.color@1.0.so
-vendor/lib/vendor.display.color@1.1.so
-vendor/lib/vendor.display.color@1.2.so
 vendor/lib/vendor.display.postproc@1.0.so
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/libdisp-aba.so
 vendor/lib64/vendor.display.color@1.0.so
-vendor/lib64/vendor.display.color@1.1.so
-vendor/lib64/vendor.display.color@1.2.so
 vendor/lib64/vendor.display.postproc@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
-# Power-off alarm - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+# Power-off alarm - from TA-1024 - PKQ1.181105.001
 framework/vendor.qti.hardware.alarm-V1.0-java.jar
 -vendor/app/PowerOffAlarm/PowerOffAlarm.apk
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
@@ -627,9 +629,11 @@ vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
 # Radio - ims.apk - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
 -priv-app/ims/ims.apk
 
-# Sensors - from marmite - OPM5.171019.017 - UOS273C
-vendor/bin/sensors.qcom
--vendor/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
+# Sensors - from TA-1024 - PKQ1.181105.001
+-framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
+lib/vendor.qti.hardware.sensorscalibrate@1.0.so
+lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
+vendor/bin/sensors.qti
 vendor/lib/hw/activity_recognition.msm8937.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
@@ -641,27 +645,26 @@ vendor/lib64/libsensor_reg.so
 vendor/lib64/sensors.ssc.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
-# Thermal - from marmite - OPM5.171019.017 - UOS273C
+# Thermal - from TA-1024 - PKQ1.181105.001
 vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
 
-# Time services - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+# Time services - from TA-1024 - PKQ1.181105.001
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 -vendor/lib/libtime_genoff.so
 -vendor/lib64/libtime_genoff.so
 
-# TUI - from marmite - OPM5.171019.017 - UOS273C
+# TUI - from TA-1024 - PKQ1.181105.001
 lib/vendor.qti.hardware.tui_comm@1.0.so
 lib64/vendor.qti.hardware.tui_comm@1.0.so
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
-vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
-# Widevine DRM - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+# Widevine - from TA-1024 - PKQ1.181105.001
 vendor/bin/hw/android.hardware.drm@1.1-service.widevine
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
 vendor/lib64/libwvhidl.so
@@ -669,20 +672,20 @@ vendor/lib64/libwvhidl.so
 # Wi-Fi - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
 vendor/bin/wcnss_service
 
-# WiFi Display - from daisy
+# WiFi Display - from TA-1024 - PKQ1.181105.001
 bin/wfdservice
 etc/init/wfdservice.rc
 etc/wfdconfig.xml
 etc/wfdconfigsink.xml
 -framework/WfdCommon.jar
--priv-app/WfdService/WfdService.apk
 lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 lib/extractors/libmmparser.so
 lib/libFileMux.so
+lib/libmmparser_lite.so
 lib/libmmosal.so
 lib/libmmrtpdecoder.so
 lib/libmmrtpencoder.so
-lib/libmmparser_lite.so
+lib/libOmxMux.so
 lib/libwfdavenhancements.so
 lib/libwfdclient.so
 lib/libwfdcodecv4l2.so
@@ -696,22 +699,26 @@ lib/libwfdrtsp.so
 lib/libwfdservice.so
 lib/libwfdsm.so
 lib/libwfduibcinterface.so
-lib/libwfduibcsinkinterface.so
 lib/libwfduibcsink.so
-lib/libwfduibcsrcinterface.so
+lib/libwfduibcsinkinterface.so
 lib/libwfduibcsrc.so
+lib/libwfduibcsrcinterface.so
 lib64/extractors/libmmparser.so
 lib64/libFileMux.so
-lib64/libmmosal.so
 lib64/libmmparser_lite.so
+lib64/libmmosal.so
 lib64/libwfdclient.so
 lib64/libwfdnative.so
+-priv-app/WfdService/WfdService.apk
 vendor/bin/wifidisplayhalservice
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so
+vendor/lib/libmmosal_proprietary.so
 vendor/lib/libwfdcommonutils_proprietary.so
 vendor/lib/libwfdhaldsmanager.so
 vendor/lib/libwfdhdcpcp.so
 vendor/lib/libwfdmmservice.so
 vendor/lib/libwfdmodulehdcpsession.so
+vendor/lib64/libmmosal_proprietary.so
+vendor/lib64/libwfdhdcpcp.so
