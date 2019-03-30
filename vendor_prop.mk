@@ -127,7 +127,8 @@ media.stagefright.audio.sink=280 \
 mm.enable.qcom_parser=17825791 \
 vendor.vidc.disable.split.mode=1 \
 vendor.vidc.enc.disable.pq=true \
-video.disable.ubwc=1
+video.disable.ubwc=1 \
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
