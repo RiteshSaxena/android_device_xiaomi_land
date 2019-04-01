@@ -48,7 +48,7 @@ vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcvirt.so
 
-# Bluetooth - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# Bluetooth - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/bin/hci_qcomm_init
 vendor/bin/wcnss_filter
@@ -56,9 +56,6 @@ vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/libbtnv.so
 vendor/lib64/libbt-hidlclient.so
-
-# Bluetooth (shared dependencies) - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
-vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
 
 # CNE - from TA-1024 - PKQ1.181105.001
 etc/permissions/cneapiclient.xml
@@ -168,7 +165,7 @@ vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so
 vendor/lib/hw/gatekeeper.msm8937.so
 vendor/lib64/hw/gatekeeper.msm8937.so
 
-# GPS - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+# GPS - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.xml
 etc/permissions/izat.xt.srv.xml
@@ -566,7 +563,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
-# Radio - QTI Telephony - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+# Radio - QTI Telephony - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 framework/qti-telephony-common.jar
 
 # Radio - IMS - from tissot - OPR1.170623.026.V9.5.4.0.ODHMIFA
@@ -626,7 +623,7 @@ vendor/lib64/lib-uceservice.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
 
-# Radio - ims.apk - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+# Radio - ims.apk - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 -priv-app/ims/ims.apk
 
 # Sensors - from TA-1024 - PKQ1.181105.001
@@ -669,7 +666,7 @@ vendor/bin/hw/android.hardware.drm@1.1-service.widevine
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
 vendor/lib64/libwvhidl.so
 
-# Wi-Fi - from tissot - OPM1.171019.026 V9.6.4.0.ODHMIFE
+# Wi-Fi - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 vendor/bin/wcnss_service
 
 # WiFi Display - from TA-1024 - PKQ1.181105.001
