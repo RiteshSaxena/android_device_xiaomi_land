@@ -165,10 +165,6 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
-BOARD_ROOT_EXTRA_SYMLINKS := \
-    /dsp:/vendor/dsp \
-    /firmware:/vendor/firmware_mnt \
-    /persist:/mnt/vendor/persist
 
 # FM
 BOARD_HAVE_QCOM_FM := true
