@@ -146,7 +146,6 @@ on boot
 
     mkdir /persist/drm 0770 system system
     mkdir /persist/misc 0770 system system
-    mkdir /persist/secnvm 0770 system system
 
     #Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
@@ -236,9 +235,6 @@ on boot
     chown system system /sys/class/sensors/ap3426-proximity/enable
     chown system system /sys/class/sensors/ap3426-proximity/poll_delay
 
-    # Create vpp directory
-    mkdir /persist/vpp 0770 media media
-
     # IR blaster
     chown root system /sys/class/leds/infrared/transmit
     chown root system /sys/class/leds/infrared/brightness
@@ -248,9 +244,6 @@ on boot
     write /sys/bus/msm_subsys/devices/subsys1/restart_level related
     write /sys/bus/msm_subsys/devices/subsys2/restart_level related
     write /sys/bus/msm_subsys/devices/subsys3/restart_level related
-
-    # Create hvdcp_opti directory
-    mkdir /persist/hvdcp_opti 0770 root system
 
 # msm specific files that need to be created on /data
 on post-fs-data
