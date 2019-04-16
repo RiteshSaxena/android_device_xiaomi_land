@@ -137,7 +137,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.disable.split.mode=1 \
     vendor.vidc.enc.disable.pq=true \
     vendor.video.disable.ubwc=1 \
-    media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+    media.settings.xml=/vendor/etc/media_profiles_V1_0.xml
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
