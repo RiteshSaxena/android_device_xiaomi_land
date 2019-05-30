@@ -36,3 +36,7 @@ allow hal_fingerprint_land keystore_service:service_manager find;
 # For permissions checking
 binder_call(hal_fingerprint_land, system_server);
 allow hal_fingerprint_land permission_service:service_manager find;
+
+# Use system data for pre-P first SDK API level
+allow hal_fingerprint_land fingerprintd_data_file:file create_file_perms;
+allow hal_fingerprint_land fingerprintd_data_file:dir rw_dir_perms;

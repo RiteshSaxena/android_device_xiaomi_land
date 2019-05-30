@@ -1,1 +1,2 @@
 allow init { domain -lmkd -crash_dump }:process noatsecure;
+allow init sysfs:file setattr;

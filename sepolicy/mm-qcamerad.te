@@ -2,10 +2,9 @@ binder_use(mm-qcamerad)
 binder_call(mm-qcamerad, servicemanager)
 typeattribute mm-qcamerad socket_between_core_and_vendor_violators;
 
-type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket1";
-type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket2";
+allow mm-qcamerad camera_data_file:dir w_dir_perms;
+allow mm-qcamerad camera_data_file:file create_file_perms;
 allow mm-qcamerad camera_data_file:sock_file { create unlink };
-allow mm-qcamerad camera_socket:sock_file { create unlink write };
 
 allow mm-qcamerad init:unix_stream_socket connectto;
 allow mm-qcamerad property_socket:sock_file write;

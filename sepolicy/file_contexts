@@ -22,7 +22,7 @@
 
 # Goodix Fingerprint data
 /data/system/fingerprint(/.*)?                  u:object_r:gx_fpd_data_file:s0
-/persist/data/gxfp(/.*)?                        u:object_r:gx_fpd_data_file:s0
+/mnt/vendor/persist/data/gxfp(/.*)?                        u:object_r:gx_fpd_data_file:s0
 
 # Ir
 /dev/lirc[0-9]*					u:object_r:lirc_device:s0
