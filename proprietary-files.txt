@@ -1,11 +1,11 @@
-# Audio dirac - from stock - MIUI V9.5.8.0.MALMIFD
+# Audio dirac - from stock - V10.2.2.0.MALMIXM
 lib/soundfx/libdirac.so
 lib/libDiracAPI_SHARED.so
 vendor/etc/diracmobile.config
 vendor/lib/libhwdaphal.so
 vendor/lib64/libhwdaphal.so
 
-# Audio ACDB - from stock - MIUI V9.5.8.0.MALMIFD
+# Audio ACDB - from stock - V10.2.2.0.MALMIXM
 etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb:vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb
 etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_General_cal.acdb:vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_General_cal.acdb
 etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Global_cal.acdb:vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Global_cal.acdb
@@ -35,7 +35,7 @@ etc/acdbdata/QRD/QRD_Hdmi_cal.acdb:vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
 etc/acdbdata/QRD/QRD_Headset_cal.acdb:vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
 etc/acdbdata/QRD/QRD_Speaker_cal.acdb:vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
 
-# Camera - from stock - MIUI V9.5.8.0.MALMIFD
+# Camera - from stock - V10.2.2.0.MALMIXM
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
 lib/libmorpho_memory_allocator.so:vendor/lib/libmorpho_memory_allocator.so
 lib/libmorpho_panorama.so:vendor/lib/libmorpho_panorama.so
@@ -167,11 +167,11 @@ vendor/lib64/libmmsw_opencl.so
 vendor/lib64/libmmsw_platform.so
 
 # Camera TNR - from prada (Redmi 4)
-vendor/lib/libllvd_smore.so
-vendor/lib/libllvd_sw_tnr.so
-vendor/lib/libmmcamera_sw_tnr.so
+vendor/lib/libllvd_smore.so|582739377d89d73fca85364f714c4e577a59ea82
+vendor/lib/libllvd_sw_tnr.so|fcdcf57426014ff9d29f394ada26a6fd830dc6e3
+vendor/lib/libmmcamera_sw_tnr.so|6b20dab49ea83f84afed555d9b60595a4c380e16
 
-# Camera actuators - from stock - MIUI V9.5.8.0.MALMIFD
+# Camera actuators - from stock - V10.2.2.0.MALMIXM
 vendor/lib/libactuator_ad5816g.so
 vendor/lib/libactuator_ad5823.so
 vendor/lib/libactuator_bu64291gwz.so
@@ -188,7 +188,7 @@ vendor/lib/libactuator_dw9718s.so
 vendor/lib/libactuator_dw9763.so
 vendor/lib/libactuator_dw9763_ov13853.so
 
-# Camera chromatix - from stock - MIUI V9.5.8.0.MALMIFD
+# Camera chromatix - from stock - V10.2.2.0.MALMIXM
 vendor/lib/libchromatix_ov5670_f5670bq_a3_default_preview.so
 vendor/lib/libchromatix_ov5670_f5670bq_a3_default_video.so
 vendor/lib/libchromatix_ov5670_f5670bq_a3_hfr_120.so
@@ -871,7 +871,7 @@ vendor/lib/libchromatix_s5k3m2xx_video_4k.so
 vendor/lib/libchromatix_s5k3m2xx_zsl_preview_ad5816g.so
 vendor/lib/libchromatix_s5k3m2xx_zsl_video_ad5816g.so
 
-# Camera configs - from stock - MIUI V9.5.8.0.MALMIFD
+# Camera configs - from stock - V10.2.2.0.MALMIXM
 etc/camera/ofilm_s5k5e8_chromatix.xml:vendor/etc/camera/ofilm_s5k5e8_chromatix.xml
 etc/camera/ov13853_q13853a_chromatix.xml:vendor/etc/camera/ov13853_q13853a_chromatix.xml
 etc/camera/ov5670_f5670bq_chromatix.xml:vendor/etc/camera/ov5670_f5670bq_chromatix.xml
@@ -905,7 +905,7 @@ etc/camera/s5k3m2xm_chromatix.xml:vendor/etc/camera/s5k3m2xm_chromatix.xml
 etc/camera/s5k3m2xm_chromatix_bear.xml:vendor/etc/camera/s5k3m2xm_chromatix_bear.xml
 etc/camera/s5k3m2xx_chromatix.xml:vendor/etc/camera/s5k3m2xx_chromatix.xml
 
-# Camera firmware - from stock - MIUI V9.5.8.0.MALMIFD
+# Camera firmware - from stock - V10.2.2.0.MALMIXM
 etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
 etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
 etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
@@ -916,7 +916,7 @@ etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
 etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
 
-# Camera sensors - from stock - MIUI V9.5.8.0.MALMIFD
+# Camera sensors - from stock - V10.2.2.0.MALMIXM
 vendor/lib/libmmcamera_isp_wb40.so
 vendor/lib/libmmcamera_isp_abf40.so
 vendor/lib/libmmcamera_isp_bcc40.so
@@ -954,16 +954,16 @@ vendor/lib/libmmcamera_isp_color_xform_viewfinder40.so
 # Camera sensors - correct40 - from prada (Redmi 4)
 vendor/lib/libmmcamera_isp_color_correct40.so|44ad865ec415913f761e7cfb87617dee0aa375c0
 
-# Consumer IR - from stock - MIUI V9.5.8.0.MALMIFD
+# Consumer IR - from stock - V10.2.2.0.MALMIXM
 lib/hw/consumerir.default.so:vendor/lib/hw/consumerir.default.so
 lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.default.so
 
-# Display calibration - from stock - MIUI V9.5.8.0.MALMIFD
+# Display calibration - from stock - V10.2.2.0.MALMIXM
 -etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml:vendor/etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml
 -etc/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml:vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml
 -etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml:vendor/etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml
 
-# Fingerprint - from stock - MIUI V9.5.8.0.MALMIFD
+# Fingerprint - from stock - V10.2.2.0.MALMIXM
 bin/gx_fpcmd:vendor/bin/gx_fpcmd
 bin/gx_fpd:vendor/bin/gx_fpd
 lib/hw/fingerprint.default.so:vendor/lib/hw/fingerprint.default.so
@@ -976,7 +976,7 @@ lib64/libfp_client.so:vendor/lib64/libfp_client.so
 lib64/libfpnav.so:vendor/lib64/libfpnav.so
 lib64/libfpservice.so:vendor/lib64/libfpservice.so
 
-# Graphics firmware - from stock - MIUI V9.5.8.0.MALMIFD
+# Graphics firmware - from stock - V10.2.2.0.MALMIXM
 etc/firmware/a530_gpmu.fw2:vendor/firmware/a530_gpmu.fw2
 etc/firmware/a530_pfp.fw:vendor/firmware/a530_pfp.fw
 etc/firmware/a530_pm4.fw:vendor/firmware/a530_pm4.fw
@@ -986,7 +986,7 @@ etc/firmware/a530v2_seq.fw2:vendor/firmware/a530v2_seq.fw2
 etc/firmware/a530v3_gpmu.fw2:vendor/firmware/a530v3_gpmu.fw2
 etc/firmware/a530v3_seq.fw2:vendor/firmware/a530v3_seq.fw2
 
-# Radio - MBN - from stock - MIUI V9.5.8.0.MALMIFD
+# Radio - MBN - from stock - V10.2.2.0.MALMIXM
 etc/firmware/modem_config/S88537AA1/cmcc_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AA1/cmcc_mcfg_sw.mbn
 etc/firmware/modem_config/S88537AA1/ct_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AA1/ct_mcfg_sw.mbn
 etc/firmware/modem_config/S88537AA1/cu_mcfg_sw.mbn:vendor/firmware/modem_config/S88537AA1/cu_mcfg_sw.mbn
@@ -1002,7 +1002,7 @@ etc/firmware/modem_config/S88537CA1/row_mcfg_sw.mbn:vendor/firmware/modem_config
 etc/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn:vendor/firmware/modem_config/S88537EC1/reliance_mcfg_sw.mbn
 etc/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn:vendor/firmware/modem_config/S88537EC1/row_mcfg_sw.mbn
 
-# Touchscreen - from stock - MIUI V9.5.8.0.MALMIFD
+# Touchscreen - from stock - V10.2.2.0.MALMIXM
 etc/ft5336_biel_720p.ini:vendor/etc/ft5336_biel_720p.ini
 etc/ft5336_lens_720p.ini:vendor/etc/ft5336_lens_720p.ini
 etc/ft5336_oufei_720p.ini:vendor/etc/ft5336_oufei_720p.ini
