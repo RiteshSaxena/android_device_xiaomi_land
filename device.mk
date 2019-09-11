@@ -130,9 +130,9 @@ PRODUCT_PACKAGES += \
     libbt-vendor
 
 # Boost Framework
-PRODUCT_BOOT_JARS += \
-    QPerformance \
-    UxPerformance
+#PRODUCT_BOOT_JARS += \
+#    QPerformance \
+#    UxPerformance
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -370,8 +370,8 @@ PRODUCT_PACKAGES += \
     telephony-ext \
     ims-ext-common
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+#PRODUCT_BOOT_JARS += \
+#    telephony-ext
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -466,5 +466,5 @@ PRODUCT_PACKAGES += \
     libaacwrapper \
     libnl
 
-PRODUCT_BOOT_JARS += \
-    WfdCommon
+#PRODUCT_BOOT_JARS += \
+#    WfdCommon
